@@ -12,6 +12,7 @@ class AppImages {
   static String imgIconSearch = 'assets/images/ic_search.png';
   static String imgIconPlayVideo = 'assets/images/ic_play_video.png';
   static String imgIconNotBookmark = 'assets/images/ic_not_bookmark.png';
-
+  static String imgIconFilter = 'assets/images/ic_filter.png';
+  static String imgIconNotificationItem = 'assets/images/ic_notification.png';
 
 }

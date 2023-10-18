@@ -49,7 +49,7 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(AppImages.imgBackgroundOnBoard),
-              fit: BoxFit.cover
+              fit: BoxFit.fitHeight
             ),
           ),
           child: Column(
@@ -57,7 +57,7 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 28.sp,vertical: 64.sp),
+                margin: EdgeInsets.symmetric(horizontal: 28.sp,vertical: 57.sp),
                 alignment: Alignment.center,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -89,22 +89,19 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 24.sp,right: 73.sp,left:  73.sp),
+                padding: EdgeInsets.only(top: 24.sp,right: 73.sp,left: 73.sp,bottom: 40.sp),
                 child: Text(
                   AppStrings.findBestRecipeForCooking,
                   textAlign: TextAlign.center,
                   style: AppTextStyles.onBoardBold400,
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 40.sp),
-                child: PrimaryIconLargeButton(
-                    onTap: () {
-                      Navigator.pushNamed(context, Routers.home);
-                    },
-                    title: AppStrings.startCooking,
-                    icon: Icons.arrow_forward),
-              ),
+              PrimaryIconLargeButton(
+                  onTap: () {
+                    Navigator.pushNamed(context, Routers.home);
+                  },
+                  title: AppStrings.startCooking,
+                  icon: Icons.arrow_forward),
             ],
           ),
         ),

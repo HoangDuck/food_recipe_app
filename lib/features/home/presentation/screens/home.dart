@@ -1,35 +1,34 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/screens/home_tab.dart';
+import 'package:food_recipe_app/features/home/presentation/screens/notification_tab.dart';
 import 'package:food_recipe_app/features/home/presentation/screens/save_recipe_tab.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/icon_tab.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/icon_tab_model.dart';
 import 'package:food_recipe_app/shared/theme/app_bottom_bar_shape.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/app_images.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class Home extends StatefulWidget {
+class Home extends HookConsumerWidget {
   const Home({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  final PageController _myPage = PageController(initialPage: 0);
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    // TODO: implement build
     ScreenUtil.init(context, designSize: const Size(375,812));
+    final pageController = usePageController(initialPage: 0);
     return Scaffold(
       backgroundColor: Colors.white,extendBody: true,
       resizeToAvoidBottomInset: false,
       body:   PageView(
-        controller: _myPage,
+        controller: pageController,
         children: const [
           HomeTab(),
           SaveRecipeTab(),
+          NotificationTab(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
@@ -50,7 +49,7 @@ class _HomeState extends State<Home> {
                 flex:1,
                 child: IconTab(
                   onTap: () {
-                    _myPage.jumpToPage(0);
+                    pageController.jumpToPage(0);
                   },
                   padding: EdgeInsets.only(top:16.sp,left: 0.sp,right: 12.sp,bottom: 50.sp),
                   iconTabModel: IconTabModel(
@@ -62,7 +61,7 @@ class _HomeState extends State<Home> {
                 flex:1,
                 child: IconTab(
                   onTap: () {
-                    _myPage.jumpToPage(1);
+                    pageController.jumpToPage(1);
                   },
                   padding: EdgeInsets.only(top:16.sp,left: 12.sp,right: 103.sp,bottom: 50.sp),
                   iconTabModel: IconTabModel(
@@ -75,7 +74,9 @@ class _HomeState extends State<Home> {
               Expanded(
                 flex:1,
                 child: IconTab(
-                  onTap: () {},
+                  onTap: () {
+                    pageController.jumpToPage(2);
+                  },
                   padding: EdgeInsets.only(top:16.sp,left: 103.sp,right: 12.sp,bottom: 50.sp),
                   iconTabModel: IconTabModel(
                       enableImage: AppImages.imgIconNotificationPressed,
@@ -118,4 +119,5 @@ class _HomeState extends State<Home> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
+
 }

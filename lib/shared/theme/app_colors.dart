@@ -36,4 +36,6 @@ class AppColors {
   static const Color titleSmallBold = Color(0xFFEE8B8B);
 
   static const Color cardFoodByCategory = Color(0xFFF1F1F1);
+
+  static const Color iconNotificationBackground = Color(0xFFCEECD7);
 }

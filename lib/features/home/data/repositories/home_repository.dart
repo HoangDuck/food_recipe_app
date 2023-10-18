@@ -1,6 +1,6 @@
 
 import 'package:dartz/dartz.dart';
-import 'package:food_recipe_app/features/home/data/datasource/home_remote_datasource.dart';
+import 'package:food_recipe_app/features/home/data/datasource/meal/home_remote_datasource.dart';
 import 'package:food_recipe_app/features/home/domain/repositories/home_repository.dart';
 import 'package:food_recipe_app/shared/domain/models/categories/categories.dart';
 import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
