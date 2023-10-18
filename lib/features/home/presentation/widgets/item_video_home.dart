@@ -12,21 +12,28 @@ import 'package:food_recipe_app/shared/theme/text_style.dart';
 
 class ItemVideo extends ConsumerWidget {
   final Meals meal;
-  const ItemVideo({super.key,required this.meal});
+  final bool isMarked;
+  final Size size;
+
+  const ItemVideo(
+      {super.key,
+      required this.meal,
+      this.isMarked = false,
+      this.size = const Size(280, 220)});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
-    return Padding(
-      padding: EdgeInsets.only(right: 16.sp),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _videoPreview(),
-          _videoCreator(authorAvt: meal.strMealThumb??'',authorName: meal.strArea??''),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _videoPreview(),
+        _videoCreator(
+          authorAvt: meal.strMealThumb ?? '',
+          authorName: meal.strArea ?? '',
+        ),
+      ],
     );
   }
 
@@ -66,15 +73,15 @@ class ItemVideo extends ConsumerWidget {
 
   Widget _videoPreview(){
     return SizedBox(
-      height: 220.sp,
-      width: 280.sp,
+      height: size.height.sp,
+      width: size.width.sp,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: 180.sp,
-            width: 280.sp,
+            width: size.width.sp,
             child: Padding(
               padding: EdgeInsets.only(bottom: 6.sp),
               child: Stack(
@@ -103,6 +110,7 @@ class ItemVideo extends ConsumerWidget {
                     right: 8.sp,
                     child: IconBookmarkFood(
                       onTap: () {},
+                      isMarked: isMarked,
                     ),
                   ),
                   Positioned(

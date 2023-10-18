@@ -13,4 +13,6 @@ class AppStrings {
   static const String letsCooking = 'Let\'s Cooking';
   static const String startCooking = 'Start cooking';
   static const String savedRecipe = 'Saved recipes';
+  static const String video = 'Video';
+  static const String recipe = 'Recipe';
 }

@@ -7,6 +7,17 @@ class AppTextStyles {
   static const String fontFamily = 'Helvetica';
   static TextStyle fontPopin = GoogleFonts.getFont('Lato');
 
+  static TextStyle customTextStyle(
+      {double size = 16.0,
+      Color color = AppColors.white,
+      FontWeight fontWeight = FontWeight.w600}) {
+    return GoogleFonts.poppins(
+      fontWeight: FontWeight.w600,
+      fontSize: size.sp,
+      color: color,
+    );
+  }
+
   /// Text style for body
   static const TextStyle bodyLg = TextStyle(
     fontSize: 16,

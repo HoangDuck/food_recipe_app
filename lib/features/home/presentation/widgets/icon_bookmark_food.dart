@@ -6,7 +6,8 @@ import 'package:food_recipe_app/shared/theme/app_images.dart';
 
 class IconBookmarkFood extends StatelessWidget {
   final Function() onTap;
-  const IconBookmarkFood({super.key,required this.onTap});
+  final bool isMarked;
+  const IconBookmarkFood({super.key,required this.onTap, this.isMarked = false});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,9 @@ class IconBookmarkFood extends StatelessWidget {
           borderRadius: BorderRadius.circular(100.sp),
         ),
         child: Image.asset(
-          AppImages.imgIconNotBookmark,
+          isMarked
+              ? AppImages.imgIconDiscoverPressed
+              : AppImages.imgIconNotBookmark,
           width: 21.33.sp,
           height: 21.33.sp,
         ),

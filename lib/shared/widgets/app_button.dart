@@ -9,6 +9,7 @@ class PrimaryNoIconLargeButton extends StatelessWidget {
   final Size size;
   final EdgeInsets padding;
   final bool isHighLight;
+  final double textSize;
 
   const PrimaryNoIconLargeButton(
       {super.key,
@@ -16,7 +17,8 @@ class PrimaryNoIconLargeButton extends StatelessWidget {
       required this.onTap,
       this.size = const Size(206, 54),
       this.padding = const EdgeInsets.symmetric(vertical: 16,horizontal: 32),
-      this.isHighLight = true});
+      this.isHighLight = true,
+      this.textSize = 16});
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +45,15 @@ class PrimaryNoIconLargeButton extends StatelessWidget {
           title,
           textAlign: TextAlign.center,
           style: isHighLight
-              ? AppTextStyles.onBoardBold600
-              : AppTextStyles.poppinsLabelBoldV4,
+              ? textSize == 16
+                  ? AppTextStyles.onBoardBold600
+                  : AppTextStyles.customTextStyle(size: textSize)
+              : textSize == 16
+                  ? AppTextStyles.poppinsLabelBoldV4
+                  : AppTextStyles.customTextStyle(
+                      size: textSize,
+                      color: AppColors.titleSmallBold,
+                    ),
         ),
       ),
     );
