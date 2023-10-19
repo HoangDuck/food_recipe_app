@@ -20,4 +20,12 @@ class AppImages {
   static String imgIconLocation = 'assets/images/ic_location.png';
   static String imgIconSushi = 'assets/images/ic_sushi.png';
   static String imgIconNoodles = 'assets/images/ic_noodles.png';
+  static String imgIconEdit = 'assets/images/ic_edit.png';
+  static String imgIconArrowRight = 'assets/images/ic_arrow_right.png';
+  static String imgIconProfile = 'assets/images/ic_profile.png';
+  static String imgIconClockRed = 'assets/images/ic_clock.png';
+  static String imgIconAdd = 'assets/images/ic_plus_no_border.png';
+  static String imgIconAddBorder = 'assets/images/ic_plus.png';
+  static String imgIconMinusBorder = 'assets/images/ic_minus_button.png';
+
 }

@@ -5,6 +5,8 @@ import 'package:food_recipe_app/features/home/presentation/widgets/home_tab/popu
 import 'package:food_recipe_app/features/home/presentation/widgets/home_tab/recent_recipe.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/home_tab/trending_now.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/text_field_search.dart';
+import 'package:food_recipe_app/shared/theme/app_colors.dart';
+import 'package:food_recipe_app/shared/theme/app_images.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 
@@ -34,7 +36,20 @@ class _HomeTabState extends State<HomeTab> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 8.sp, horizontal: 20.sp),
-            child: const TextFieldSearchWidget(),
+            child: TextFieldWidget(
+              hintText: AppStrings.searchRecipe,
+              borderColor: AppColors.dividerColor,
+              prefixIcon: Padding(
+                padding: EdgeInsets.only(left: 16.sp,right: 12.sp),
+                child: Image.asset(
+                  AppImages.imgIconSearch,
+                  width: 20.sp,
+                  height: 20.sp,
+                  fit: BoxFit.fitWidth,
+                  alignment: Alignment.center,
+                ),
+              ),
+            ),
           ),
           const TrendingNowWidget(),
           const PopularCategory(),

@@ -8,11 +8,12 @@ import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
 class ItemVideoRecipeDetail extends ConsumerWidget {
   final Meals meal;
   final Size size;
+  final List<Widget> extendWidgets;
 
   const ItemVideoRecipeDetail(
       {super.key,
         required this.meal,
-        this.size = const Size(335, 220)});
+        this.size = const Size(335, 220), this.extendWidgets = const []});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,7 +26,7 @@ class ItemVideoRecipeDetail extends ConsumerWidget {
       height: size.height.sp,
       width: size.width.sp,
       child: Padding(
-        padding: EdgeInsets.only(bottom: 6.sp),
+        padding: EdgeInsets.only(bottom: 0.sp),
         child: Stack(
           children: [
             Positioned.fill(
@@ -48,6 +49,7 @@ class ItemVideoRecipeDetail extends ConsumerWidget {
                 ),
               ),
             ),
+            ...extendWidgets
           ],
         ),
       ),

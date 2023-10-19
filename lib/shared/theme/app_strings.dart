@@ -32,5 +32,13 @@ class AppStrings {
   static const String follow = 'Follow';
   static const String ingredients = 'Ingredients';
   static const String fiveItems = '5 items';
-
+  static const String createRecipe = 'Create recipe';
+  static const String saveMyRecipe = 'Save my recipes';
+  static const String bentoLunch = 'Bento lunch box ideas for work|';
+  static const String enterRecipe = 'Enter recipe';
+  static const String serves = 'Serves';
+  static const String cookTime = 'Cook time';
+  static const String addNewIngredient = 'Add new ingredients';
+  static const String itemName = 'Item name';
+  static const String quantity = 'Quantity';
 }

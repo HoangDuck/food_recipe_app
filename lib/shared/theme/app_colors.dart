@@ -42,4 +42,6 @@ class AppColors {
   static const Color dividerColor = Color(0xFFD9D9D9);
 
   static const Color authorTitleColor = Color(0xFF181818);
+
+  static const Color shadowButtonSaveRecipe = Color(0x146C6C6C);
 }

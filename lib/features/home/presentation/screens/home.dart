@@ -8,6 +8,7 @@ import 'package:food_recipe_app/features/home/presentation/screens/notification_
 import 'package:food_recipe_app/features/home/presentation/screens/save_recipe_tab.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/icon_tab.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/icon_tab_model.dart';
+import 'package:food_recipe_app/routes/router.dart';
 import 'package:food_recipe_app/shared/theme/app_bottom_bar_shape.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/app_images.dart';
@@ -106,7 +107,9 @@ class Home extends HookConsumerWidget {
         height: 48.sp,
         width: 48.sp,
         child: FloatingActionButton.large(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, Routers.createRecipe);
+          },
           elevation: 0,
           backgroundColor: AppColors.buttonPrimaryNoIconLargeColor,
           child: Padding(
