@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_recipe_app/configs/app_configs.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 
 class ItemPopularCreator extends StatelessWidget {
@@ -20,9 +21,9 @@ class ItemPopularCreator extends StatelessWidget {
             SizedBox(
                 width: 75.sp,
                 height: 75.sp,
-              child: const CircleAvatar(
+              child: CircleAvatar(
                 radius: 48,
-                backgroundImage: NetworkImage("https://i.pravatar.cc/300",),
+                backgroundImage: NetworkImage(AppConfig.randomImageUrl,),
               ),
             ),
             Padding(

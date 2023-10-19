@@ -109,6 +109,12 @@ class AppTextStyles {
     color: AppColors.titleBoldColor,
   );
 
+  static TextStyle poppinsH4Bold = GoogleFonts.poppins(
+    fontWeight: FontWeight.w600,
+    fontSize: 24.sp,
+    color: AppColors.titleBoldColor,
+  );
+
   static TextStyle poppinsLabelBold = GoogleFonts.poppins(
     fontWeight: FontWeight.w600,
     fontSize: 14.sp,
@@ -179,5 +185,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
     fontSize: 10.sp,
     color: AppColors.titleSmallRegular,
+  );
+
+  static TextStyle poppinsParagraphBoldV2 =  GoogleFonts.poppins(
+    fontWeight: FontWeight.w600,
+    fontSize: 16.sp,
+    color: AppColors.authorTitleColor,
   );
 }

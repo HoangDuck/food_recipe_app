@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/configs/app_configs.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/icon_bookmark_food.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/icon_play_video.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/icon_review_star.dart';
@@ -102,7 +101,7 @@ class ItemVideo extends ConsumerWidget {
                     top: 8.sp,
                     left: 8.sp,
                     child: const IconReviewStar(
-                      rating: '4,5',
+                      rating: AppStrings.fourAndAHalf,
                     ),
                   ),
                   Positioned(
@@ -144,5 +143,4 @@ class ItemVideo extends ConsumerWidget {
       ),
     );
   }
-
 }

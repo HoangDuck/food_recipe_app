@@ -34,7 +34,7 @@ class ItemVideoRecipe extends StatelessWidget {
             top: 8.sp,
             left: 8.sp,
             child: const IconReviewStar(
-              rating: '4,5',
+              rating: AppStrings.fourAndAHalf,
             ),
           ),
           Positioned(

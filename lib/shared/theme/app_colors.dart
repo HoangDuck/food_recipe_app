@@ -40,4 +40,6 @@ class AppColors {
   static const Color iconNotificationBackground = Color(0xFFCEECD7);
 
   static const Color dividerColor = Color(0xFFD9D9D9);
+
+  static const Color authorTitleColor = Color(0xFF181818);
 }

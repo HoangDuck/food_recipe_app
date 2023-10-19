@@ -27,5 +27,10 @@ class AppStrings {
   static const String following = 'Following';
   static const String twentyIngredients = '20 Ingredients';
   static const String fortyMinutes = '40 min';
+  static const String threeHundredReviews = '(300 Reviews)';
+  static const String fourAndAHalf = '4,5';
+  static const String follow = 'Follow';
+  static const String ingredients = 'Ingredients';
+  static const String fiveItems = '5 items';
 
 }

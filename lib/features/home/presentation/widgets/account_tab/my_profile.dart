@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/features/home/presentation/providers/account_state/user_state_provider.dart';
+import 'package:food_recipe_app/features/home/presentation/providers/user_state/user_state_provider.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/account_tab/item_statistic.dart';
 import 'package:food_recipe_app/shared/domain/models/users/user.dart';
 import 'package:food_recipe_app/shared/theme/app_images.dart';

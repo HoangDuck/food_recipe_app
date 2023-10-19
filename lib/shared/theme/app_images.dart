@@ -16,5 +16,8 @@ class AppImages {
   static String imgIconNotificationItem = 'assets/images/ic_notification.png';
   static String imgIconAvatarMock = 'assets/images/ic_avatar.png';
   static String imgIconMoreHoriz = 'assets/images/ic_more_horiz.png';
-
+  static String imgIconStarHighlight = 'assets/images/ic_star_highlight.png';
+  static String imgIconLocation = 'assets/images/ic_location.png';
+  static String imgIconSushi = 'assets/images/ic_sushi.png';
+  static String imgIconNoodles = 'assets/images/ic_noodles.png';
 }

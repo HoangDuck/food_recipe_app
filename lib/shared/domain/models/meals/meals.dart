@@ -1,3 +1,5 @@
+import 'package:food_recipe_app/shared/domain/models/ingredients/ingredients.dart';
+
 class MealModel {
   MealModel({
     required this.meals,
@@ -74,6 +76,7 @@ class Meals {
     this.strImageSource,
     this.strCreativeCommonsConfirmed,
     this.dateModified,
+    this.listIngredients = const []
   });
   late final String? idMeal;
   late final String? strMeal;
@@ -128,6 +131,7 @@ class Meals {
   late final String? strImageSource;
   late final String? strCreativeCommonsConfirmed;
   late final String? dateModified;
+  List<Ingredients> listIngredients = [];
 
   Meals.fromJson(Map<String, dynamic> json){
     idMeal = json['idMeal'];
