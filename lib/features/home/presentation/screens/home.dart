@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_recipe_app/features/home/presentation/screens/account_tab.dart';
 import 'package:food_recipe_app/features/home/presentation/screens/home_tab.dart';
 import 'package:food_recipe_app/features/home/presentation/screens/notification_tab.dart';
 import 'package:food_recipe_app/features/home/presentation/screens/save_recipe_tab.dart';
@@ -29,6 +30,7 @@ class Home extends HookConsumerWidget {
           HomeTab(),
           SaveRecipeTab(),
           NotificationTab(),
+          AccountTab(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
@@ -86,7 +88,9 @@ class Home extends HookConsumerWidget {
               Expanded(
                 flex:1,
                 child: IconTab(
-                  onTap: () {},
+                  onTap: () {
+                    pageController.jumpToPage(3);
+                  },
                   padding: EdgeInsets.only(top:16.sp,left: 12.sp,right: 32.sp,bottom: 50.sp),
                   iconTabModel: IconTabModel(
                       enableImage: AppImages.imgIconAccountPressed,

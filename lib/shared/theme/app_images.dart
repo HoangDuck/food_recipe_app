@@ -14,5 +14,7 @@ class AppImages {
   static String imgIconNotBookmark = 'assets/images/ic_not_bookmark.png';
   static String imgIconFilter = 'assets/images/ic_filter.png';
   static String imgIconNotificationItem = 'assets/images/ic_notification.png';
+  static String imgIconAvatarMock = 'assets/images/ic_avatar.png';
+  static String imgIconMoreHoriz = 'assets/images/ic_more_horiz.png';
 
 }

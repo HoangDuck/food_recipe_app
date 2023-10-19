@@ -20,4 +20,12 @@ class AppStrings {
   static const String unRead = 'Unread';
   static const String read = 'Read';
   static const String youreallSet = 'You\'re all set';
+  static const String myProfile = 'My profile';
+  static const String editProfile = 'Edit profile';
+  static const String videos = 'Videos';
+  static const String followers = 'Followers';
+  static const String following = 'Following';
+  static const String twentyIngredients = '20 Ingredients';
+  static const String fortyMinutes = '40 min';
+
 }

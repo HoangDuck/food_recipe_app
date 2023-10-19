@@ -109,3 +109,59 @@ class PrimaryIconLargeButton extends StatelessWidget {
   }
 }
 
+
+class SecondaryNoIconLargeButton extends StatelessWidget {
+  final String title;
+  final Function() onTap;
+  final Size size;
+  final EdgeInsets padding;
+  final bool isHighLight;
+  final double textSize;
+
+  const SecondaryNoIconLargeButton(
+      {super.key,
+        required this.title,
+        required this.onTap,
+        this.size = const Size(107, 36),
+        this.padding = const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
+        this.isHighLight = true,
+        this.textSize = 14});
+
+  @override
+  Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: const Size(375,812));
+    return GestureDetector(
+      onTap: () {
+        onTap();
+      },
+      child: Container(
+        padding: EdgeInsets.fromLTRB(
+            padding.left.sp,
+            padding.top.sp,
+            padding.right.sp,
+            padding.bottom.sp),
+        height: size.height.sp,
+        width: size.width.sp,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: AppColors.white,
+          border: Border.all(color: AppColors.buttonPrimaryNoIconLargeColor)
+        ),
+        child: Text(
+          title,
+          textAlign: TextAlign.center,
+          style: isHighLight
+              ? textSize == 14
+                ? AppTextStyles.poppinsLabelBold
+                : AppTextStyles.customTextStyle(size: textSize)
+              : textSize == 14
+              ? AppTextStyles.poppinsLabelBoldV4
+              : AppTextStyles.customTextStyle(
+            size: textSize,
+            color: AppColors.titleSmallBold,
+          ),
+        ),
+      ),
+    );
+  }
+}

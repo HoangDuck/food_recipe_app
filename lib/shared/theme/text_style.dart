@@ -157,6 +157,12 @@ class AppTextStyles {
     color: AppColors.titleSmallRegular,
   );
 
+  static TextStyle poppinsSmallRegularV3 = GoogleFonts.poppins(
+    fontWeight: FontWeight.w400,
+    fontSize: 14.sp,
+    color: AppColors.titleSmallRegular,
+  );
+
   static TextStyle poppinsSmallBold = GoogleFonts.poppins(
     fontWeight: FontWeight.w600,
     fontSize: 12.sp,

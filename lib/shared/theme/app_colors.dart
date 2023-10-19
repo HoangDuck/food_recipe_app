@@ -38,4 +38,6 @@ class AppColors {
   static const Color cardFoodByCategory = Color(0xFFF1F1F1);
 
   static const Color iconNotificationBackground = Color(0xFFCEECD7);
+
+  static const Color dividerColor = Color(0xFFD9D9D9);
 }
