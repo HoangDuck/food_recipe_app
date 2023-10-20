@@ -24,80 +24,87 @@ class AccountTab extends HookConsumerWidget{
     var currentPage = useState<TypeTabAccount>(TypeTabAccount.video);
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: EdgeInsets.only(top: 44.sp),
-          child: SizedBox(
-            height: 69.sp,
+    return SingleChildScrollView(
+      child: Column(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 44.sp),
+            child: SizedBox(
+              height: 69.sp,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(22.sp,20.sp,20.sp,20.sp),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      AppStrings.myProfile,
+                      textAlign: TextAlign.start,
+                      style: AppTextStyles.homeBoldh4,
+                    ),
+                    const Spacer(),
+                    const Icon(Icons.more_horiz)
+                  ],
+                ),
+              ),
+            ),
+          ),
+          const MyProfile(),
+          const DividerBorder(),
+          SizedBox(
+            height: 58.sp,
             child: Padding(
-              padding: EdgeInsets.fromLTRB(22.sp,20.sp,20.sp,20.sp),
+              padding: EdgeInsets.fromLTRB(19.sp,12.sp,19.sp,12.sp),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    AppStrings.myProfile,
-                    textAlign: TextAlign.start,
-                    style: AppTextStyles.homeBoldh4,
+                  PrimaryNoIconLargeButton(
+                    title: AppStrings.video,
+                    onTap: () {
+                      currentPage.value = TypeTabAccount.video;
+                      pageController.jumpToPage(0);
+                    },
+                    size: Size(160.sp,34.sp),
+                    padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
+                    textSize: 12.sp,
+                    isHighLight: currentPage.value == TypeTabAccount.video,
                   ),
                   const Spacer(),
-                  const Icon(Icons.more_horiz)
+                  PrimaryNoIconLargeButton(
+                    title: AppStrings.recipe,
+                    size: Size(160.sp,34.sp),
+                    padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
+                    onTap: () {
+                      currentPage.value = TypeTabAccount.recipe;
+                      pageController.jumpToPage(1);
+                    },
+                    textSize: 12.sp,
+                    isHighLight: currentPage.value == TypeTabAccount.recipe,
+                  ),
                 ],
               ),
             ),
           ),
-        ),
-        const MyProfile(),
-        const DividerBorder(),
-        SizedBox(
-          height: 58.sp,
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(19.sp,12.sp,19.sp,12.sp),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                PrimaryNoIconLargeButton(
-                  title: AppStrings.video,
-                  onTap: () {
-                    currentPage.value = TypeTabAccount.video;
-                    pageController.jumpToPage(0);
-                  },
-                  size: Size(160.sp,34.sp),
-                  padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
-                  textSize: 12.sp,
-                  isHighLight: currentPage.value == TypeTabAccount.video,
-                ),
-                const Spacer(),
-                PrimaryNoIconLargeButton(
-                  title: AppStrings.recipe,
-                  size: Size(160.sp,34.sp),
-                  padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
-                  onTap: () {
-                    currentPage.value = TypeTabAccount.recipe;
-                    pageController.jumpToPage(1);
-                  },
-                  textSize: 12.sp,
-                  isHighLight: currentPage.value == TypeTabAccount.recipe,
-                ),
-              ],
+          Flexible(
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: PageView(
+                controller: pageController,
+                children: [
+                  Container(),
+                  const ListRecipeProfile(),
+                ],
+              ),
             ),
           ),
-        ),
-        Expanded(
-          child: PageView(
-            controller: pageController,
-            children: [
-              Container(),
-              const ListRecipeProfile(),
-            ],
-          ),
-        ),
-        SizedBox(height: 106.sp,)
-      ],
+          SizedBox(height: 106.sp,)
+        ],
+      ),
     );
   }
 }

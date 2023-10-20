@@ -36,6 +36,36 @@ class UserLocalDataSource extends UserDatasourceLocal{
             strMeal: 'Japanese fried rice',
             strMealThumb:
             'https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg'),
+      Meals(
+          idMeal: '1',
+          strMeal: 'How to make Italian Spaghetti at home',
+          strMealThumb:
+          'https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg'),
+      Meals(
+          idMeal: '2',
+          strMeal: 'Simple chicken meal prep dishes',
+          strMealThumb:
+          'https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg'),
+      Meals(
+          idMeal: '3',
+          strMeal: 'Japanese fried rice',
+          strMealThumb:
+          'https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg'),
+      Meals(
+          idMeal: '1',
+          strMeal: 'How to make Italian Spaghetti at home',
+          strMealThumb:
+          'https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg'),
+      Meals(
+          idMeal: '2',
+          strMeal: 'Simple chicken meal prep dishes',
+          strMealThumb:
+          'https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg'),
+      Meals(
+          idMeal: '3',
+          strMeal: 'Japanese fried rice',
+          strMealThumb:
+          'https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg'),
       ]
   );
 

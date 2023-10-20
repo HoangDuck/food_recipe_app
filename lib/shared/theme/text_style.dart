@@ -128,6 +128,13 @@ class AppTextStyles {
     color: AppColors.buttonPrimaryNoIconLargeColor,
   );
 
+  static TextStyle poppinsLabelBoldV6 = GoogleFonts.poppins(
+    fontWeight: FontWeight.w600,
+    fontSize: 14.sp,
+    height: 19.6.sp,
+    color: AppColors.buttonPrimaryNoIconLargeColor,
+  );
+
   static TextStyle poppinsLabelBoldV4 = GoogleFonts.poppins(
     fontWeight: FontWeight.w600,
     fontSize: 16.sp,

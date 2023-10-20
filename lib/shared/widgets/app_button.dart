@@ -123,7 +123,7 @@ class SecondaryNoIconLargeButton extends StatelessWidget {
         required this.title,
         required this.onTap,
         this.size = const Size(107, 36),
-        this.padding = const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
+        this.padding = const EdgeInsets.symmetric(vertical: 8,horizontal: 13),
         this.isHighLight = true,
         this.textSize = 14});
 
@@ -153,11 +153,11 @@ class SecondaryNoIconLargeButton extends StatelessWidget {
           style: isHighLight
               ? textSize == 14
                 ? AppTextStyles.poppinsLabelBold
-                : AppTextStyles.customTextStyle(size: textSize)
+                : AppTextStyles.customTextStyle(size: textSize.sp)
               : textSize == 14
               ? AppTextStyles.poppinsLabelBoldV4
               : AppTextStyles.customTextStyle(
-            size: textSize,
+            size: textSize.sp,
             color: AppColors.titleSmallBold,
           ),
         ),

@@ -17,6 +17,8 @@ class ListRecipeProfile extends ConsumerWidget{
     return Padding(
       padding: EdgeInsets.all(20.sp),
       child: CustomScrollView(
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
         slivers: [
           SliverList(
             delegate: SliverChildBuilderDelegate(
