@@ -14,6 +14,13 @@ import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/app_images.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+enum TypeTabBottomAppBar {
+  home,
+  discover,
+  notification,
+  profile
+}
+
 class Home extends HookConsumerWidget {
   const Home({super.key});
 
@@ -22,6 +29,7 @@ class Home extends HookConsumerWidget {
     // TODO: implement build
     ScreenUtil.init(context, designSize: const Size(375,812));
     final pageController = usePageController(initialPage: 0);
+    var currentPage = useState<TypeTabBottomAppBar>(TypeTabBottomAppBar.home);
     return Scaffold(
       backgroundColor: Colors.white,extendBody: true,
       resizeToAvoidBottomInset: false,
@@ -36,7 +44,7 @@ class Home extends HookConsumerWidget {
       ),
       bottomNavigationBar: BottomAppBar(
         // color: Colors.white,
-        elevation:10,
+        elevation:30,
         shadowColor: AppColors.borderTextField,
         padding: EdgeInsets.zero,
         notchMargin: 4.sp,
@@ -52,8 +60,10 @@ class Home extends HookConsumerWidget {
                 flex:1,
                 child: IconTab(
                   onTap: () {
+                    currentPage.value = TypeTabBottomAppBar.home;
                     pageController.jumpToPage(0);
                   },
+                  isHighLight: currentPage.value==TypeTabBottomAppBar.home,
                   padding: EdgeInsets.only(top:16.sp,left: 0.sp,right: 12.sp,bottom: 50.sp),
                   iconTabModel: IconTabModel(
                       enableImage: AppImages.imgIconHomePressed,
@@ -64,12 +74,14 @@ class Home extends HookConsumerWidget {
                 flex:1,
                 child: IconTab(
                   onTap: () {
+                    currentPage.value = TypeTabBottomAppBar.discover;
                     pageController.jumpToPage(1);
                   },
+                  isHighLight: currentPage.value==TypeTabBottomAppBar.discover,
                   padding: EdgeInsets.only(top:16.sp,left: 12.sp,right: 103.sp,bottom: 50.sp),
                   iconTabModel: IconTabModel(
                       enableImage: AppImages.imgIconDiscoverPressed,
-                      disableImage: AppImages.imgIconDiscoverPressed),
+                      disableImage: AppImages.imgIconDiscover),
                 ),
               ),
               const Spacer(),
@@ -78,8 +90,10 @@ class Home extends HookConsumerWidget {
                 flex:1,
                 child: IconTab(
                   onTap: () {
+                    currentPage.value = TypeTabBottomAppBar.notification;
                     pageController.jumpToPage(2);
                   },
+                  isHighLight: currentPage.value==TypeTabBottomAppBar.notification,
                   padding: EdgeInsets.only(top:16.sp,left: 103.sp,right: 12.sp,bottom: 50.sp),
                   iconTabModel: IconTabModel(
                       enableImage: AppImages.imgIconNotificationPressed,
@@ -90,8 +104,10 @@ class Home extends HookConsumerWidget {
                 flex:1,
                 child: IconTab(
                   onTap: () {
+                    currentPage.value = TypeTabBottomAppBar.profile;
                     pageController.jumpToPage(3);
                   },
+                  isHighLight: currentPage.value==TypeTabBottomAppBar.profile,
                   padding: EdgeInsets.only(top:16.sp,left: 12.sp,right: 32.sp,bottom: 50.sp),
                   iconTabModel: IconTabModel(
                       enableImage: AppImages.imgIconAccountPressed,

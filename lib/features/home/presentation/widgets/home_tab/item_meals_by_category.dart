@@ -44,13 +44,13 @@ class ItemMealByCategory extends StatelessWidget {
                   borderRadius: BorderRadius.circular(110),
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.textHintColor,
+                      color: AppColors.shadowMealByCategory,
                       offset: Offset(
                         0.sp,
-                        55.0.sp,
+                        8.0.sp,
                       ),
-                      blurRadius: 100.0,
-                      spreadRadius: 1.0,
+                      blurRadius: 25.0,
+                      spreadRadius: 0.0,
                     ),
                   ],
                 ),

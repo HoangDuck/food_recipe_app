@@ -85,6 +85,13 @@ class AppTextStyles {
     color: AppColors.white,
   );
 
+  static TextStyle onBoardBold600BigSizeV2 = GoogleFonts.poppins(
+    fontWeight: FontWeight.w600,
+    fontSize: 56.sp,
+    height: 1.2,
+    color: AppColors.white,
+  );
+
   static TextStyle homeBoldh4 = GoogleFonts.poppins(
     fontWeight: FontWeight.w600,
     fontSize: 24.sp,

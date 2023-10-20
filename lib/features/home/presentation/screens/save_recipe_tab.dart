@@ -6,12 +6,17 @@ import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 import 'package:food_recipe_app/shared/widgets/app_button.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+enum TypeTabSavedRecipes {
+  video,
+  recipe
+}
 
 class SaveRecipeTab extends HookConsumerWidget {
   const SaveRecipeTab({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    var currentPage = useState<TypeTabSavedRecipes>(TypeTabSavedRecipes.video);
     // TODO: implement build
     ScreenUtil.init(context, designSize: const Size(375,812));
     final pageController = usePageController(initialPage: 0);
@@ -44,12 +49,13 @@ class SaveRecipeTab extends HookConsumerWidget {
                 PrimaryNoIconLargeButton(
                   title: AppStrings.video,
                   onTap: () {
+                    currentPage.value = TypeTabSavedRecipes.video;
                     pageController.jumpToPage(0);
                   },
                   size: Size(159.sp,34.sp),
                   padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
                   textSize: 12.sp,
-                  isHighLight: true,
+                  isHighLight:  currentPage.value == TypeTabSavedRecipes.video,
                 ),
                 const Spacer(),
                 PrimaryNoIconLargeButton(
@@ -57,10 +63,11 @@ class SaveRecipeTab extends HookConsumerWidget {
                   size: Size(159.sp,34.sp),
                   padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
                   onTap: () {
+                    currentPage.value = TypeTabSavedRecipes.recipe;
                     pageController.jumpToPage(1);
                   },
                   textSize: 12.sp,
-                  isHighLight: false,
+                  isHighLight: currentPage.value == TypeTabSavedRecipes.recipe,
                 ),
               ],
             ),

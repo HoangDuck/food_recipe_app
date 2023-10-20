@@ -52,6 +52,10 @@ class TextFieldWidget extends HookConsumerWidget {
             borderSide: BorderSide(color: borderColor, width: 1.sp),
             borderRadius: BorderRadius.circular(10.sp),
           ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: borderColor, width: 1.sp),
+            borderRadius: BorderRadius.circular(10.sp),
+          ),
           hintText: hintText,
           hintStyle: hintStyle ?? AppTextStyles.hintTextStyleSearch,
           prefixIcon: prefixIcon,

@@ -8,12 +8,20 @@ import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 import 'package:food_recipe_app/shared/widgets/app_button.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+enum TypeTabNotifications {
+  all,
+  read,
+  unread
+}
+
 class NotificationTab extends HookConsumerWidget{
   const NotificationTab({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController = usePageController(initialPage: 0);
+    var currentPage = useState<TypeTabNotifications>(TypeTabNotifications.all);
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Column(
@@ -57,12 +65,13 @@ class NotificationTab extends HookConsumerWidget{
                 PrimaryNoIconLargeButton(
                   title: AppStrings.all,
                   onTap: () {
+                    currentPage.value = TypeTabNotifications.all;
                     pageController.jumpToPage(0);
                   },
                   size: Size(107.sp,34.sp),
                   padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
                   textSize: 12.sp,
-                  isHighLight: true,
+                  isHighLight: currentPage.value == TypeTabNotifications.all,
                 ),
                 const Spacer(),
                 PrimaryNoIconLargeButton(
@@ -70,10 +79,11 @@ class NotificationTab extends HookConsumerWidget{
                   size: Size(107.sp,34.sp),
                   padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
                   onTap: () {
+                    currentPage.value = TypeTabNotifications.unread;
                     pageController.jumpToPage(1);
                   },
                   textSize: 12.sp,
-                  isHighLight: false,
+                  isHighLight: currentPage.value == TypeTabNotifications.unread,
                 ),
                 const Spacer(),
                 PrimaryNoIconLargeButton(
@@ -81,10 +91,11 @@ class NotificationTab extends HookConsumerWidget{
                   size: Size(107.sp,34.sp),
                   padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
                   onTap: () {
+                    currentPage.value = TypeTabNotifications.read;
                     pageController.jumpToPage(2);
                   },
                   textSize: 12.sp,
-                  isHighLight: false,
+                  isHighLight: currentPage.value == TypeTabNotifications.read,
                 ),
               ],
             ),

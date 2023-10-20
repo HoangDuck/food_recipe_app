@@ -5,35 +5,43 @@ import 'package:food_recipe_app/shared/domain/models/categories/categories.dart'
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 
-class ItemCategoryPopular extends ConsumerWidget{
+class ItemCategoryPopular extends StatelessWidget{
   final Function(String id) onTap;
   final Categories categories;
-  const ItemCategoryPopular({super.key, required this.onTap, required this.categories});
+  bool isHighLight;
+
+  ItemCategoryPopular(
+      {super.key,
+        required this.onTap,
+        required this.categories,
+        this.isHighLight = false});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     // TODO: implement build
     return Padding(
       padding: EdgeInsets.only(right: 8.sp),
       child: GestureDetector(
         onTap: () {
-          onTap(categories.idCategory??'');
+          onTap(categories.strCategory??'Beef');
         },
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 8.sp, horizontal: 12.sp),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.sp),
-            color: AppColors.white,
+            color: isHighLight
+                ? AppColors.buttonPrimaryNoIconLargeColor
+                : AppColors.white,
           ),
           child: Text(
-              categories.strCategory??'',
+            categories.strCategory??'',
             textAlign: TextAlign.center,
-            style: AppTextStyles.poppinsSmallBold,
-
+            style: isHighLight
+                ? AppTextStyles.poppinsSmallBoldWhite
+                : AppTextStyles.poppinsSmallBold,
           ),
         ),
       ),
     );
   }
-
 }

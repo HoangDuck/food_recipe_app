@@ -27,15 +27,6 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () async {
-      // final isUserLoggedIn = await ref.read(userLoginCheckProvider.future);
-      // final route = isUserLoggedIn
-      //     ? const DashboardRoute()
-      //     : LoginRoute() as PageRouteInfo;
-      // // ignore: use_build_context_synchronously
-      // AutoRouter.of(context).pushAndPopUntil(
-      //   route,
-      //   predicate: (_) => false,
-      // );
     });
   }
 
@@ -44,20 +35,32 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Center(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(AppImages.imgBackgroundOnBoard),
+            fit: BoxFit.fitHeight
+          ),
+        ),
         child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(AppImages.imgBackgroundOnBoard),
-              fit: BoxFit.fitHeight
-            ),
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.transparent,
+                  Colors.black12,
+                  Colors.black45,
+                  Colors.black87,
+                ],
+              )
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 28.sp,vertical: 57.sp),
+                margin: EdgeInsets.fromLTRB(82.sp, 57.sp, 83.sp, 0.sp),
                 alignment: Alignment.center,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -65,27 +68,33 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(right: 8.sp),
-                      child: Image.asset(AppImages.imgIconStar),
+                      child: Image.asset(
+                        AppImages.imgIconStar,
+                        width: 16.sp,
+                        height: 16.sp,
+                      ),
                     ),
                     Text(
-                      "60K+ ",
-                      textAlign: TextAlign.center,
+                      AppStrings.sixtyPlus,
                       style: AppTextStyles.onBoardBold600,
                     ),
+                    SizedBox(width: 4.sp,),
                     Text(
-                      "Premium recipes",
-                      textAlign: TextAlign.center,
+                      AppStrings.premiumRecipe,
                       style: AppTextStyles.onBoardBold400,
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 317.sp,right: 64.sp,left: 64.sp),
-                child: Text(
-                  AppStrings.letsCooking,
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.onBoardBold600BigSize,
+                padding: EdgeInsets.only(top: 377.sp,right: 64.sp,left: 64.sp),
+                child: SizedBox(
+                  height: 134.sp,
+                  child: Text(
+                    AppStrings.letsCooking,
+                    textAlign: TextAlign.center,
+                    style: AppTextStyles.onBoardBold600BigSizeV2,
+                  ),
                 ),
               ),
               Padding(
@@ -93,15 +102,17 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
                 child: Text(
                   AppStrings.findBestRecipeForCooking,
                   textAlign: TextAlign.center,
+                  // maxLines: 1,
                   style: AppTextStyles.onBoardBold400,
                 ),
               ),
               PrimaryIconLargeButton(
-                  onTap: () {
-                    Navigator.pushNamed(context, Routers.home);
-                  },
-                  title: AppStrings.startCooking,
-                  icon: Icons.arrow_forward),
+                onTap: () {
+                  Navigator.pushNamed(context, Routers.home);
+                },
+                title: AppStrings.startCooking,
+                icon: Icons.arrow_forward,
+              ),
             ],
           ),
         ),

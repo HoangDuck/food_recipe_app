@@ -10,12 +10,18 @@ import 'package:food_recipe_app/shared/widgets/app_button.dart';
 import 'package:food_recipe_app/shared/widgets/divider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+enum TypeTabAccount {
+  video,
+  recipe
+}
+
 class AccountTab extends HookConsumerWidget{
   const AccountTab({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController = usePageController(initialPage: 0);
+    var currentPage = useState<TypeTabAccount>(TypeTabAccount.video);
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Column(
@@ -45,7 +51,7 @@ class AccountTab extends HookConsumerWidget{
           ),
         ),
         const MyProfile(),
-        DividerBorder(),
+        const DividerBorder(),
         SizedBox(
           height: 58.sp,
           child: Padding(
@@ -57,12 +63,13 @@ class AccountTab extends HookConsumerWidget{
                 PrimaryNoIconLargeButton(
                   title: AppStrings.video,
                   onTap: () {
+                    currentPage.value = TypeTabAccount.video;
                     pageController.jumpToPage(0);
                   },
                   size: Size(160.sp,34.sp),
                   padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
                   textSize: 12.sp,
-                  isHighLight: false,
+                  isHighLight: currentPage.value == TypeTabAccount.video,
                 ),
                 const Spacer(),
                 PrimaryNoIconLargeButton(
@@ -70,10 +77,11 @@ class AccountTab extends HookConsumerWidget{
                   size: Size(160.sp,34.sp),
                   padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
                   onTap: () {
+                    currentPage.value = TypeTabAccount.recipe;
                     pageController.jumpToPage(1);
                   },
                   textSize: 12.sp,
-                  isHighLight: true,
+                  isHighLight: currentPage.value == TypeTabAccount.recipe,
                 ),
               ],
             ),
@@ -82,9 +90,9 @@ class AccountTab extends HookConsumerWidget{
         Expanded(
           child: PageView(
             controller: pageController,
-            children: const [
-              ListRecipeProfile(),
-              ListRecipeProfile(),
+            children: [
+              Container(),
+              const ListRecipeProfile(),
             ],
           ),
         ),

@@ -31,9 +31,9 @@ class HomeRepositoryImpl implements HomeRepository {
   }
 
   @override
-  Future<Either<AppException, List<meal_by_category.Meals>>> fetchMealsByCategory({String category = ''}) {
+  Future<Either<AppException, List<meal_by_category.Meals>>> fetchMealsByCategory({String category = ''}) async {
     // TODO: implement fetchMealsByCategory
-    return homeDatasource.fetchMealByCategories(category: category);
+    return await homeDatasource.fetchMealByCategories(category: category);
   }
 
   @override

@@ -44,4 +44,8 @@ class AppColors {
   static const Color authorTitleColor = Color(0xFF181818);
 
   static const Color shadowButtonSaveRecipe = Color(0x146C6C6C);
+
+  static Color shadowMealByCategory = const Color(0xFF202020).withOpacity(0.15);
+
+  static Color shadowBottomAppBar = const Color(0xFF6C6C6C).withOpacity(0.08);
 }

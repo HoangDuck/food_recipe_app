@@ -41,4 +41,6 @@ class AppStrings {
   static const String addNewIngredient = 'Add new ingredients';
   static const String itemName = 'Item name';
   static const String quantity = 'Quantity';
+  static const String sixtyPlus = '60K+';
+  static const String premiumRecipe = 'Premium recipes';
 }

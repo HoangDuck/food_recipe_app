@@ -12,7 +12,7 @@ final homeNotifierPopularProvider = StateNotifierProvider<HomeNotifier, HomeStat
 });
 
 
-final categoryNotifierProvider = StateNotifierProvider<CategoryNotifier, CategoryState>((ref) {
+final categoryNotifierProvider = StateNotifierProvider.family<CategoryNotifier, CategoryState,String>((ref,value) {
   final repository = ref.watch(homeRepositoryProvider);
-  return CategoryNotifier(repository)..fetchMealsByCategory(category: "Beef");
+  return CategoryNotifier(repository)..fetchMealsByCategory(category: value);
 });

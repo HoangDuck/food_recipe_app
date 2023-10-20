@@ -88,19 +88,19 @@ class PrimaryIconLargeButton extends StatelessWidget {
 
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
               child: Text(
                 title,
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.start,
                 style: AppTextStyles.onBoardBold600,
               ),
             ),
             Padding(
               padding: EdgeInsets.only(left: 8.sp),
-              child: Icon(icon,color: Colors.white,),
+              child: Icon(icon,color: Colors.white,size: 20.sp,),
             ),
           ],
         ),

@@ -44,7 +44,7 @@ class ItemFormIngredients extends HookConsumerWidget{
                 width: 24.sp,
                 height: 24.sp,
               ),
-            )
+            ),
           ],
         ),
       ),
