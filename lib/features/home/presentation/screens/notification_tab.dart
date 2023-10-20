@@ -29,35 +29,32 @@ class NotificationTab extends HookConsumerWidget{
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(top: 44.sp),
-          child: SizedBox(
-            height: 69.sp,
-            child: Padding(
-              padding: EdgeInsets.all(20.sp),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    AppStrings.notification,
-                    textAlign: TextAlign.start,
-                    style: AppTextStyles.homeBoldh4,
-                  ),
-                  const Spacer(),
-                  Image.asset(
-                    AppImages.imgIconFilter,
-                    width: 24.sp,
-                    height: 24.sp,
-                  ),
-                ],
-              ),
+          padding: EdgeInsets.only(top: 44.h),
+          child: Padding(
+            padding: EdgeInsets.all(20.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  AppStrings.notification,
+                  textAlign: TextAlign.start,
+                  style: AppTextStyles.homeBoldh4,
+                ),
+                const Spacer(),
+                Image.asset(
+                  AppImages.imgIconFilter,
+                  width: 24.sp,
+                  height: 24.sp,
+                ),
+              ],
             ),
           ),
         ),
         SizedBox(
-          height: 58.sp,
+          height: 58.h,
           child: Padding(
-            padding: EdgeInsets.fromLTRB(19.sp,12.sp,19.sp,12.sp),
+            padding: EdgeInsets.fromLTRB(19.w,12.h,19.w,12.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -68,16 +65,16 @@ class NotificationTab extends HookConsumerWidget{
                     currentPage.value = TypeTabNotifications.all;
                     pageController.jumpToPage(0);
                   },
-                  size: Size(107.sp,34.sp),
-                  padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
+                  size: Size(107.w,34.h),
+                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
                   textSize: 12.sp,
                   isHighLight: currentPage.value == TypeTabNotifications.all,
                 ),
                 const Spacer(),
                 PrimaryNoIconLargeButton(
                   title: AppStrings.unRead,
-                  size: Size(107.sp,34.sp),
-                  padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
+                  size: Size(107.w,34.h),
+                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
                   onTap: () {
                     currentPage.value = TypeTabNotifications.unread;
                     pageController.jumpToPage(1);
@@ -88,8 +85,8 @@ class NotificationTab extends HookConsumerWidget{
                 const Spacer(),
                 PrimaryNoIconLargeButton(
                   title: AppStrings.read,
-                  size: Size(107.sp,34.sp),
-                  padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
+                  size: Size(107.w,34.h),
+                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
                   onTap: () {
                     currentPage.value = TypeTabNotifications.read;
                     pageController.jumpToPage(2);
@@ -103,7 +100,7 @@ class NotificationTab extends HookConsumerWidget{
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(20.sp,12.sp,20.sp,12.sp),
+            padding: EdgeInsets.fromLTRB(20.w,12.h,20.w,12.h),
             child: PageView(
               controller: pageController,
               children: const [
@@ -114,7 +111,7 @@ class NotificationTab extends HookConsumerWidget{
             ),
           ),
         ),
-        SizedBox(height: 106.sp,)
+        SizedBox(height: 106.h,)
       ],
     );
   }

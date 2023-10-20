@@ -20,13 +20,13 @@ class TrendingNowWidget extends ConsumerWidget{
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.sp, 12.sp, 0, 12.sp),
+      padding: EdgeInsets.fromLTRB(20.w, 12.h, 0, 12.h),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children:[
           Padding(
-            padding: EdgeInsets.fromLTRB(0.sp,0.sp,20.sp,16.sp),
+            padding: EdgeInsets.fromLTRB(0.w,0.h,20.w,16.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -45,7 +45,7 @@ class TrendingNowWidget extends ConsumerWidget{
             ),
           ),
           SizedBox(
-            height: 254.sp,
+            height: 254.h,
             child: ListView.builder(
                 itemCount: listFoodTrending.length,
                 scrollDirection: Axis.horizontal,
@@ -56,7 +56,7 @@ class TrendingNowWidget extends ConsumerWidget{
                           arguments: listFoodTrending[index].idMeal);
                     },
                     child: Padding(
-                      padding: EdgeInsets.only(right: 16.sp),
+                      padding: EdgeInsets.only(right: 16.w),
                       child: ItemVideo(meal: listFoodTrending[index]),
                     ),
                   );

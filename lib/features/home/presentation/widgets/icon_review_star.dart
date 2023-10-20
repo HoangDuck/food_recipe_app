@@ -13,9 +13,9 @@ class IconReviewStar extends StatelessWidget {
     return Visibility(
       visible: rating.isNotEmpty,
       child: Container(
-        height: 28.sp,
-        width: 59.sp,
-        padding: EdgeInsets.symmetric(vertical: 4.sp, horizontal: 8.sp),
+        height: 28.h,
+        width: 59.w,
+        padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 8.w),
         decoration: BoxDecoration(
           color: AppColors.iconReviewStarColor,
           borderRadius: BorderRadius.circular(10.sp)
@@ -24,8 +24,8 @@ class IconReviewStar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(AppImages.imgIconStar,width: 16.sp,height: 16.sp),
-            SizedBox(width: 4.sp,),
+            Image.asset(AppImages.imgIconStar,width: 16.w,height: 16.h),
+            SizedBox(width: 4.w,),
             Text(rating,style: AppTextStyles.ratingTextStyle,),
           ],
         ),

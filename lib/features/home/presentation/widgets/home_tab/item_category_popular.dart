@@ -20,13 +20,13 @@ class ItemCategoryPopular extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Padding(
-      padding: EdgeInsets.only(right: 8.sp),
+      padding: EdgeInsets.only(right: 8.w),
       child: GestureDetector(
         onTap: () {
           onTap(categories.strCategory??'Beef');
         },
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 8.sp, horizontal: 12.sp),
+          padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 12.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.sp),
             color: isHighLight

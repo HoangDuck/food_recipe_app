@@ -23,8 +23,8 @@ class ItemVideoRecipeDetail extends ConsumerWidget {
 
   Widget _videoPreview(){
     return SizedBox(
-      height: size.height.sp,
-      width: size.width.sp,
+      height: size.height.h,
+      width: size.width.w,
       child: Padding(
         padding: EdgeInsets.only(bottom: 0.sp),
         child: Stack(

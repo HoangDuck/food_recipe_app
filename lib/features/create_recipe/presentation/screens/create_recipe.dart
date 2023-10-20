@@ -34,8 +34,8 @@ class CreateRecipe extends HookConsumerWidget{
             ),
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(20.sp, 16.sp, 20.sp, 50.sp),
-            height: 120.sp,
+            padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 50.h),
+            height: 120.h,
             decoration: const BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -49,8 +49,8 @@ class CreateRecipe extends HookConsumerWidget{
             child: PrimaryNoIconLargeButton(
               title: AppStrings.saveMyRecipe,
               onTap: () {},
-              padding: EdgeInsets.symmetric(vertical: 16.sp, horizontal: 32.sp),
-              size: Size(335.sp, 54.sp),
+              padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 32.w),
+              size: Size(335.w, 54.h),
             ),
           ),
         ],
@@ -60,7 +60,7 @@ class CreateRecipe extends HookConsumerWidget{
 
   Widget _titleCreateRecipe(BuildContext context){
     return Container(
-      padding: EdgeInsets.fromLTRB(20.sp, 56.sp, 20.sp, 12.sp),
+      padding: EdgeInsets.fromLTRB(20.w, 56.h, 20.w, 12.h),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,7 +94,7 @@ class CreateRecipe extends HookConsumerWidget{
             ],
           ),
           Padding(
-            padding: EdgeInsets.only(top: 16.sp),
+            padding: EdgeInsets.only(top: 16.h),
             child: Text(
               AppStrings.createRecipe,
               style: AppTextStyles.poppinsH4Bold,

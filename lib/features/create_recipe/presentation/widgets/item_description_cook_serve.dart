@@ -19,7 +19,7 @@ class ItemDescriptionCookServe extends StatelessWidget {
     return Container(
       width: 335.sp,
       height: 60.sp,
-      padding: EdgeInsets.symmetric(vertical: 12.sp,horizontal: 16.sp),
+      padding: EdgeInsets.symmetric(vertical: 12.h,horizontal: 16.w),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.sp),
         color: AppColors.cardFoodByCategory,
@@ -31,15 +31,15 @@ class ItemDescriptionCookServe extends StatelessWidget {
           Container(
             width: 36.sp,
             height: 36.sp,
-            padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 8.sp),
+            padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 8.w),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.sp),
               color: AppColors.white,
             ),
             child: Image.network(
               image,
-              width: 20.sp,
-              height: 20.sp,
+              width: 20.w,
+              height: 20.h,
               errorBuilder: (context,error,stackTrace){
                 return Image.asset(
                   image,
@@ -50,19 +50,19 @@ class ItemDescriptionCookServe extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 16.sp,top: 7.sp,bottom: 7.sp),
+            padding: EdgeInsets.only(left: 16.w,top: 7.h,bottom: 7.h),
             child: Text(title,style: AppTextStyles.poppinsParagraphBold,),
           ),
           const Spacer(),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.sp),
+            padding: EdgeInsets.symmetric(vertical: 8.h),
             child: Text(
               quantity,
               style: AppTextStyles.poppinsSmallRegularV3,
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(8.sp, 6.sp, 0.sp, 6.sp),
+            padding: EdgeInsets.fromLTRB(8.w, 6.h, 0.w, 6.h),
             child: Image.asset(
               AppImages.imgIconArrowRight,
               width: 24.sp,

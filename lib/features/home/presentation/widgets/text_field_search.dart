@@ -59,7 +59,7 @@ class TextFieldWidget extends HookConsumerWidget {
           hintText: hintText,
           hintStyle: hintStyle ?? AppTextStyles.hintTextStyleSearch,
           prefixIcon: prefixIcon,
-          contentPadding: EdgeInsets.symmetric(vertical: 12.sp,horizontal: 16.sp)
+          contentPadding: EdgeInsets.symmetric(vertical: 12.h,horizontal: 16.w)
         ),
         textAlignVertical: TextAlignVertical.center,
         // textAlign: TextAlign.center,

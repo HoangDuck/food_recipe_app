@@ -16,17 +16,17 @@ class IconMoreHorizFood extends StatelessWidget {
         onTap();
       },
       child: Container(
-        height: 32.sp,
-        width: 32.sp,
-        padding: EdgeInsets.all(6.sp),
+        height: 32.w,
+        width: 32.w,
+        padding: EdgeInsets.all(6.w),
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(100.sp),
         ),
         child: Image.asset(
           AppImages.imgIconMoreHoriz,
-          width: 20.sp,
-          height: 20.sp,
+          width: 20.w,
+          height: 20.w,
         ),
       ),
     );

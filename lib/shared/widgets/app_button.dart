@@ -79,9 +79,9 @@ class PrimaryIconLargeButton extends StatelessWidget {
         onTap();
       },
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 16.sp,horizontal: 32.sp),
-        height: 54.sp,
-        width: 206.sp,
+        padding: EdgeInsets.symmetric(vertical: 16.h,horizontal: 32.w),
+        height: 54.h,
+        width: 206.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.sp),
           color: AppColors.buttonPrimaryNoIconLargeColor,
@@ -99,8 +99,8 @@ class PrimaryIconLargeButton extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 8.sp),
-              child: Icon(icon,color: Colors.white,size: 20.sp,),
+              padding: EdgeInsets.only(left: 8.w),
+              child: Icon(icon,color: Colors.white,size: 20.w,),
             ),
           ],
         ),
@@ -136,12 +136,12 @@ class SecondaryNoIconLargeButton extends StatelessWidget {
       },
       child: Container(
         padding: EdgeInsets.fromLTRB(
-            padding.left.sp,
-            padding.top.sp,
-            padding.right.sp,
-            padding.bottom.sp),
-        height: size.height.sp,
-        width: size.width.sp,
+            padding.left.w,
+            padding.top.h,
+            padding.right.w,
+            padding.bottom.h),
+        height: size.height.h,
+        width: size.width.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: AppColors.white,

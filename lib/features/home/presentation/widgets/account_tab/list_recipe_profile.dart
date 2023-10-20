@@ -15,7 +15,7 @@ class ListRecipeProfile extends ConsumerWidget{
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Padding(
-      padding: EdgeInsets.all(20.sp),
+      padding: EdgeInsets.all(20.w),
       child: CustomScrollView(
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
@@ -24,7 +24,7 @@ class ListRecipeProfile extends ConsumerWidget{
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 return Padding(
-                  padding: EdgeInsets.only(bottom: 16.sp),
+                  padding: EdgeInsets.only(bottom: 16.h),
                   child: ItemVideoRecipe(
                     meal: listMealsProfile[index],
                   ),

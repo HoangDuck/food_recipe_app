@@ -13,19 +13,19 @@ class ItemMealByCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return Padding(
-      padding: EdgeInsets.only(right: 16.sp),
+      padding: EdgeInsets.only(right: 16.w),
       child: SizedBox(
-        height: 231.sp,
-        width: 150.sp,
+        height: 231.h,
+        width: 150.w,
         child: Stack(
           children: [
             Positioned(
-              bottom: 0.sp,
-              right: 0.sp,
-              left: 0.sp,
+              bottom: 0.h,
+              right: 0.w,
+              left: 0.w,
               child: Container(
-                height: 176.sp,
-                width: 150.sp,
+                height: 176.h,
+                width: 150.w,
                 decoration: BoxDecoration(
                   color: AppColors.cardFoodByCategory,
                   borderRadius: BorderRadius.circular(12.sp),
@@ -33,21 +33,21 @@ class ItemMealByCategory extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 121.sp,
-              right: 23.sp,
-              left: 24.sp,
+              bottom: 121.h,
+              right: 23.w,
+              left: 24.w,
               child: Container(
-                width: 110.sp,
-                height: 110.sp,
-                padding: EdgeInsets.all(1.sp),
+                width: 110.w,
+                height: 110.h,
+                padding: EdgeInsets.all(1.w),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(110),
                   boxShadow: [
                     BoxShadow(
                       color: AppColors.shadowMealByCategory,
                       offset: Offset(
-                        0.sp,
-                        8.0.sp,
+                        0.w,
+                        8.0.h,
                       ),
                       blurRadius: 25.0,
                       spreadRadius: 0.0,
@@ -55,8 +55,8 @@ class ItemMealByCategory extends StatelessWidget {
                   ],
                 ),
                 child: SizedBox(
-                  width: 110.sp,
-                  height: 110.sp,
+                  width: 110.w,
+                  height: 110.h,
                   child: CircleAvatar(
                     radius: 48,
                     backgroundImage: NetworkImage(meals.strMealThumb ?? '',),
@@ -65,10 +65,10 @@ class ItemMealByCategory extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 121.sp,
-              bottom: 70.sp,
-              right: 8.sp,
-              left: 8.sp,
+              top: 121.h,
+              bottom: 70.h,
+              right: 8.w,
+              left: 8.w,
               child: Text(
                 meals.strMeal??'',
                 textAlign: TextAlign.center,
@@ -76,24 +76,24 @@ class ItemMealByCategory extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 34.sp,
-              left: 12.sp,
+              bottom: 34.h,
+              left: 12.w,
               child: Text(
                 'Time',
                 style: AppTextStyles.hintTextStyleSearchSmall,
               ),
             ),
             Positioned(
-              bottom: 12.sp,
-              left: 12.sp,
+              bottom: 12.h,
+              left: 12.w,
               child: Text(
                 '10 Mins',
                 style: AppTextStyles.poppinsLabelBoldV3,
               ),
             ),
             Positioned(
-              bottom: 12.sp,
-              right: 12.sp,
+              bottom: 12.h,
+              right: 12.w,
               child: IconBookmarkFood(
                 onTap: () {
 

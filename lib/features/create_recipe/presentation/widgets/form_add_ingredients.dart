@@ -16,13 +16,13 @@ class FormAddIngredients extends HookConsumerWidget{
     var numberOfIngredients = useState<int>(1);
     // TODO: implement build
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.sp, 12.sp, 28.sp, 12.sp),
+      padding: EdgeInsets.fromLTRB(20.w, 12.h, 28.w, 12.h),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(bottom: 16.sp),
+            padding: EdgeInsets.only(bottom: 16.h),
             child: Text(
               AppStrings.ingredients,
               style: AppTextStyles.poppinsParagraphBoldV3,
@@ -35,7 +35,7 @@ class FormAddIngredients extends HookConsumerWidget{
               numberOfIngredients.value = numberOfIngredients.value+1;
             },
             child: SizedBox(
-              height: 24.sp,
+              height: 24.h,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -46,7 +46,7 @@ class FormAddIngredients extends HookConsumerWidget{
                     child: Image.asset(AppImages.imgIconAdd),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 4.sp),
+                    padding: EdgeInsets.only(left: 4.w),
                     child: Text(
                       AppStrings.addNewIngredient,
                       style: AppTextStyles.poppinsParagraphBoldV2,

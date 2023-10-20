@@ -39,7 +39,7 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(AppImages.imgBackgroundOnBoard),
-            fit: BoxFit.fitHeight
+            fit: BoxFit.fitWidth
           ),
         ),
         child: Container(
@@ -60,25 +60,25 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(82.sp, 57.sp, 83.sp, 0.sp),
+                margin: EdgeInsets.fromLTRB(82.w, 57.h, 83.w, 0.h),
                 alignment: Alignment.center,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(right: 8.sp),
+                      padding: EdgeInsets.only(right: 8.w),
                       child: Image.asset(
                         AppImages.imgIconStar,
-                        width: 16.sp,
-                        height: 16.sp,
+                        width: 16.w,
+                        height: 16.w,
                       ),
                     ),
                     Text(
                       AppStrings.sixtyPlus,
                       style: AppTextStyles.onBoardBold600,
                     ),
-                    SizedBox(width: 4.sp,),
+                    SizedBox(width: 4.w,),
                     Text(
                       AppStrings.premiumRecipe,
                       style: AppTextStyles.onBoardBold400,
@@ -87,9 +87,9 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 377.sp,right: 64.sp,left: 64.sp),
+                padding: EdgeInsets.only(top: 377.h,right: 64.w,left: 64.h),
                 child: SizedBox(
-                  height: 134.sp,
+                  height: 134.h,
                   child: Text(
                     AppStrings.letsCooking,
                     textAlign: TextAlign.center,
@@ -98,7 +98,7 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 24.sp,right: 73.sp,left: 73.sp,bottom: 40.sp),
+                padding: EdgeInsets.only(top: 24.h,right: 73.w,left: 73.w,bottom: 40.h),
                 child: Text(
                   AppStrings.findBestRecipeForCooking,
                   textAlign: TextAlign.center,

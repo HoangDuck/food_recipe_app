@@ -11,10 +11,10 @@ class ItemRecentRecipe extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return Padding(
-      padding: EdgeInsets.only(right: 16.sp),
+      padding: EdgeInsets.only(right: 16.w),
       child: SizedBox(
-        height: 191.sp,
-        width: 124.sp,
+        height: 191.h,
+        width: 124.w,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,15 +26,15 @@ class ItemRecentRecipe extends StatelessWidget {
                 errorBuilder: (context, error, stackTrace) {
                   return Container();
                 },
-                width: 124.sp,
-                height: 124.sp,
+                width: 124.w,
+                height: 124.h,
               ),
             ),
             Padding(
               padding: EdgeInsets.only(
-                  left: 4.sp, right: 9.sp, top: 8.sp, bottom: 4.sp),
+                  left: 4.w, right: 9.w, top: 8.h, bottom: 4.h),
               child: SizedBox(
-                height: 40.sp,
+                height: 40.h,
                 child: Text(
                   meal.strMeal ?? '',
                   style: AppTextStyles.poppinsLabelBoldV2,
@@ -44,7 +44,7 @@ class ItemRecentRecipe extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 4.sp, right: 31.sp),
+              padding: EdgeInsets.only(left: 4.w, right: 31.w),
               child: Text(
                 meal.strArea ?? '',
                 style: AppTextStyles.poppinsTinyRegular,

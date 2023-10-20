@@ -23,10 +23,10 @@ class IconTab extends StatelessWidget {
         onTap();
       },
       child: SizedBox(
-        height: 40.sp,
-        width: 40.sp,
+        height: 40.w,
+        width: 40.w,
         child: Padding(
-          padding: EdgeInsets.all(8.sp),
+          padding: EdgeInsets.all(8.w),
           child: Image.asset(
             isHighLight ? iconTabModel.enableImage : iconTabModel.disableImage,
           ),

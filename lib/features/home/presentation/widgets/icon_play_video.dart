@@ -25,8 +25,8 @@ class IconPlayVideo extends StatelessWidget {
       ),
       child: Image.asset(
         AppImages.imgIconPlayVideo,
-        width: 20.sp,
-        height: 20.sp,
+        width: 20.w,
+        height: 20.w,
       ),
     );
   }

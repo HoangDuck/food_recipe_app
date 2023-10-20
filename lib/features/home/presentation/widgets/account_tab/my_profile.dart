@@ -24,9 +24,9 @@ class MyProfile extends ConsumerWidget{
     }else{
       User user = state.user!;
       return SizedBox(
-        height: 296.sp,
+        height: 296.h,
         child: Padding(
-          padding: EdgeInsets.fromLTRB(20.sp, 12.sp, 20.sp, 0.sp),
+          padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 0.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -55,8 +55,8 @@ class MyProfile extends ConsumerWidget{
               child: Image.network(
                 user.avatar,
                 fit: BoxFit.cover,
-                height: 99.sp,
-                width: 100.sp,
+                height: 99.h,
+                width: 100.w,
                 errorBuilder: (context, error, stackTrace) {
                   return Image.asset(AppImages.imgIconAvatarMock);
                 },
@@ -70,14 +70,14 @@ class MyProfile extends ConsumerWidget{
           ],
         ),
         Padding(
-          padding: EdgeInsets.only(top: 16.sp),
+          padding: EdgeInsets.only(top: 16.h),
           child: Text(
             user.fullName ?? '',
             style: AppTextStyles.poppinsH5Bold,
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(top: 12.sp,right: 99.sp),
+          padding: EdgeInsets.only(top: 12.h,right: 99.w),
           child: Text(
             user.intro ?? '',
             maxLines: 2,
@@ -91,7 +91,7 @@ class MyProfile extends ConsumerWidget{
 
   Widget _viewStatisticInfo(User user){
     return Padding(
-      padding: EdgeInsets.only(top: 20.sp),
+      padding: EdgeInsets.only(top: 20.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,

@@ -20,14 +20,14 @@ class DescriptionRecipeDetail extends HookConsumerWidget{
     // final textEditController = useTextEditingController();
     // TODO: implement build
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.sp, 12.sp, 20.sp, 16.sp),
+      padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 16.h),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ItemVideoRecipeDetailDescription(meal: Meals(strMealThumb: AppConfig.randomImageUrl),),
           Padding(
-            padding: EdgeInsets.only(top: 20.sp, bottom: 16.sp),
+            padding: EdgeInsets.only(top: 20.h, bottom: 16.h),
             child: const TextFieldWidget(
               hintText: AppStrings.searchRecipe,
               borderColor: AppColors.buttonPrimaryNoIconLargeColor,
@@ -39,7 +39,7 @@ class DescriptionRecipeDetail extends HookConsumerWidget{
             title: AppStrings.serves,
             quantity: '01',
           ),
-          SizedBox(height:12.sp,),
+          SizedBox(height:12.h,),
           ItemDescriptionCookServe(
             image: AppImages.imgIconClockRed,
             title: AppStrings.cookTime,

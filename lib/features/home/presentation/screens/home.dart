@@ -51,7 +51,7 @@ class Home extends HookConsumerWidget {
         // height: 106.sp,
         shape: const CircularNotchedRectangleCustom(),
         child: SizedBox(
-          height: 106.sp,
+          height: 106.h,
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -64,7 +64,7 @@ class Home extends HookConsumerWidget {
                     pageController.jumpToPage(0);
                   },
                   isHighLight: currentPage.value==TypeTabBottomAppBar.home,
-                  padding: EdgeInsets.only(top:16.sp,left: 0.sp,right: 12.sp,bottom: 50.sp),
+                  padding: EdgeInsets.only(top:16.h,left: 0.w,right: 12.w,bottom: 50.h),
                   iconTabModel: IconTabModel(
                       enableImage: AppImages.imgIconHomePressed,
                       disableImage: AppImages.imgIconHome),
@@ -78,7 +78,7 @@ class Home extends HookConsumerWidget {
                     pageController.jumpToPage(1);
                   },
                   isHighLight: currentPage.value==TypeTabBottomAppBar.discover,
-                  padding: EdgeInsets.only(top:16.sp,left: 12.sp,right: 103.sp,bottom: 50.sp),
+                  padding: EdgeInsets.only(top:16.h,left: 12.w,right: 103.w,bottom: 50.h),
                   iconTabModel: IconTabModel(
                       enableImage: AppImages.imgIconDiscoverPressed,
                       disableImage: AppImages.imgIconDiscover),
@@ -94,7 +94,7 @@ class Home extends HookConsumerWidget {
                     pageController.jumpToPage(2);
                   },
                   isHighLight: currentPage.value==TypeTabBottomAppBar.notification,
-                  padding: EdgeInsets.only(top:16.sp,left: 103.sp,right: 12.sp,bottom: 50.sp),
+                  padding: EdgeInsets.only(top:16.h,left: 103.w,right: 12.w,bottom: 50.h),
                   iconTabModel: IconTabModel(
                       enableImage: AppImages.imgIconNotificationPressed,
                       disableImage: AppImages.imgIconNotification),
@@ -108,7 +108,7 @@ class Home extends HookConsumerWidget {
                     pageController.jumpToPage(3);
                   },
                   isHighLight: currentPage.value==TypeTabBottomAppBar.profile,
-                  padding: EdgeInsets.only(top:16.sp,left: 12.sp,right: 32.sp,bottom: 50.sp),
+                  padding: EdgeInsets.only(top:16.h,left: 12.w,right: 32.w,bottom: 50.h),
                   iconTabModel: IconTabModel(
                       enableImage: AppImages.imgIconAccountPressed,
                       disableImage: AppImages.imgIconAccount),
@@ -129,7 +129,7 @@ class Home extends HookConsumerWidget {
           elevation: 0,
           backgroundColor: AppColors.buttonPrimaryNoIconLargeColor,
           child: Padding(
-            padding: EdgeInsets.all(1.sp),
+            padding: EdgeInsets.all(1.w),
             child: Icon(
               Icons.add_rounded,
               color: Colors.white,

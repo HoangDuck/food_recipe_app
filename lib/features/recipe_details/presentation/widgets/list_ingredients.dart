@@ -15,7 +15,7 @@ class ListIngredients extends ConsumerWidget{
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.sp, 12.sp, 20.sp, 12.sp),
+      padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 12.h),
       child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,8 +25,8 @@ class ListIngredients extends ConsumerWidget{
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: 28.sp,
-                width: 164.sp,
+                height: 28.h,
+                width: 164.w,
                 child: Text(
                   AppStrings.ingredients,
                   style: AppTextStyles.poppinsH5Bold,
@@ -40,7 +40,7 @@ class ListIngredients extends ConsumerWidget{
             ],
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 16.sp),
+            padding: EdgeInsets.symmetric(vertical: 16.h),
             child: CustomScrollView(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,

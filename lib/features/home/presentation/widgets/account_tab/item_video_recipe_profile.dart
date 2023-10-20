@@ -14,8 +14,8 @@ class ItemVideoRecipe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200.sp,
-      width: 335.sp,
+      height: 200.h,
+      width: 335.w,
       child: Stack(
         children: [
           Positioned.fill(
@@ -31,25 +31,25 @@ class ItemVideoRecipe extends StatelessWidget {
                 ),
               )),
           Positioned(
-            top: 8.sp,
-            left: 8.sp,
+            top: 8.h,
+            left: 8.w,
             child: const IconReviewStar(
               rating: AppStrings.fourAndAHalf,
             ),
           ),
           Positioned(
-            top: 8.sp,
-            right: 8.sp,
+            top: 8.h,
+            right: 8.w,
             child: IconMoreHorizFood(
               onTap: () {},
             ),
           ),
           Positioned(
-            left: 16.sp,
-            bottom: 42.sp,
+            left: 16.w,
+            bottom: 42.h,
             child: SizedBox(
-              height: 44.sp,
-              width: 170.sp,
+              height: 44.h,
+              width: 170.w,
               child: Text(
                 meal.strMeal ?? '',
                 maxLines: 2,
@@ -59,8 +59,8 @@ class ItemVideoRecipe extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 16.sp,
-            bottom: 16.sp,
+            left: 16.w,
+            bottom: 16.h,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -70,9 +70,9 @@ class ItemVideoRecipe extends StatelessWidget {
                   style: AppTextStyles.poppinsSmallRegular,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.sp),
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
                   child: VerticalDivider(
-                    width: 1.sp,
+                    width: 1.w,
                     color: AppColors.white,
                   ),
                 ),

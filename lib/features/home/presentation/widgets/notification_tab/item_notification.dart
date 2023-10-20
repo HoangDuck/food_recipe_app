@@ -13,9 +13,9 @@ class ItemNotification extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 12.sp,horizontal: 16.sp),
-      height: 82.sp,
-      width: 335.sp,
+      padding: EdgeInsets.symmetric(vertical: 12.h,horizontal: 16.w),
+      // height: 82.h,
+      // width: 335.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.sp),
         color: AppColors.cardFoodByCategory,
@@ -25,22 +25,22 @@ class ItemNotification extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.all(6.sp),
+            padding: EdgeInsets.all(6.w),
             decoration: BoxDecoration(
               color: AppColors.iconNotificationBackground,
               borderRadius: BorderRadius.circular(10.sp),
             ),
-            height: 28.sp,
-            width: 28.sp,
+            height: 28.h,
+            width: 28.w,
             child: Image.asset(
               AppImages.imgIconNotificationItem,
-              height: 16.sp,
-              width: 16.sp,
+              height: 16.h,
+              width: 16.w,
             ),
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.only(left: 12.sp),
+              padding: EdgeInsets.only(left: 12.w),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +50,7 @@ class ItemNotification extends StatelessWidget {
                     style: AppTextStyles.poppinsLabelBoldV3,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 4.sp),
+                    padding: EdgeInsets.only(top: 4.h),
                     child: Text(
                       notification.body ?? '',
                       maxLines: 2,
@@ -65,8 +65,8 @@ class ItemNotification extends StatelessWidget {
           Visibility(
             visible: notification.isToday,
             child: Container(
-              height: 6.sp,
-              width: 6.sp,
+              height: 6.h,
+              width: 6.w,
               decoration: BoxDecoration(
                 color: AppColors.buttonPrimaryNoIconLargeColor,
                 borderRadius: BorderRadius.circular(48.sp)

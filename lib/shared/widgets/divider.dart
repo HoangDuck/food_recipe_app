@@ -9,7 +9,7 @@ class DividerBorder extends StatelessWidget {
   Widget build(BuildContext context) {
     return
     Container(
-      height: 1.sp,
+      height: 1.h,
       color: AppColors.dividerColor,
     );
   }

@@ -11,7 +11,7 @@ class ItemStatistic extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return SizedBox(
-      height: 48.sp,
+      height: 48.h,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -21,7 +21,7 @@ class ItemStatistic extends StatelessWidget {
             style: AppTextStyles.poppinsSmallRegularV2,
           ),
           Padding(
-            padding: EdgeInsets.only(top: 2.sp),
+            padding: EdgeInsets.only(top: 2.h),
             child: Text(
               value,
               textAlign: TextAlign.center,

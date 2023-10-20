@@ -38,10 +38,10 @@ class ItemVideo extends ConsumerWidget {
 
   Widget _videoCreator({String authorAvt = '',String authorName = ''}){
     return Padding(
-      padding: EdgeInsets.only(top: 2.sp),
+      padding: EdgeInsets.only(top: 2.h),
       child: SizedBox(
-        height: 32.sp,
-        width: 145.sp,
+        height: 32.h,
+        width: 145.w,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,12 +53,12 @@ class ItemVideo extends ConsumerWidget {
                 errorBuilder: (context,error,stackTrace){
                   return Container();
                 },
-                width: 32.sp,
-                height: 32.sp,
+                width: 32.w,
+                height: 32.w,
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 8.sp),
+              padding: EdgeInsets.only(left: 8.w),
               child: Text(
                 authorName,
                 style: AppTextStyles.poppinsSmallRegularV2,
@@ -72,17 +72,17 @@ class ItemVideo extends ConsumerWidget {
 
   Widget _videoPreview(){
     return SizedBox(
-      height: size.height.sp,
-      width: size.width.sp,
+      // height: size.height.h,
+      // width: size.width.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 180.sp,
-            width: size.width.sp,
+            height: 180.h,
+            width: size.width.w,
             child: Padding(
-              padding: EdgeInsets.only(bottom: 6.sp),
+              padding: EdgeInsets.only(bottom: 6.h),
               child: Stack(
                 children: [
                   Positioned.fill(
@@ -98,23 +98,23 @@ class ItemVideo extends ConsumerWidget {
                                           ),
                       )),
                   Positioned(
-                    top: 8.sp,
-                    left: 8.sp,
+                    top: 8.h,
+                    left: 8.w,
                     child: const IconReviewStar(
                       rating: AppStrings.fourAndAHalf,
                     ),
                   ),
                   Positioned(
-                    top: 8.sp,
-                    right: 8.sp,
+                    top: 8.h,
+                    right: 8.w,
                     child: IconBookmarkFood(
                       onTap: () {},
                       isMarked: isMarked,
                     ),
                   ),
                   Positioned(
-                    bottom: 8.sp,
-                    right: 8.sp,
+                    bottom: 8.h,
+                    right: 8.w,
                     child: const IconTimeVideo(),
                   ),
                   Positioned.fill(
@@ -130,7 +130,7 @@ class ItemVideo extends ConsumerWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 6.sp),
+            padding: EdgeInsets.symmetric(vertical: 6.h),
             child: Row(
               children: [
                 Text(meal.strMeal??'',style: AppTextStyles.poppinsParagraphBold),

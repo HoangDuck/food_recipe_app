@@ -3,7 +3,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/account_tab/list_recipe_profile.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/account_tab/my_profile.dart';
-import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 import 'package:food_recipe_app/shared/widgets/app_button.dart';
@@ -32,33 +31,30 @@ class AccountTab extends HookConsumerWidget{
         mainAxisSize: MainAxisSize.min,
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 44.sp),
-            child: SizedBox(
-              height: 69.sp,
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(22.sp,20.sp,20.sp,20.sp),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      AppStrings.myProfile,
-                      textAlign: TextAlign.start,
-                      style: AppTextStyles.homeBoldh4,
-                    ),
-                    const Spacer(),
-                    const Icon(Icons.more_horiz)
-                  ],
-                ),
+            padding: EdgeInsets.only(top: 44.h),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(22.w,20.h,20.w,20.h),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    AppStrings.myProfile,
+                    textAlign: TextAlign.start,
+                    style: AppTextStyles.homeBoldh4,
+                  ),
+                  const Spacer(),
+                  const Icon(Icons.more_horiz)
+                ],
               ),
             ),
           ),
           const MyProfile(),
           const DividerBorder(),
           SizedBox(
-            height: 58.sp,
+            height: 58.h,
             child: Padding(
-              padding: EdgeInsets.fromLTRB(19.sp,12.sp,19.sp,12.sp),
+              padding: EdgeInsets.fromLTRB(19.w,12.h,19.w,12.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -69,16 +65,16 @@ class AccountTab extends HookConsumerWidget{
                       currentPage.value = TypeTabAccount.video;
                       pageController.jumpToPage(0);
                     },
-                    size: Size(160.sp,34.sp),
-                    padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
+                    size: Size(160.w,34.h),
+                    padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
                     textSize: 12.sp,
                     isHighLight: currentPage.value == TypeTabAccount.video,
                   ),
                   const Spacer(),
                   PrimaryNoIconLargeButton(
                     title: AppStrings.recipe,
-                    size: Size(160.sp,34.sp),
-                    padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
+                    size: Size(160.w,34.h),
+                    padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
                     onTap: () {
                       currentPage.value = TypeTabAccount.recipe;
                       pageController.jumpToPage(1);
@@ -102,7 +98,7 @@ class AccountTab extends HookConsumerWidget{
               ),
             ),
           ),
-          SizedBox(height: 106.sp,)
+          SizedBox(height: 106.h,)
         ],
       ),
     );

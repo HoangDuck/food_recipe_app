@@ -15,15 +15,15 @@ class PopularCreators extends ConsumerWidget{
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.sp, 12.sp, 19.sp, 12.sp),
+      padding: EdgeInsets.fromLTRB(20.w, 12.h, 19.w, 12.h),
       child: SizedBox(
-        height: 187.sp,
+        height: 187.h,
         child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children:[
               Padding(
-                padding: EdgeInsets.fromLTRB(0.sp,0.sp,0.sp,16.sp),
+                padding: EdgeInsets.fromLTRB(0.w,0.h,0.w,16.h),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,7 +42,7 @@ class PopularCreators extends ConsumerWidget{
                 ),
               ),
               SizedBox(
-                height: 119.sp,
+                height: 119.h,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,

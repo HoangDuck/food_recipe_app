@@ -27,7 +27,7 @@ class RecipeDetails extends ConsumerWidget{
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(20.sp, 56.sp, 20.sp, 12.sp),
+                padding: EdgeInsets.fromLTRB(20.w, 56.h, 20.w, 12.h),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +61,7 @@ class RecipeDetails extends ConsumerWidget{
                       ],
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 16.sp),
+                      padding: EdgeInsets.only(top: 16.h),
                       child: Text(
                         meal.strMeal ?? '',
                         style: AppTextStyles.poppinsH4Bold,

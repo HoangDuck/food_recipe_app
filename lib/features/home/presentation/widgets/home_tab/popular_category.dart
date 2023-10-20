@@ -27,13 +27,13 @@ class PopularCategory extends HookConsumerWidget{
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.sp, 12.sp, 0, 12.sp),
+      padding: EdgeInsets.fromLTRB(20.w, 12.h, 0, 12.h),
       child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children:[
             Padding(
-              padding: EdgeInsets.fromLTRB(0.sp,0.sp,20.sp,16.sp),
+              padding: EdgeInsets.fromLTRB(0.w,0.h,20.w,16.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,7 +43,7 @@ class PopularCategory extends HookConsumerWidget{
               ),
             ),
             SizedBox(
-              height: 34.sp,
+              height: 34.h,
               child: ListView.builder(
                 itemCount: listCategories.length,
                 scrollDirection: Axis.horizontal,
@@ -60,9 +60,9 @@ class PopularCategory extends HookConsumerWidget{
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 20.sp),
+              padding: EdgeInsets.only(top: 20.h),
               child: SizedBox(
-                height: 231.sp,
+                height: 231.h,
                 child: ListView.builder(
                   itemCount: listMealByCategories.length,
                   scrollDirection: Axis.horizontal,

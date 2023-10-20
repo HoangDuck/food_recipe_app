@@ -17,8 +17,8 @@ class IconBookmarkFood extends StatelessWidget {
         onTap();
       },
       child: Container(
-        height: 32.sp,
-        width: 32.sp,
+        height: 32.h,
+        width: 32.w,
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(100.sp),

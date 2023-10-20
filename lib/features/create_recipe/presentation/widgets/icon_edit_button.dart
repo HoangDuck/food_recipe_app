@@ -24,8 +24,8 @@ class IconEditButton extends StatelessWidget {
         ),
         child: Image.asset(
           AppImages.imgIconEdit,
-          width: 20.sp,
-          height: 20.sp,
+          width: 20.w,
+          height: 20.h,
         ),
       ),
     );

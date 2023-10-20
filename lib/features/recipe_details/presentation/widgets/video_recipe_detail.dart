@@ -18,28 +18,28 @@ class VideoRecipeDetail extends ConsumerWidget{
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.sp, 12.sp, 20.sp, 14.sp),
+      padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 14.h),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ItemVideoRecipeDetail(meal: meal),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 16.sp),
+            padding: EdgeInsets.symmetric(vertical: 16.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(AppImages.imgIconStarHighlight,width: 16.sp,height: 16.sp,),
+                Image.asset(AppImages.imgIconStarHighlight,width: 16.w,height: 16.h,),
                 Padding(
-                  padding: EdgeInsets.only(left: 4.sp),
+                  padding: EdgeInsets.only(left: 4.w),
                   child: Text(
                     AppStrings.fourAndAHalf,
                     style: AppTextStyles.poppinsParagraphBold,
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 7.sp),
+                  padding: EdgeInsets.only(left: 7.w),
                   child: Text(
                     AppStrings.threeHundredReviews,
                     style: AppTextStyles.poppinsSmallRegularV3,
@@ -49,17 +49,17 @@ class VideoRecipeDetail extends ConsumerWidget{
             ),
           ),
           SizedBox(
-            height: 43.sp,
+            height: 43.h,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(48.sp),
-                  child: Image.network(AppConfig.randomImageUrl,width: 41.sp,height: 41.sp,),
+                  child: Image.network(AppConfig.randomImageUrl,width: 41.w,height: 41.h,),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 10.sp),
+                  padding: EdgeInsets.only(left: 10.w),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,7 +77,7 @@ class VideoRecipeDetail extends ConsumerWidget{
                             width: 16.sp,
                           ),
                           Padding(
-                            padding: EdgeInsets.only(left: 4.sp),
+                            padding: EdgeInsets.only(left: 4.w),
                             child: Text(
                               meal.strArea ?? '',
                               style: AppTextStyles.poppinsSmallRegularV3,
@@ -92,8 +92,8 @@ class VideoRecipeDetail extends ConsumerWidget{
                 PrimaryNoIconLargeButton(
                   title: AppStrings.follow,
                   onTap: () {},
-                  padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 16.sp),
-                  size: Size(77.sp,36.sp),
+                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 16.w),
+                  size: Size(77.w,36.h),
                   textSize: 13.sp,
                 ),
               ],

@@ -19,10 +19,10 @@ class ListVideoRecipes extends ConsumerWidget{
       padding: EdgeInsets.zero,
       itemBuilder: (context, index) {
         return Padding(
-          padding: EdgeInsets.only(bottom: 16.sp),
+          padding: EdgeInsets.only(bottom: 16.h),
           child: ItemVideo(
             meal: listFoodTrending[index],
-            size: Size(335.sp, 209.sp),
+            size: Size(335.w, 209.h),
             isMarked: true,
           ),
         );

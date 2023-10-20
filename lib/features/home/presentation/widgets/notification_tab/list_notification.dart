@@ -38,7 +38,7 @@ class ListNotification extends HookConsumerWidget{
             physics: const NeverScrollableScrollPhysics(),
             useStickyGroupSeparators: true,
             groupSeparatorBuilder: (value) => Container(
-              padding: EdgeInsets.fromLTRB(16.sp,12.sp,0.sp,12.sp),
+              padding: EdgeInsets.fromLTRB(16.w,12.h,0.w,12.h),
               color: AppColors.white,
               child: Text(
                 value,
@@ -47,13 +47,13 @@ class ListNotification extends HookConsumerWidget{
             ),
             indexedItemBuilder: (context, element, index) {
               return Padding(
-                padding: EdgeInsets.only(bottom: 12.sp),
+                padding: EdgeInsets.only(bottom: 12.h),
                 child: ItemNotification(notification: element,),
               );
             },
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(42.sp, 16.sp, 42.sp, 0.sp),
+            padding: EdgeInsets.fromLTRB(42.w, 16.h, 42.w, 0.h),
             child: Text(
               AppStrings.youreallSet,
               style: AppTextStyles.poppinsTinyRegular,

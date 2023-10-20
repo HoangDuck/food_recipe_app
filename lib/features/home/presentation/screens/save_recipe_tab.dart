@@ -25,23 +25,20 @@ class SaveRecipeTab extends HookConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(top: 44.sp),
-          child: SizedBox(
-            height: 69.sp,
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(22.sp, 20.sp, 136.sp, 20.sp),
-              child: Text(
-                AppStrings.savedRecipe,
-                textAlign: TextAlign.start,
-                style: AppTextStyles.homeBoldh4,
-              ),
+          padding: EdgeInsets.only(top: 44.h),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(22.w, 20.h, 136.w, 20.h),
+            child: Text(
+              AppStrings.savedRecipe,
+              textAlign: TextAlign.start,
+              style: AppTextStyles.homeBoldh4,
             ),
           ),
         ),
         SizedBox(
-          height: 58.sp,
+          height: 58.h,
           child: Padding(
-            padding: EdgeInsets.fromLTRB(20.sp,12.sp,21.sp,12.sp),
+            padding: EdgeInsets.fromLTRB(20.w,12.h,21.w,12.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,16 +49,16 @@ class SaveRecipeTab extends HookConsumerWidget {
                     currentPage.value = TypeTabSavedRecipes.video;
                     pageController.jumpToPage(0);
                   },
-                  size: Size(159.sp,34.sp),
-                  padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
+                  size: Size(159.w,34.h),
+                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
                   textSize: 12.sp,
                   isHighLight:  currentPage.value == TypeTabSavedRecipes.video,
                 ),
                 const Spacer(),
                 PrimaryNoIconLargeButton(
                   title: AppStrings.recipe,
-                  size: Size(159.sp,34.sp),
-                  padding: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 12.sp),
+                  size: Size(159.w,34.h),
+                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
                   onTap: () {
                     currentPage.value = TypeTabSavedRecipes.recipe;
                     pageController.jumpToPage(1);
@@ -75,7 +72,7 @@ class SaveRecipeTab extends HookConsumerWidget {
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(20.sp,12.sp,20.sp,12.sp),
+            padding: EdgeInsets.fromLTRB(20.w,12.h,20.w,12.h),
             child: PageView(
               controller: pageController,
               children: [
@@ -85,7 +82,7 @@ class SaveRecipeTab extends HookConsumerWidget {
             ),
           ),
         ),
-        SizedBox(height: 106.sp,)
+        SizedBox(height: 106.h,)
       ],
     );
   }

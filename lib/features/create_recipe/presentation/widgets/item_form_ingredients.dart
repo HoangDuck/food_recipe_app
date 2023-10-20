@@ -15,22 +15,22 @@ class ItemFormIngredients extends HookConsumerWidget{
     return Padding(
       padding: EdgeInsets.only(bottom: 16.sp),
       child: SizedBox(
-        width: 327.sp,
+        width: 327.w,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.only(right: 12.sp),
+              padding: EdgeInsets.only(right: 12.w),
               child: TextFieldWidget(
-                size: Size(155.sp, 44.sp),
+                size: Size(155.w, 44.h),
                 hintText: AppStrings.itemName,
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(right: 12.sp),
+              padding: EdgeInsets.only(right: 12.w),
               child: TextFieldWidget(
-                size: Size(110.sp, 44.sp),
+                size: Size(110.w, 44.h),
                 hintText: AppStrings.quantity,
                 textAlign: TextAlign.center,
               ),

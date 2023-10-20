@@ -27,7 +27,7 @@ class _HomeTabState extends State<HomeTab> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(22.sp, 64.sp, 136.sp, 20.sp),
+            padding: EdgeInsets.fromLTRB(22.w, 64.h, 136.w, 20.h),
             child: Text(
               AppStrings.findBestRecipeForCooking,
               textAlign: TextAlign.start,
@@ -35,12 +35,12 @@ class _HomeTabState extends State<HomeTab> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.sp, horizontal: 20.sp),
+            padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 20.w),
             child: TextFieldWidget(
               hintText: AppStrings.searchRecipe,
               borderColor: AppColors.dividerColor,
               prefixIcon: Padding(
-                padding: EdgeInsets.only(left: 16.sp,right: 12.sp),
+                padding: EdgeInsets.only(left: 16.w,right: 12.w),
                 child: Image.asset(
                   AppImages.imgIconSearch,
                   width: 20.sp,
@@ -55,7 +55,7 @@ class _HomeTabState extends State<HomeTab> {
           const PopularCategory(),
           const RecentRecipe(),
           const PopularCreators(),
-          SizedBox(height: 106.sp,)
+          SizedBox(height: 106.h,)
         ],
       ),
     );

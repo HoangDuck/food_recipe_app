@@ -15,11 +15,11 @@ class ItemVideoRecipeDetailDescription extends ConsumerWidget{
     // TODO: implement build
     return ItemVideoRecipeDetail(
       meal: meal,
-      size: Size(335.sp, 200.sp),
+      size: Size(335.w, 200.h),
       extendWidgets: [
         Positioned(
-          top: 8.sp,
-          right: 8.sp,
+          top: 8.h,
+          right: 8.w,
           child: IconEditButton(
             onTap: () {},
           ),
