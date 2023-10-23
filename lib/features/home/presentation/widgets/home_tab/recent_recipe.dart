@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,7 +8,7 @@ import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 
-class RecentRecipe extends ConsumerWidget{
+class RecentRecipe extends ConsumerWidget {
   const RecentRecipe({super.key});
 
   @override
@@ -17,46 +16,70 @@ class RecentRecipe extends ConsumerWidget{
     final stateRecentRecipe = ref.watch(recentRecipeProvider);
     List<Meals> listRecentRecipe = stateRecentRecipe.listMealsByCategory;
 
-    ScreenUtil.init(context, designSize: const Size(375,812));
+    ScreenUtil.init(context, designSize: const Size(375, 812));
     // TODO: implement build
     return Padding(
       padding: EdgeInsets.fromLTRB(20.w, 12.h, 0, 12.h),
       child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children:[
+          children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(0.w,0.h,20.w,16.h),
+              padding: EdgeInsets.fromLTRB(0.w, 0.h, 20.w, 16.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(AppStrings.recentRecipe,style: AppTextStyles.poppinsH5Bold,),
+                  Text(
+                    AppStrings.recentRecipe,
+                    style: AppTextStyles.poppinsH5Bold,
+                  ),
                   const Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(AppStrings.seeAll,style: AppTextStyles.poppinsLabelBold,),
-                      const Icon(Icons.arrow_forward_rounded, color: AppColors.buttonPrimaryNoIconLargeColor,)
+                      Text(
+                        AppStrings.seeAll,
+                        style: AppTextStyles.poppinsLabelBold,
+                      ),
+                      const Icon(
+                        Icons.arrow_forward_rounded,
+                        color: AppColors.buttonPrimaryNoIconLargeColor,
+                      )
                     ],
                   ),
                 ],
               ),
             ),
-            SizedBox(
-              height: 191.h,
-              child: ListView.builder(
-                itemCount: listRecentRecipe.length,
+            // CustomScrollView(
+            //   slivers: [
+            //     SliverList(delegate: (delegate))
+            //   ],
+            // ),
+            SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return ItemRecentRecipe(meal: listRecentRecipe[index],);
-                },
-              ),
-            ),
-          ]
-      ),
+                child: Row(
+                  children: [
+                    ...List.generate(
+                        listRecentRecipe.length,
+                        (index) => ItemRecentRecipe(
+                              meal: listRecentRecipe[index],
+                            ))
+                  ],
+                )),
+            // SizedBox(
+            //   // height: 191.h,
+            //   child: ListView.builder(
+            //     itemCount: listRecentRecipe.length,
+            //     scrollDirection: Axis.horizontal,
+            //     shrinkWrap: true,
+            //     itemBuilder: (context, index) {
+            //       return ItemRecentRecipe(meal: listRecentRecipe[index],);
+            //     },
+            //   ),
+            // ),
+          ]),
     );
   }
-
 }

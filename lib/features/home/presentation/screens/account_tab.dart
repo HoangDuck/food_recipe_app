@@ -51,43 +51,40 @@ class AccountTab extends HookConsumerWidget{
           ),
           const MyProfile(),
           const DividerBorder(),
-          SizedBox(
-            height: 58.h,
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(20.w,12.h,20.w,12.h),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: PrimaryNoIconLargeButton(
-                      title: AppStrings.video,
-                      onTap: () {
-                        currentPage.value = TypeTabAccount.video;
-                        pageController.jumpToPage(0);
-                      },
-                      size: Size(160.w,34.h),
-                      padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-                      textSize: 12.sp,
-                      isHighLight: currentPage.value == TypeTabAccount.video,
-                    ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(20.w,12.h,20.w,12.h),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: PrimaryNoIconLargeButton(
+                    title: AppStrings.video,
+                    onTap: () {
+                      currentPage.value = TypeTabAccount.video;
+                      pageController.jumpToPage(0);
+                    },
+                    size: Size(160.w,34.h),
+                    padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
+                    textSize: 12.sp,
+                    isHighLight: currentPage.value == TypeTabAccount.video,
                   ),
-                  SizedBox(width: 16.w,),
-                  Expanded(
-                    child: PrimaryNoIconLargeButton(
-                      title: AppStrings.recipe,
-                      size: Size(160.w,34.h),
-                      padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-                      onTap: () {
-                        currentPage.value = TypeTabAccount.recipe;
-                        pageController.jumpToPage(1);
-                      },
-                      textSize: 12.sp,
-                      isHighLight: currentPage.value == TypeTabAccount.recipe,
-                    ),
+                ),
+                SizedBox(width: 16.w,),
+                Expanded(
+                  child: PrimaryNoIconLargeButton(
+                    title: AppStrings.recipe,
+                    size: Size(160.w,34.h),
+                    padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
+                    onTap: () {
+                      currentPage.value = TypeTabAccount.recipe;
+                      pageController.jumpToPage(1);
+                    },
+                    textSize: 12.sp,
+                    isHighLight: currentPage.value == TypeTabAccount.recipe,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           Flexible(

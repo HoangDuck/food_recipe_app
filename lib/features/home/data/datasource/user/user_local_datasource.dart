@@ -1,6 +1,7 @@
 
 import 'package:dartz/dartz.dart';
 import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
+import 'package:food_recipe_app/shared/domain/models/users/statistic.dart';
 import 'package:food_recipe_app/shared/domain/models/users/user.dart';
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
@@ -18,7 +19,7 @@ class UserLocalDataSource extends UserDatasourceLocal{
         'Hello world I’m Alessandra Blair, I’m from Italy 🇮🇹 I love cooking so much!',
     avatar: 'https://i.pravatar.cc/300',
     statistic:
-        Statistic(recipe: 3, videos: 13, followers: 14000, following: 130),
+        const Statistic(recipe: 3, videos: 13, followers: 14000, following: 130),
     meals: [
         Meals(
             idMeal: '1',

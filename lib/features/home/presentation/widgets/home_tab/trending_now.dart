@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/home_state/home_state_provider.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/item_video_home.dart';
@@ -56,14 +55,9 @@ class TrendingNowWidget extends HookConsumerWidget{
               ],
             ),
           ),
-          SizedBox(
-            height: 254.h,
-            child: ListView.builder(
-                controller: scrollController,
-                itemCount: listFoodTrending.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
+          SingleChildScrollView(scrollDirection: Axis.horizontal,child: Row(
+            children: [
+              ...List.generate(listFoodTrending.length, (index) => GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, Routers.recipeDetail,
                           arguments: listFoodTrending[index].idMeal);
@@ -72,10 +66,29 @@ class TrendingNowWidget extends HookConsumerWidget{
                       padding: EdgeInsets.only(right: 16.w),
                       child: ItemVideo(meal: listFoodTrending[index]),
                     ),
-                  );
-                },
-              ),
-          ),
+                  ))
+            ],
+          )),
+          // SizedBox(
+          //   height: 257.h,
+          //   child: ListView.builder(
+          //       controller: scrollController,
+          //       itemCount: listFoodTrending.length,
+          //       scrollDirection: Axis.horizontal,
+          //       itemBuilder: (context, index) {
+          //         return GestureDetector(
+          //           onTap: () {
+          //             Navigator.pushNamed(context, Routers.recipeDetail,
+          //                 arguments: listFoodTrending[index].idMeal);
+          //           },
+          //           child: Padding(
+          //             padding: EdgeInsets.only(right: 16.w),
+          //             child: ItemVideo(meal: listFoodTrending[index]),
+          //           ),
+          //         );
+          //       },
+          //     ),
+          // ),
         ]
       ),
     );

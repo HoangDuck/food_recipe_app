@@ -13,7 +13,7 @@ class ItemRecentRecipe extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(right: 16.w),
       child: SizedBox(
-        height: 191.h,
+        // height: 191.h,
         width: 124.w,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -33,14 +33,11 @@ class ItemRecentRecipe extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(
                   left: 4.w, right: 9.w, top: 8.h, bottom: 4.h),
-              child: SizedBox(
-                height: 40.h,
-                child: Text(
-                  meal.strMeal ?? '',
-                  style: AppTextStyles.poppinsLabelBoldV2,
-                  overflow: TextOverflow.fade,
-                  maxLines: 2,
-                ),
+              child: Text(
+                meal.strMeal ?? '',
+                style: AppTextStyles.poppinsLabelBoldV2,
+                overflow: TextOverflow.fade,
+                maxLines: 2,
               ),
             ),
             Padding(

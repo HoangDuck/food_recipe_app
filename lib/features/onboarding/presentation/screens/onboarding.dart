@@ -33,10 +33,9 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return Scaffold(
-      // backgroundColor: Colors.black,
+      backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Container(
-          height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(AppImages.imgBackgroundOnBoard),
@@ -60,32 +59,35 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  margin: EdgeInsets.fromLTRB(82.w, 57.h, 83.w, 0.h),
-                  alignment: Alignment.center,
+                Padding(
+                  padding: EdgeInsets.only(left:82.w,top: 57.h,right: 83.w),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(right: 8.w),
-                        child: Image.asset(
-                          AppImages.imgIconStar,
-                          width: 16.w,
-                          height: 16.w,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(right: 8.w),
+                          child: Image.asset(
+                            AppImages.imgIconStar,
+                            width: 16.w,
+                            height: 16.w,
+                          ),
                         ),
-                      ),
-                      Text(
-                        AppStrings.sixtyPlus,
-                        style: AppTextStyles.onBoardBold600,
-                      ),
-                      SizedBox(width: 4.w,),
-                      Text(
-                        AppStrings.premiumRecipe,
-                        style: AppTextStyles.onBoardBold400,
-                      ),
-                    ],
-                  ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 8.w),
+                          child: Text(
+                            AppStrings.sixtyPlus,
+                            style: AppTextStyles.onBoardBold600,
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            AppStrings.premiumRecipe,
+                            style: AppTextStyles.onBoardBold400,
+                          ),
+                        ),
+                      ],
+                    ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 317.h,right: 64.w,left: 64.w,bottom: 0.h),

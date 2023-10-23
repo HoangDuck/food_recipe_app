@@ -35,43 +35,40 @@ class SaveRecipeTab extends HookConsumerWidget {
             ),
           ),
         ),
-        SizedBox(
-          height: 58.h,
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(20.w,12.h,21.w,12.h),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: PrimaryNoIconLargeButton(
-                    title: AppStrings.video,
-                    onTap: () {
-                      currentPage.value = TypeTabSavedRecipes.video;
-                      pageController.jumpToPage(0);
-                    },
-                    size: Size(159.w,34.h),
-                    padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-                    textSize: 12.sp,
-                    isHighLight:  currentPage.value == TypeTabSavedRecipes.video,
-                  ),
+        Padding(
+          padding: EdgeInsets.fromLTRB(20.w,12.h,21.w,12.h),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: PrimaryNoIconLargeButton(
+                  title: AppStrings.video,
+                  onTap: () {
+                    currentPage.value = TypeTabSavedRecipes.video;
+                    pageController.jumpToPage(0);
+                  },
+                  size: Size(159.w,34.h),
+                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
+                  textSize: 12.sp,
+                  isHighLight:  currentPage.value == TypeTabSavedRecipes.video,
                 ),
-                SizedBox(width: 15.w,),
-                Expanded(
-                  child: PrimaryNoIconLargeButton(
-                    title: AppStrings.recipe,
-                    size: Size(159.w,34.h),
-                    padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-                    onTap: () {
-                      currentPage.value = TypeTabSavedRecipes.recipe;
-                      pageController.jumpToPage(1);
-                    },
-                    textSize: 12.sp,
-                    isHighLight: currentPage.value == TypeTabSavedRecipes.recipe,
-                  ),
+              ),
+              SizedBox(width: 15.w,),
+              Expanded(
+                child: PrimaryNoIconLargeButton(
+                  title: AppStrings.recipe,
+                  size: Size(159.w,34.h),
+                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
+                  onTap: () {
+                    currentPage.value = TypeTabSavedRecipes.recipe;
+                    pageController.jumpToPage(1);
+                  },
+                  textSize: 12.sp,
+                  isHighLight: currentPage.value == TypeTabSavedRecipes.recipe,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         Expanded(

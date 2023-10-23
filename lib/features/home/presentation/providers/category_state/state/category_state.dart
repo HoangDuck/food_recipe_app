@@ -1,6 +1,6 @@
 
 import 'package:equatable/equatable.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories.dart' as meal_by_category;
+import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
 
 class CategoryState extends Equatable {
   final int total;

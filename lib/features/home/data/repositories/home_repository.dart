@@ -2,10 +2,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:food_recipe_app/features/home/data/datasource/meal/home_remote_datasource.dart';
 import 'package:food_recipe_app/features/home/domain/repositories/home_repository.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/categories.dart';
+import 'package:food_recipe_app/shared/domain/models/categories/category_list/categories.dart';
 import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories.dart' as meal_by_category;
+import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
 
 class HomeRepositoryImpl implements HomeRepository {
   final HomeDatasource homeDatasource;

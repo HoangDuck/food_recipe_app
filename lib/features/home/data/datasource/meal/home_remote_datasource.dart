@@ -1,11 +1,13 @@
 
 import 'package:dartz/dartz.dart';
 import 'package:food_recipe_app/shared/data/remote/network_service.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/categories.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories.dart';
+import 'package:food_recipe_app/shared/domain/models/categories/category_list/categories.dart';
+import 'package:food_recipe_app/shared/domain/models/categories/category_list/category_list.dart';
+import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories/meal_by_category_list.dart';
+import 'package:food_recipe_app/shared/domain/models/meals/meal_list.dart';
 import 'package:food_recipe_app/shared/domain/models/meals/meals.dart' as meals;
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories.dart' as meal_by_category;
+import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
 
 abstract class HomeDatasource {
   Future<Either<AppException, List<meals.Meals>>> fetchTrendingMeals();
@@ -40,7 +42,7 @@ class HomeRemoteDatasource extends HomeDatasource {
             ),
           );
         }
-        final resultSearchResponse = meals.MealModel.fromJson(jsonData['meals'] ?? []);
+        final resultSearchResponse = MealList.fromJson(jsonData);
         return Right(resultSearchResponse.meals);
       },
     );
@@ -66,7 +68,7 @@ class HomeRemoteDatasource extends HomeDatasource {
             ),
           );
         }
-        final resultSearchResponse = meals.MealModel.fromJson(jsonData['meals'] ?? []);
+        final resultSearchResponse = MealList.fromJson(jsonData['meals'] ?? []);
         return Right(resultSearchResponse.meals);
       },
     );
@@ -92,7 +94,7 @@ class HomeRemoteDatasource extends HomeDatasource {
             ),
           );
         }
-        final resultSearchResponse = CategoryModel.fromJson(jsonData);
+        final resultSearchResponse = CategoryList.fromJson(jsonData);
         return Right(resultSearchResponse.categories);
       },
     );
@@ -118,7 +120,7 @@ class HomeRemoteDatasource extends HomeDatasource {
             ),
           );
         }
-        final resultSearchResponse = MealByCategoryModel.fromJson(jsonData);
+        final resultSearchResponse = MealByCategoryList.fromJson(jsonData);
         return Right(resultSearchResponse.meals);
       },
     );
@@ -144,7 +146,7 @@ class HomeRemoteDatasource extends HomeDatasource {
             ),
           );
         }
-        final resultSearchResponse = meals.MealModel.fromJson(jsonData['meals'] ?? []);
+        final resultSearchResponse = MealList.fromJson(jsonData);
         return Right(resultSearchResponse.meals);
       },
     );

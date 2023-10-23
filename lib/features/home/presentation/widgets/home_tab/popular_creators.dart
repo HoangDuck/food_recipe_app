@@ -11,7 +11,6 @@ class PopularCreators extends ConsumerWidget{
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // TODO: implement build
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Padding(
@@ -41,13 +40,10 @@ class PopularCreators extends ConsumerWidget{
                   ],
                 ),
               ),
-              SizedBox(
-                height: 121.h,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: List.generate(4, (index) => const ItemPopularCreator()),
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: List.generate(4, (index) => const ItemPopularCreator()),
               ),
             ]
         ),

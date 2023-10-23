@@ -5,10 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/category_state/category_state_provider.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/home_tab/item_category_popular.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/home_tab/item_meals_by_category.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/categories.dart';
+import 'package:food_recipe_app/shared/domain/models/categories/category_list/categories.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories.dart' as meal_by_category;
+import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PopularCategory extends HookConsumerWidget{

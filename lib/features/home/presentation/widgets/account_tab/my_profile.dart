@@ -23,18 +23,15 @@ class MyProfile extends ConsumerWidget{
       );
     }else{
       User user = state.user!;
-      return SizedBox(
-        height: 296.h,
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 0.h),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              _viewPersonalInfo(user),
-              _viewStatisticInfo(user),
-            ],
-          ),
+      return Padding(
+        padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 0.h),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _viewPersonalInfo(user),
+            _viewStatisticInfo(user),
+          ],
         ),
       );
     }
