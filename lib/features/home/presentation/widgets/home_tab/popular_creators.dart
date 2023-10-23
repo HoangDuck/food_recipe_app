@@ -42,7 +42,7 @@ class PopularCreators extends ConsumerWidget{
                 ),
               ),
               SizedBox(
-                height: 119.h,
+                height: 121.h,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,

@@ -35,6 +35,8 @@ class Home extends HookConsumerWidget {
       resizeToAvoidBottomInset: false,
       body:   PageView(
         controller: pageController,
+          physics: const NeverScrollableScrollPhysics(),
+        // pageSnapping: false,
         children: const [
           HomeTab(),
           SaveRecipeTab(),

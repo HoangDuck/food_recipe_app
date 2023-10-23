@@ -72,8 +72,8 @@ class ItemVideo extends ConsumerWidget {
 
   Widget _videoPreview(){
     return SizedBox(
-      // height: size.height.h,
-      // width: size.width.w,
+      height: size.height.h,
+      width: size.width.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

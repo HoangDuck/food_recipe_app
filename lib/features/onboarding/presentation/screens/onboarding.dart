@@ -3,7 +3,6 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/routes/app_route.dart';
 import 'package:food_recipe_app/routes/router.dart';
 import 'package:food_recipe_app/shared/theme/app_images.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
@@ -34,86 +33,89 @@ class _OnBoardingScreenState extends ConsumerState<OnBoarding> {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(AppImages.imgBackgroundOnBoard),
-            fit: BoxFit.fitWidth
-          ),
-        ),
+      // backgroundColor: Colors.black,
+      body: SingleChildScrollView(
         child: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.transparent,
-                  Colors.black12,
-                  Colors.black45,
-                  Colors.black87,
-                ],
-              )
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(AppImages.imgBackgroundOnBoard),
+              fit: BoxFit.cover
+            ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                margin: EdgeInsets.fromLTRB(82.w, 57.h, 83.w, 0.h),
-                alignment: Alignment.center,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(right: 8.w),
-                      child: Image.asset(
-                        AppImages.imgIconStar,
-                        width: 16.w,
-                        height: 16.w,
-                      ),
-                    ),
-                    Text(
-                      AppStrings.sixtyPlus,
-                      style: AppTextStyles.onBoardBold600,
-                    ),
-                    SizedBox(width: 4.w,),
-                    Text(
-                      AppStrings.premiumRecipe,
-                      style: AppTextStyles.onBoardBold400,
-                    ),
+          child: Container(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.transparent,
+                    Colors.black12,
+                    Colors.black45,
+                    Colors.black87,
                   ],
+                )
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.fromLTRB(82.w, 57.h, 83.w, 0.h),
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 8.w),
+                        child: Image.asset(
+                          AppImages.imgIconStar,
+                          width: 16.w,
+                          height: 16.w,
+                        ),
+                      ),
+                      Text(
+                        AppStrings.sixtyPlus,
+                        style: AppTextStyles.onBoardBold600,
+                      ),
+                      SizedBox(width: 4.w,),
+                      Text(
+                        AppStrings.premiumRecipe,
+                        style: AppTextStyles.onBoardBold400,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 377.h,right: 64.w,left: 64.h),
-                child: SizedBox(
-                  height: 134.h,
+                Padding(
+                  padding: EdgeInsets.only(top: 317.h,right: 64.w,left: 64.w,bottom: 0.h),
                   child: Text(
                     AppStrings.letsCooking,
                     textAlign: TextAlign.center,
                     style: AppTextStyles.onBoardBold600BigSizeV2,
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 24.h,right: 73.w,left: 73.w,bottom: 40.h),
-                child: Text(
-                  AppStrings.findBestRecipeForCooking,
-                  textAlign: TextAlign.center,
-                  // maxLines: 1,
-                  style: AppTextStyles.onBoardBold400,
+                Padding(
+                  padding: EdgeInsets.only(top: 24.h,right: 73.w,left: 73.w,bottom: 40.h),
+                  child: Text(
+                    AppStrings.findBestRecipeForCooking,
+                    textAlign: TextAlign.center,
+                    // maxLines: 1,
+                    style: AppTextStyles.onBoardBold400,
+                  ),
                 ),
-              ),
-              PrimaryIconLargeButton(
-                onTap: () {
-                  Navigator.pushNamed(context, Routers.home);
-                },
-                title: AppStrings.startCooking,
-                icon: Icons.arrow_forward,
-              ),
-            ],
+                Padding(
+                  padding: EdgeInsets.fromLTRB(84.w, 0.h, 84.w, 82.h),
+                  child: PrimaryIconLargeButton(
+                    onTap: () {
+                      Navigator.pushNamed(context, Routers.home);
+                    },
+                    title: AppStrings.startCooking,
+                    icon: Icons.arrow_forward,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

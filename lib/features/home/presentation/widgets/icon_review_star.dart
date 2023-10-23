@@ -13,8 +13,8 @@ class IconReviewStar extends StatelessWidget {
     return Visibility(
       visible: rating.isNotEmpty,
       child: Container(
-        height: 28.h,
-        width: 59.w,
+        // height: 28.h,
+        // width: 59.w,
         padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 8.w),
         decoration: BoxDecoration(
           color: AppColors.iconReviewStarColor,

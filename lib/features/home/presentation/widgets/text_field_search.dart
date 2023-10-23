@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
-import 'package:food_recipe_app/shared/theme/app_images.dart';
-import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -16,9 +14,12 @@ class TextFieldWidget extends HookConsumerWidget {
   final Widget? prefixIcon;
   final TextAlign textAlign;
   final Size size;
+  final Function(String text)? onChange;
+  final TextEditingController? textEditController;
 
   const TextFieldWidget(
       {super.key,
+        this.textEditController,
       this.hintText = '',
       this.borderColor = AppColors.borderTextField,
       this.style,
@@ -26,13 +27,13 @@ class TextFieldWidget extends HookConsumerWidget {
       this.initialValue = '',
       this.prefixIcon,
       this.textAlign = TextAlign.start,
-      this.size = const Size(335, 44)});
+      this.size = const Size(335, 44),this.onChange});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final textEditController = useTextEditingController();
-    if(initialValue!=''){
-      textEditController.text = initialValue;
+
+    if(initialValue!='' && textEditController!=null){
+      textEditController!.text = initialValue;
     }
     // TODO: implement build
     ScreenUtil.init(context, designSize: const Size(375,812));
@@ -42,6 +43,11 @@ class TextFieldWidget extends HookConsumerWidget {
       child: TextFormField(
         controller: textEditController,
         style: style ?? AppTextStyles.poppinsLabelBoldV5,
+        onChanged: (text){
+          if(onChange!=null){
+            onChange!(text);
+          }
+        },
         textAlign: textAlign,
         decoration: InputDecoration(
           border: OutlineInputBorder(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/home_state/home_state_provider.dart';
@@ -8,14 +9,25 @@ import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class TrendingNowWidget extends ConsumerWidget{
+class TrendingNowWidget extends HookConsumerWidget{
   const TrendingNowWidget({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(homeNotifierTrendingProvider);
     List<Meals> listFoodTrending = state.productList as List<Meals>;
+    final scrollController = useScrollController();
+    scrollController.addListener(() {
+      double maxScroll = scrollController.position.maxScrollExtent;
+      double currentScroll = scrollController.position.pixels;
+      double delta = MediaQuery.of(context).size.width * 0.20;
+      if (maxScroll - currentScroll <= delta) {
+        // ref.read(homeNotifierTrendingProvider.notifier).();
+      }
+    });
+
 
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
@@ -47,6 +59,7 @@ class TrendingNowWidget extends ConsumerWidget{
           SizedBox(
             height: 254.h,
             child: ListView.builder(
+                controller: scrollController,
                 itemCount: listFoodTrending.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {

@@ -12,8 +12,8 @@ class IconTimeVideo extends ConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 26.h,
-      width: 46.w,
+      // height: 26.h,
+      // width: 46.w,
       padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 8.w),
       decoration: BoxDecoration(
         color: AppColors.iconReviewStarColor,

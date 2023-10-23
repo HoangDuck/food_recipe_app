@@ -10,7 +10,7 @@ class ItemPopularCreator extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return SizedBox(
-      height: 119.h,
+      height: 121.h,
       width: 75.w,
       child: Padding(
         padding: EdgeInsets.only(right: 12.w),

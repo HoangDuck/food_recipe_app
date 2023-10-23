@@ -33,8 +33,8 @@ class PrimaryNoIconLargeButton extends StatelessWidget {
             padding.top.sp,
             padding.right.sp,
             padding.bottom.sp),
-        height: size.height.sp,
-        width: size.width.sp,
+        // height: size.height.sp,
+        // width: size.width.sp,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: isHighLight
@@ -80,8 +80,8 @@ class PrimaryIconLargeButton extends StatelessWidget {
       },
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 16.h,horizontal: 32.w),
-        height: 54.h,
-        width: 206.w,
+        // height: 54.h,
+        // width: 206.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.sp),
           color: AppColors.buttonPrimaryNoIconLargeColor,
@@ -140,8 +140,8 @@ class SecondaryNoIconLargeButton extends StatelessWidget {
             padding.top.h,
             padding.right.w,
             padding.bottom.h),
-        height: size.height.h,
-        width: size.width.w,
+        //height: size.height.h,
+        //width: size.width.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: AppColors.white,

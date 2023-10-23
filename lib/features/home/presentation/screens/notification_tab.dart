@@ -54,45 +54,51 @@ class NotificationTab extends HookConsumerWidget{
         SizedBox(
           height: 58.h,
           child: Padding(
-            padding: EdgeInsets.fromLTRB(19.w,12.h,19.w,12.h),
+            padding: EdgeInsets.fromLTRB(20.w,12.h,20.w,12.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                PrimaryNoIconLargeButton(
-                  title: AppStrings.all,
-                  onTap: () {
-                    currentPage.value = TypeTabNotifications.all;
-                    pageController.jumpToPage(0);
-                  },
-                  size: Size(107.w,34.h),
-                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-                  textSize: 12.sp,
-                  isHighLight: currentPage.value == TypeTabNotifications.all,
+                Expanded(
+                  child: PrimaryNoIconLargeButton(
+                    title: AppStrings.all,
+                    onTap: () {
+                      currentPage.value = TypeTabNotifications.all;
+                      pageController.jumpToPage(0);
+                    },
+                    size: Size(107.w,34.h),
+                    padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
+                    textSize: 12.sp,
+                    isHighLight: currentPage.value == TypeTabNotifications.all,
+                  ),
                 ),
-                const Spacer(),
-                PrimaryNoIconLargeButton(
-                  title: AppStrings.unRead,
-                  size: Size(107.w,34.h),
-                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-                  onTap: () {
-                    currentPage.value = TypeTabNotifications.unread;
-                    pageController.jumpToPage(1);
-                  },
-                  textSize: 12.sp,
-                  isHighLight: currentPage.value == TypeTabNotifications.unread,
+                SizedBox(width: 7.w,),
+                Expanded(
+                  child: PrimaryNoIconLargeButton(
+                    title: AppStrings.unRead,
+                    size: Size(107.w,34.h),
+                    padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
+                    onTap: () {
+                      currentPage.value = TypeTabNotifications.unread;
+                      pageController.jumpToPage(1);
+                    },
+                    textSize: 12.sp,
+                    isHighLight: currentPage.value == TypeTabNotifications.unread,
+                  ),
                 ),
-                const Spacer(),
-                PrimaryNoIconLargeButton(
-                  title: AppStrings.read,
-                  size: Size(107.w,34.h),
-                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-                  onTap: () {
-                    currentPage.value = TypeTabNotifications.read;
-                    pageController.jumpToPage(2);
-                  },
-                  textSize: 12.sp,
-                  isHighLight: currentPage.value == TypeTabNotifications.read,
+                SizedBox(width: 7.w,),
+                Expanded(
+                  child: PrimaryNoIconLargeButton(
+                    title: AppStrings.read,
+                    size: Size(107.w,34.h),
+                    padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
+                    onTap: () {
+                      currentPage.value = TypeTabNotifications.read;
+                      pageController.jumpToPage(2);
+                    },
+                    textSize: 12.sp,
+                    isHighLight: currentPage.value == TypeTabNotifications.read,
+                  ),
                 ),
               ],
             ),
@@ -103,6 +109,7 @@ class NotificationTab extends HookConsumerWidget{
             padding: EdgeInsets.fromLTRB(20.w,12.h,20.w,12.h),
             child: PageView(
               controller: pageController,
+              physics: const NeverScrollableScrollPhysics(),
               children: const [
                 ListNotification(),
                 ListNotification(type: TypeNotification.unread),

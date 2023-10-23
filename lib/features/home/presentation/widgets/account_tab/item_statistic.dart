@@ -11,7 +11,7 @@ class ItemStatistic extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return SizedBox(
-      height: 48.h,
+      // height: 48.h,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,

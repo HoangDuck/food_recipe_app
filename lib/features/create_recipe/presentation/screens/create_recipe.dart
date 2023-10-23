@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_recipe_app/features/create_recipe/presentation/providers/create_recipe_provider.dart';
 import 'package:food_recipe_app/features/create_recipe/presentation/widgets/description_recipe_detail.dart';
 import 'package:food_recipe_app/features/create_recipe/presentation/widgets/form_add_ingredients.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
@@ -14,6 +15,7 @@ class CreateRecipe extends HookConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
+    final formIngredientList = ref.watch(formIngredientListProvider);
     // TODO: implement build
     return Scaffold(
       body: Column(
@@ -36,6 +38,7 @@ class CreateRecipe extends HookConsumerWidget{
           Container(
             padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 50.h),
             height: 120.h,
+            width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -48,9 +51,12 @@ class CreateRecipe extends HookConsumerWidget{
             ),
             child: PrimaryNoIconLargeButton(
               title: AppStrings.saveMyRecipe,
-              onTap: () {},
-              padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 32.w),
-              size: Size(335.w, 54.h),
+              onTap: () {
+
+                ref.read(formIngredientListProvider.notifier).printResult();
+              },
+              padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 32.w),
+              size: Size(335.w, 56.h),
             ),
           ),
         ],
