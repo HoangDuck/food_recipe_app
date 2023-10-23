@@ -15,7 +15,7 @@ class CreateRecipe extends HookConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
-    final formIngredientList = ref.watch(formIngredientListProvider);
+    // final formIngredientList = ref.watch(formIngredientListProvider);
     // TODO: implement build
     return Scaffold(
       body: Column(

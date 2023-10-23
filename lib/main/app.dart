@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/onboarding/presentation/screens/onboarding.dart';
-import 'package:food_recipe_app/routes/app_route.dart';
+// import 'package:food_recipe_app/routes/app_route.dart';
 import 'package:food_recipe_app/routes/router.dart';
 import 'package:food_recipe_app/shared/theme/app_theme.dart';
 class MyApp extends ConsumerWidget{
@@ -12,7 +12,7 @@ class MyApp extends ConsumerWidget{
   // final appRouter = AppRoute();
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeMode = ref.watch(appThemeProvider);
+    // final themeMode = ref.watch(appThemeProvider);
     // return MaterialApp.router(
     //   title: 'Flutter TDD',
     //   theme: AppTheme.lightTheme,

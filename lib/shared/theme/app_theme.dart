@@ -6,7 +6,6 @@ import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 import 'package:food_recipe_app/shared/theme/text_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:food_recipe_app/shared/theme/app_colors.dart';
 
 final appThemeProvider = StateNotifierProvider<AppThemeModeNotifier, ThemeMode>(
       (ref) {

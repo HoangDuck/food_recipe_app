@@ -1,6 +1,6 @@
 
-import 'package:auto_route/auto_route.dart';
-import 'package:food_recipe_app/features/onboarding/presentation/screens/onboarding.dart';
+// import 'package:auto_route/auto_route.dart';
+// import 'package:food_recipe_app/features/onboarding/presentation/screens/onboarding.dart';
 // part 'app_route.gr.dart';
 //
 // @AutoRouterConfig()

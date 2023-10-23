@@ -7,8 +7,6 @@ import 'package:food_recipe_app/shared/domain/models/response.dart' as response;
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 import 'package:food_recipe_app/shared/globals.dart';
 import 'package:food_recipe_app/shared/mixins/exception_handler_mixin.dart';
-import 'package:food_recipe_app/configs/app_configs.dart';
-import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
 class DioNetworkService extends NetworkService with ExceptionHandlerMixin {
   final Dio dio;
