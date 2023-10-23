@@ -79,3 +79,16 @@ class AppTheme {
     );
   }
 }
+
+ColorScheme colorSchemeBottomAppBar = const ColorScheme(
+    primary: Colors.white,
+    brightness: Brightness.light,
+    onPrimary: Colors.white,
+    secondary: Color(0xff66fff9),
+    onSecondary: Colors.black,
+    error: Color(0xff790000),
+    onError: Colors.white,
+    background: Colors.white,
+    onBackground: Colors.black,
+    surface: Colors.white,
+    onSurface: Colors.black);

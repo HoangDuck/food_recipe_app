@@ -30,7 +30,7 @@ class MyApp extends ConsumerWidget{
         theme: ThemeData(
         useMaterial3: true,
         // canvasColor: Colors.white,///here
-          colorScheme: const ColorScheme.highContrastLight(),
+          colorScheme: colorSchemeBottomAppBar,
       ),
         // theme: themeMode,
         localizationsDelegates: const [
