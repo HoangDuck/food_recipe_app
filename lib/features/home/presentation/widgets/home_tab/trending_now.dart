@@ -27,8 +27,6 @@ class TrendingNowWidget extends HookConsumerWidget{
         // ref.read(homeNotifierTrendingProvider.notifier).();
       }
     });
-
-
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Padding(
@@ -36,6 +34,7 @@ class TrendingNowWidget extends HookConsumerWidget{
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
         children:[
           Padding(
             padding: EdgeInsets.fromLTRB(0.w,0.h,20.w,16.h),
@@ -43,9 +42,12 @@ class TrendingNowWidget extends HookConsumerWidget{
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(AppStrings.trendingNow,style: AppTextStyles.poppinsH5Bold,),
-                const Spacer(),
-                Row(
+                  Expanded(
+                      child: Text(
+                    AppStrings.trendingNow,
+                    style: AppTextStyles.poppinsH5Bold,
+                  )),
+                  Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -68,10 +70,9 @@ class TrendingNowWidget extends HookConsumerWidget{
                     ),
                   ))
             ],
-          )),
+          ),),
         ]
       ),
     );
   }
-
 }

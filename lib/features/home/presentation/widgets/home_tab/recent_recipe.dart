@@ -30,11 +30,12 @@ class RecentRecipe extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    AppStrings.recentRecipe,
-                    style: AppTextStyles.poppinsH5Bold,
+                  Expanded(
+                    child: Text(
+                      AppStrings.recentRecipe,
+                      style: AppTextStyles.poppinsH5Bold,
+                    ),
                   ),
-                  const Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,

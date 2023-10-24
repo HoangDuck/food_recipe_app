@@ -36,12 +36,13 @@ class NotificationTab extends HookConsumerWidget{
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  AppStrings.notification,
-                  textAlign: TextAlign.start,
-                  style: AppTextStyles.homeBoldh4,
+                Expanded(
+                  child: Text(
+                    AppStrings.notification,
+                    textAlign: TextAlign.start,
+                    style: AppTextStyles.homeBoldh4,
+                  ),
                 ),
-                const Spacer(),
                 Image.asset(
                   AppImages.imgIconFilter,
                   width: 24.sp,

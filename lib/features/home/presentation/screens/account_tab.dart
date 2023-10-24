@@ -19,7 +19,6 @@ class AccountTab extends HookConsumerWidget{
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final pageController = usePageController(initialPage: 0);
     var currentPage = useState<TypeTabAccount>(TypeTabAccount.video);
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
@@ -62,7 +61,6 @@ class AccountTab extends HookConsumerWidget{
                     title: AppStrings.video,
                     onTap: () {
                       currentPage.value = TypeTabAccount.video;
-                      pageController.jumpToPage(0);
                     },
                     size: Size(160.w,34.h),
                     padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
@@ -78,7 +76,6 @@ class AccountTab extends HookConsumerWidget{
                     padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
                     onTap: () {
                       currentPage.value = TypeTabAccount.recipe;
-                      pageController.jumpToPage(1);
                     },
                     textSize: 12.sp,
                     isHighLight: currentPage.value == TypeTabAccount.recipe,
@@ -87,18 +84,17 @@ class AccountTab extends HookConsumerWidget{
               ],
             ),
           ),
-          Flexible(
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height,
-              child: PageView(
-                controller: pageController,
-                physics: const NeverScrollableScrollPhysics(),
-                children: [
-                  Container(),
-                  const ListRecipeProfile(),
-                ],
+          Row(
+            children: [
+              Visibility(
+                visible: currentPage.value == TypeTabAccount.video,
+                child: Expanded(child: Container()),
               ),
-            ),
+              Visibility(
+                visible: currentPage.value == TypeTabAccount.recipe,
+                child: const Expanded(child: ListRecipeProfile()),
+              ),
+            ],
           ),
           SizedBox(height: 106.h,)
         ],

@@ -38,7 +38,12 @@ class PopularCategory extends HookConsumerWidget{
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(AppStrings.popularCategory,style: AppTextStyles.poppinsH5Bold,),
+                  Expanded(
+                    child: Text(
+                      AppStrings.popularCategory,
+                      style: AppTextStyles.poppinsH5Bold,
+                    ),
+                  ),
                 ],
               ),
             ),

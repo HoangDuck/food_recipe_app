@@ -27,8 +27,11 @@ class PopularCreators extends ConsumerWidget{
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(AppStrings.popularCreator,style: AppTextStyles.poppinsH5Bold,),
-                    const Spacer(),
+                    Expanded(
+                        child: Text(
+                      AppStrings.popularCreator,
+                      style: AppTextStyles.poppinsH5Bold,
+                    )),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,

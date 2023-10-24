@@ -45,7 +45,7 @@ class OnBoardingScreen extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left:82.w,top: 57.h,right: 83.w),
+                  padding: EdgeInsets.only(left:85.w,top: 57.h,right: 85.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
