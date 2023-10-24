@@ -14,11 +14,11 @@ final appThemeProvider = StateNotifierProvider<AppThemeModeNotifier, ThemeMode>(
 );
 
 class AppThemeModeNotifier extends StateNotifier<ThemeMode> {
-  final StroageService stroageService;
+  final StorageService storageService;
 
   ThemeMode currentTheme = ThemeMode.light;
 
-  AppThemeModeNotifier(this.stroageService) : super(ThemeMode.light) {
+  AppThemeModeNotifier(this.storageService) : super(ThemeMode.light) {
     // getCurrentTheme();
   }
 
