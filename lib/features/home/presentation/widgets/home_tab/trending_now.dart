@@ -69,26 +69,6 @@ class TrendingNowWidget extends HookConsumerWidget{
                   ))
             ],
           )),
-          // SizedBox(
-          //   height: 257.h,
-          //   child: ListView.builder(
-          //       controller: scrollController,
-          //       itemCount: listFoodTrending.length,
-          //       scrollDirection: Axis.horizontal,
-          //       itemBuilder: (context, index) {
-          //         return GestureDetector(
-          //           onTap: () {
-          //             Navigator.pushNamed(context, Routers.recipeDetail,
-          //                 arguments: listFoodTrending[index].idMeal);
-          //           },
-          //           child: Padding(
-          //             padding: EdgeInsets.only(right: 16.w),
-          //             child: ItemVideo(meal: listFoodTrending[index]),
-          //           ),
-          //         );
-          //       },
-          //     ),
-          // ),
         ]
       ),
     );

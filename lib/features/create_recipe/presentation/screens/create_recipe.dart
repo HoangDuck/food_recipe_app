@@ -16,7 +16,6 @@ class CreateRecipeScreen extends HookConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
-    // final formIngredientList = ref.watch(formIngredientListProvider);
     // TODO: implement build
     return Scaffold(
       body: Column(
@@ -29,7 +28,50 @@ class CreateRecipeScreen extends HookConsumerWidget{
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _titleCreateRecipe(context),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(20.w, 56.h, 20.w, 12.h),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            GestureDetector(
+                              onTap:(){
+                                Navigator.pop(context);
+                              },
+                              child: Container(
+                                width: 24.sp,
+                                height: 24.sp,
+                                padding: EdgeInsets.zero,
+                                child: const Icon(Icons.arrow_back_rounded),
+                              ),
+                            ),
+                            const Spacer(),
+                            GestureDetector(
+                              onTap:(){
+                              },
+                              child: Container(
+                                width: 24.sp,
+                                height: 24.sp,
+                                padding: EdgeInsets.zero,
+                                child: const Icon(Icons.more_horiz),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 16.h),
+                          child: Text(
+                            AppStrings.createRecipe,
+                            style: AppTextStyles.poppinsH4Bold,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                   const DescriptionRecipeDetail(),
                   const FormAddIngredients(),
                 ],
@@ -60,53 +102,6 @@ class CreateRecipeScreen extends HookConsumerWidget{
               size: Size(335.w, 56.h),
             ),
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _titleCreateRecipe(BuildContext context){
-    return Container(
-      padding: EdgeInsets.fromLTRB(20.w, 56.h, 20.w, 12.h),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap:(){
-                  Navigator.pop(context);
-                },
-                child: Container(
-                  width: 24.sp,
-                  height: 24.sp,
-                  padding: EdgeInsets.zero,
-                  child: const Icon(Icons.arrow_back_rounded),
-                ),
-              ),
-              const Spacer(),
-              GestureDetector(
-                onTap:(){
-                },
-                child: Container(
-                  width: 24.sp,
-                  height: 24.sp,
-                  padding: EdgeInsets.zero,
-                  child: const Icon(Icons.more_horiz),
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 16.h),
-            child: Text(
-              AppStrings.createRecipe,
-              style: AppTextStyles.poppinsH4Bold,
-            ),
-          )
         ],
       ),
     );

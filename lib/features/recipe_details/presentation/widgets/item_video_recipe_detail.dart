@@ -18,10 +18,6 @@ class ItemVideoRecipeDetail extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
-    return _videoPreview();
-  }
-
-  Widget _videoPreview(){
     return SizedBox(
       height: size.height.h,
       width: size.width.w,
