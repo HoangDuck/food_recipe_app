@@ -33,8 +33,6 @@ class PrimaryNoIconLargeButton extends StatelessWidget {
             padding.top.sp,
             padding.right.sp,
             padding.bottom.sp),
-        // height: size.height.sp,
-        // width: size.width.sp,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: isHighLight

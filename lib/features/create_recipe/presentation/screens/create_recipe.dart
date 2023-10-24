@@ -28,7 +28,7 @@ class CreateRecipeScreen extends HookConsumerWidget{
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
+                  Padding(
                     padding: EdgeInsets.fromLTRB(20.w, 56.h, 20.w, 12.h),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
