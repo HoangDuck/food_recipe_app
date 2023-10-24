@@ -6,8 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class SharedPrefsService implements StroageService {
   SharedPreferences? sharedPreferences;
 
-  final Completer<SharedPreferences> initCompleter =
-  Completer<SharedPreferences>();
+  final Completer<SharedPreferences> initCompleter = Completer<SharedPreferences>();
 
   @override
   void init() {
