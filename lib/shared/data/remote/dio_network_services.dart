@@ -50,6 +50,7 @@ class DioNetworkService extends NetworkService with ExceptionHandlerMixin {
     final res = handleException(
           () => dio.post(
         endpoint,
+        options: AppConfig.optionHeader,
         data: data,
       ),
       endpoint: endpoint,
@@ -63,6 +64,7 @@ class DioNetworkService extends NetworkService with ExceptionHandlerMixin {
     final res = handleException(
           () => dio.get(
         endpoint,
+            options: AppConfig.optionHeader,
         queryParameters: queryParameters,
       ),
       endpoint: endpoint,

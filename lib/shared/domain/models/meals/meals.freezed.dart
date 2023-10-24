@@ -775,7 +775,7 @@ class __$$MealsImplCopyWithImpl<$Res>
           : dateModified // ignore: cast_nullable_to_non_nullable
               as String?,
       listIngredients: null == listIngredients
-          ? _value._listIngredients
+          ? _value.listIngredients
           : listIngredients // ignore: cast_nullable_to_non_nullable
               as List<Ingredients>,
     ));
@@ -839,8 +839,7 @@ class _$MealsImpl with DiagnosticableTreeMixin implements _Meals {
       this.strImageSource,
       this.strCreativeCommonsConfirmed,
       this.dateModified,
-      final List<Ingredients> listIngredients = const []})
-      : _listIngredients = listIngredients;
+      this.listIngredients = const []});
 
   factory _$MealsImpl.fromJson(Map<String, dynamic> json) =>
       _$$MealsImplFromJson(json);
@@ -951,14 +950,9 @@ class _$MealsImpl with DiagnosticableTreeMixin implements _Meals {
   final String? strCreativeCommonsConfirmed;
   @override
   final String? dateModified;
-  final List<Ingredients> _listIngredients;
   @override
   @JsonKey()
-  List<Ingredients> get listIngredients {
-    if (_listIngredients is EqualUnmodifiableListView) return _listIngredients;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_listIngredients);
-  }
+  final List<Ingredients> listIngredients;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1128,7 +1122,7 @@ class _$MealsImpl with DiagnosticableTreeMixin implements _Meals {
             (identical(other.strImageSource, strImageSource) || other.strImageSource == strImageSource) &&
             (identical(other.strCreativeCommonsConfirmed, strCreativeCommonsConfirmed) || other.strCreativeCommonsConfirmed == strCreativeCommonsConfirmed) &&
             (identical(other.dateModified, dateModified) || other.dateModified == dateModified) &&
-            const DeepCollectionEquality().equals(other._listIngredients, _listIngredients));
+            const DeepCollectionEquality().equals(other.listIngredients, listIngredients));
   }
 
   @JsonKey(ignore: true)
@@ -1188,7 +1182,7 @@ class _$MealsImpl with DiagnosticableTreeMixin implements _Meals {
         strImageSource,
         strCreativeCommonsConfirmed,
         dateModified,
-        const DeepCollectionEquality().hash(_listIngredients)
+        const DeepCollectionEquality().hash(listIngredients)
       ]);
 
   @JsonKey(ignore: true)

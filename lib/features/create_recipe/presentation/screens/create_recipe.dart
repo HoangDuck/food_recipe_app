@@ -1,3 +1,4 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/create_recipe/presentation/providers/create_recipe_provider.dart';
@@ -8,9 +9,9 @@ import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 import 'package:food_recipe_app/shared/widgets/app_button.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-class CreateRecipe extends HookConsumerWidget{
-  const CreateRecipe({super.key});
+@RoutePage()
+class CreateRecipeScreen extends HookConsumerWidget{
+  const CreateRecipeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

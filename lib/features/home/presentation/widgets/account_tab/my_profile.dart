@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/user_state/user_state_provider.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/account_tab/item_statistic.dart';
+import 'package:food_recipe_app/routes/app_route.dart';
 import 'package:food_recipe_app/shared/domain/models/users/user.dart';
 import 'package:food_recipe_app/shared/theme/app_images.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
@@ -10,7 +12,8 @@ import 'package:food_recipe_app/shared/theme/text_style.dart';
 import 'package:food_recipe_app/shared/widgets/app_button.dart';
 
 class MyProfile extends ConsumerWidget{
-  const MyProfile({super.key});
+  MyProfile({super.key});
+  final AppRoute appRouter = AppRoute();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -29,7 +32,7 @@ class MyProfile extends ConsumerWidget{
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _viewPersonalInfo(user),
+            _viewPersonalInfo(context,user),
             _viewStatisticInfo(user),
           ],
         ),
@@ -38,7 +41,7 @@ class MyProfile extends ConsumerWidget{
 
   }
 
-  Widget _viewPersonalInfo(User user){
+  Widget _viewPersonalInfo(BuildContext context,User user){
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +65,10 @@ class MyProfile extends ConsumerWidget{
             const Spacer(),
             SecondaryNoIconLargeButton(
               title: AppStrings.editProfile,
-              onTap: () {},
+              onTap: () {
+                // appRouter.pushNamed('OnBoardingRoute');
+                AutoRouter.of(context).pushNamed('OnBoardingRoute');
+              },
             ),
           ],
         ),

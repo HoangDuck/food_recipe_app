@@ -2,14 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/features/onboarding/presentation/screens/onboarding.dart';
-// import 'package:food_recipe_app/routes/app_route.dart';
-import 'package:food_recipe_app/routes/router.dart';
+import 'package:food_recipe_app/routes/app_route.dart';
 import 'package:food_recipe_app/shared/theme/app_theme.dart';
 class MyApp extends ConsumerWidget{
   MyApp({super.key});
 
-  // final appRouter = AppRoute();
+  final appRouter = AppRoute();
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // final themeMode = ref.watch(appThemeProvider);
@@ -24,9 +22,9 @@ class MyApp extends ConsumerWidget{
     // );
     return ScreenUtilInit(
       designSize: const Size(375,812),
-      child: MaterialApp(
+      child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        initialRoute: OnBoarding.routeName,
+        // initialRoute: Routers.onBoarding,
         theme: ThemeData(
         useMaterial3: true,
         // canvasColor: Colors.white,///here
@@ -39,7 +37,9 @@ class MyApp extends ConsumerWidget{
           // GlobalMaterialLocalizations.delegate,
           // DefaultGlobalWidgetsLocalizations.delegate,
         ],
-        onGenerateRoute: Routers.generateRoute,
+        routerDelegate: appRouter.delegate(),
+        routeInformationParser: appRouter.defaultRouteParser(),
+        // onGenerateRoute: Routers.generateRoute,
         supportedLocales: const [
           Locale("vi"),
           Locale("en"),

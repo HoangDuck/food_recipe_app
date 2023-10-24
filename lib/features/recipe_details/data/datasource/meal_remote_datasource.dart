@@ -36,17 +36,16 @@ class MealRemoteDataSource extends MealDatasource{
             ),
           );
         }
-        final resultSearchResponse = MealList.fromJson(jsonData['meals']??[]);
+        final resultSearchResponse = MealList.fromJson(jsonData??[]);
         if(resultSearchResponse.meals.isNotEmpty){
           Meals meal = resultSearchResponse.meals.first;
-          meal.listIngredients.addAll([
+          return Right(meal.copyWith(listIngredients: [
             Ingredients(idIngredient: '1',nameIngredient: meal.strIngredient1,imgIngredient: AppImages.imgIconNoodles,quantity: '200g'),
             Ingredients(idIngredient: '2',nameIngredient: meal.strIngredient2,imgIngredient: AppImages.imgIconSushi,quantity: '200g'),
             Ingredients(idIngredient: '3',nameIngredient: meal.strIngredient3,imgIngredient: AppImages.imgIconNoodles,quantity: '200g'),
             Ingredients(idIngredient: '4',nameIngredient: meal.strIngredient4,imgIngredient: AppImages.imgIconSushi,quantity: '200g'),
             Ingredients(idIngredient: '5',nameIngredient: meal.strIngredient5,imgIngredient: AppImages.imgIconSushi,quantity: '200g'),
-          ]);
-          return Right(meal);
+          ]));
         }
         return Left(
           AppException(

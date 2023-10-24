@@ -11,7 +11,7 @@ final homeDatasourceProvider = Provider.family<HomeDatasource, NetworkService>(
 );
 
 final homeRepositoryProvider = Provider<HomeRepository>((ref) {
-  final networkService = ref.watch(netwokServiceProvider);
+  final networkService = ref.watch(networkServiceProvider);
   final datasource = ref.watch(homeDatasourceProvider(networkService));
   final repository = HomeRepositoryImpl(datasource);
   return repository;

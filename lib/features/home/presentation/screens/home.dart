@@ -1,4 +1,6 @@
 
+import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,7 +10,7 @@ import 'package:food_recipe_app/features/home/presentation/screens/notification_
 import 'package:food_recipe_app/features/home/presentation/screens/save_recipe_tab.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/icon_tab.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/icon_tab_model.dart';
-import 'package:food_recipe_app/routes/router.dart';
+import 'package:food_recipe_app/routes/app_route.dart';
 import 'package:food_recipe_app/shared/theme/app_bottom_bar_shape.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/app_images.dart';
@@ -21,8 +23,9 @@ enum TypeTabBottomAppBar {
   profile
 }
 
-class Home extends HookConsumerWidget {
-  const Home({super.key});
+@RoutePage()
+class HomeScreen extends HookConsumerWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -126,7 +129,7 @@ class Home extends HookConsumerWidget {
         width: 48.sp,
         child: FloatingActionButton.large(
           onPressed: () {
-            Navigator.pushNamed(context, Routers.createRecipe);
+            context.pushRoute(const CreateRecipeRoute());
           },
           elevation: 0,
           backgroundColor: AppColors.buttonPrimaryNoIconLargeColor,

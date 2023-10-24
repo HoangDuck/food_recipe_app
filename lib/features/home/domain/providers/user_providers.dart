@@ -16,7 +16,7 @@ final userDatasourceLocalProvider = Provider.family<UserDatasourceLocal, void>(
 );
 
 final userRepositoryProvider = Provider<UserRepository>((ref) {
-  final networkService = ref.watch(netwokServiceProvider);
+  final networkService = ref.watch(networkServiceProvider);
   final datasource = ref.watch(userDatasourceProvider(networkService));
   final datasourceLocal = ref.watch(userDatasourceLocalProvider(1));
   final repository = UserRepositoryImpl(datasource,datasourceLocal);

@@ -8,7 +8,7 @@ part 'meals.freezed.dart';
 // But if Person was not serializable, we could skip it.
 part 'meals.g.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class Meals with _$Meals {
   const factory Meals({
     String? idMeal,

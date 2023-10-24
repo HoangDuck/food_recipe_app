@@ -1,3 +1,4 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,9 +9,10 @@ import 'package:food_recipe_app/features/recipe_details/presentation/widgets/vid
 import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 
-class RecipeDetails extends ConsumerWidget{
+@RoutePage()
+class RecipeDetailsScreen extends ConsumerWidget{
   final String idMeal;
-  const RecipeDetails({super.key,required this.idMeal});
+  const RecipeDetailsScreen({super.key,required this.idMeal});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

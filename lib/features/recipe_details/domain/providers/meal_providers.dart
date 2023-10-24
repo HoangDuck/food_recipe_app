@@ -11,7 +11,7 @@ final mealDatasourceProvider = Provider.family<MealDatasource, NetworkService>(
 );
 
 final mealRepositoryProvider = Provider<MealRepository>((ref) {
-  final networkService = ref.watch(netwokServiceProvider);
+  final networkService = ref.watch(networkServiceProvider);
   final datasource = ref.watch(mealDatasourceProvider(networkService));
   final repository = MealRepositoryImpl(datasource);
   return repository;

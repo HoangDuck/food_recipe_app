@@ -49,7 +49,7 @@ class AccountTab extends HookConsumerWidget{
               ),
             ),
           ),
-          const MyProfile(),
+          MyProfile(),
           const DividerBorder(),
           Padding(
             padding: EdgeInsets.fromLTRB(20.w,12.h,20.w,12.h),

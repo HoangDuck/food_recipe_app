@@ -1,22 +1,21 @@
 
-// import 'package:auto_route/auto_route.dart';
-// import 'package:food_recipe_app/features/onboarding/presentation/screens/onboarding.dart';
-// part 'app_route.gr.dart';
-//
-// @AutoRouterConfig()
-// class AppRoute extends _$AppRoute {
-// // @override
-// // replaceInRouteName
-//
-//   @override
-//   RouteType get defaultRouteType =>
-//       const RouteType.material(); //.cupertino, .adaptive ..etc
-//
-//   @override
-//   List<AutoRoute> get routes => [
-//     /// routes go here
-//     AutoRoute(page: OnBoarding.page, initial: true),
-//     // AutoRoute(page: LoginRoute.page),
-//     // AutoRoute(page: DashboardRoute.page),
-//   ];
-// }
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:food_recipe_app/features/create_recipe/presentation/screens/create_recipe.dart';
+import 'package:food_recipe_app/features/home/presentation/screens/home.dart';
+import 'package:food_recipe_app/features/onboarding/presentation/screens/onboarding.dart';
+import 'package:food_recipe_app/features/recipe_details/presentation/screens/recipe_details.dart';
+
+part 'app_route.gr.dart';
+
+@AutoRouterConfig(replaceInRouteName: 'Screen,Route')
+class AppRoute extends _$AppRoute {
+
+  @override
+  List<AutoRoute> get routes => [
+    AutoRoute(page: OnBoardingRoute.page,initial: true),
+    AutoRoute(page: HomeRoute.page),
+    AutoRoute(page: CreateRecipeRoute.page),
+    AutoRoute(page: RecipeDetailsRoute.page),
+  ];
+}

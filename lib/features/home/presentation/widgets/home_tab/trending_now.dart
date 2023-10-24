@@ -1,9 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/home_state/home_state_provider.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/item_video_home.dart';
-import 'package:food_recipe_app/routes/router.dart';
+import 'package:food_recipe_app/routes/app_route.dart';
 import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
@@ -59,8 +60,7 @@ class TrendingNowWidget extends HookConsumerWidget{
             children: [
               ...List.generate(listFoodTrending.length, (index) => GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, Routers.recipeDetail,
-                          arguments: listFoodTrending[index].idMeal);
+                      context.pushRoute(RecipeDetailsRoute(idMeal: listFoodTrending[index].idMeal??''));
                     },
                     child: Padding(
                       padding: EdgeInsets.only(right: 16.w),

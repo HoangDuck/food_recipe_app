@@ -16,7 +16,7 @@ final notificationDatasourceLocalProvider = Provider.family<NotificationDatasour
 );
 
 final notificationRepositoryProvider = Provider<NotificationRepository>((ref) {
-  final networkService = ref.watch(netwokServiceProvider);
+  final networkService = ref.watch(networkServiceProvider);
   final datasource = ref.watch(notificationDatasourceProvider(networkService));
   final datasourceLocal = ref.watch(notificationDatasourceLocalProvider(1));
   final repository = NotificationRepositoryImpl(datasource,datasourceLocal);
