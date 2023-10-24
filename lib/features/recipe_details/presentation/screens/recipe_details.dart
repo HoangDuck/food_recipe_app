@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,7 +41,7 @@ class RecipeDetailsScreen extends ConsumerWidget{
                       children: [
                         GestureDetector(
                           onTap:(){
-                            Navigator.pop(context);
+                            context.popRoute();
                           },
                           child: Container(
                             width: 24.sp,

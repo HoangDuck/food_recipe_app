@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/create_recipe/presentation/providers/create_recipe_provider.dart';
@@ -40,7 +41,7 @@ class CreateRecipeScreen extends HookConsumerWidget{
                           children: [
                             GestureDetector(
                               onTap:(){
-                                Navigator.pop(context);
+                                context.popRoute();
                               },
                               child: Container(
                                 width: 24.sp,
