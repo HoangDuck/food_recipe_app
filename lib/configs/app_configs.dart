@@ -9,4 +9,8 @@ class AppConfig {
       'content-type': 'application/json',
     },
   );
+  static Map<String,String> baseHeader = {
+    'accept': 'application/json',
+    'content-type': 'application/json',
+  };
 }

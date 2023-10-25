@@ -14,6 +14,15 @@ class MyApp extends ConsumerWidget{
       designSize: const Size(375,812),
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
+        builder:  (context, child){
+          final MediaQueryData data = MediaQuery.of(context);
+          return MediaQuery(
+            data: data.copyWith(
+                textScaler: TextScaler.noScaling,
+            ),
+            child: child!,
+          );
+        },
         theme: ThemeData(
         useMaterial3: true,
           colorScheme: colorSchemeBottomAppBar,

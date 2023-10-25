@@ -24,9 +24,7 @@ class PrimaryNoIconLargeButton extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return GestureDetector(
-      onTap: () {
-        onTap();
-      },
+      onTap: onTap,
       child: Container(
         padding: EdgeInsets.fromLTRB(
             padding.left.sp,
@@ -73,9 +71,7 @@ class PrimaryIconLargeButton extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return GestureDetector(
-      onTap: () {
-        onTap();
-      },
+      onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 16.h,horizontal: 32.w),
         // height: 54.h,

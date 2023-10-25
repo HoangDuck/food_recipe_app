@@ -1,5 +1,6 @@
 
 import 'package:dartz/dartz.dart';
+import 'package:food_recipe_app/configs/app_configs.dart';
 import 'package:food_recipe_app/shared/data/remote/network_service.dart';
 import 'package:food_recipe_app/shared/domain/models/categories/category_list/categories.dart';
 import 'package:food_recipe_app/shared/domain/models/categories/category_list/category_list.dart';
@@ -27,6 +28,7 @@ class HomeRemoteDatasource extends HomeDatasource {
     // TODO: implement searchMeals
     final response = await networkService.get(
       '/search.php?s=a',
+      header: AppConfig.baseHeader
     );
 
     return response.fold(
@@ -53,6 +55,7 @@ class HomeRemoteDatasource extends HomeDatasource {
     // TODO: implement searchMeals
     final response = await networkService.get(
       '/search.php?f=$query',
+        header: AppConfig.baseHeader
     );
 
     return response.fold(
@@ -79,6 +82,7 @@ class HomeRemoteDatasource extends HomeDatasource {
     // TODO: implement fetchAllCategories
     final response = await networkService.get(
       '/categories.php',
+        header: AppConfig.baseHeader
     );
 
     return response.fold(
@@ -105,6 +109,7 @@ class HomeRemoteDatasource extends HomeDatasource {
     // TODO: implement fetchMealByCategories
     final response = await networkService.get(
       '/filter.php?c=$category',
+        header: AppConfig.baseHeader
     );
 
     return response.fold(
@@ -131,6 +136,7 @@ class HomeRemoteDatasource extends HomeDatasource {
     // TODO: implement fetchMealsRecentRecipe
     final response = await networkService.get(
       '/search.php?f=a',
+        header: AppConfig.baseHeader
     );
 
     return response.fold(

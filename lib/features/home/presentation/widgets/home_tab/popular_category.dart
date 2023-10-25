@@ -18,7 +18,7 @@ class PopularCategory extends HookConsumerWidget{
   Widget build(BuildContext context, WidgetRef ref) {
     final stateCategory = ref.watch(homeNotifierPopularProvider);
     List<Categories> listCategories = stateCategory.productList as List<Categories>;
-    var currentIndexCategory = useState<String>(listCategories.isEmpty
+    var currentIndexCategory = useValueNotifier<String>(listCategories.isEmpty
         ? 'Beef'
         : (listCategories.first.strCategory ?? 'Beef'));
     var stateMealByCategory = ref.watch(categoryNotifierProvider(currentIndexCategory.value));
@@ -47,37 +47,49 @@ class PopularCategory extends HookConsumerWidget{
                 ],
               ),
             ),
-            SizedBox(
-              height: 34.h,
-              child: ListView.builder(
-                itemCount: listCategories.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return ItemCategoryPopular(
-                    onTap: (id) async {
-                      currentIndexCategory.value = id;
-                    },
-                    categories: listCategories[index],
-                    isHighLight: listCategories[index].strCategory ==
-                        currentIndexCategory.value,
-                  );
-                },
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 20.h),
-              child: SizedBox(
-                height: 231.h,
-                child: ListView.builder(
-                  itemCount: listMealByCategories.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return ItemMealByCategory(
-                      meals: listMealByCategories[index],
-                    );
-                  },
-                ),
-              ),
+            ValueListenableBuilder(
+              valueListenable: currentIndexCategory,
+              builder: (context, currentCategory, child) {
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 34.h,
+                      child: ListView.builder(
+                        itemCount: listCategories.length,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return ItemCategoryPopular(
+                            onTap: (id) async {
+                              currentIndexCategory.value = id;
+                              ref.invalidate(categoryNotifierProvider(currentCategory));
+                            },
+                            categories: listCategories[index],
+                            isHighLight: listCategories[index].strCategory ==
+                                currentCategory,
+                          );
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20.h),
+                      child: SizedBox(
+                        height: 231.h,
+                        child: ListView.builder(
+                          itemCount: listMealByCategories.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return ItemMealByCategory(
+                              meals: listMealByCategories[index],
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              }
             ),
           ]
       ),

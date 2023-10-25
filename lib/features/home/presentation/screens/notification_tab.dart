@@ -21,7 +21,7 @@ class NotificationTab extends HookConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController = usePageController(initialPage: 0);
-    var currentPage = useState<TypeTabNotifications>(TypeTabNotifications.all);
+    var currentPage = useValueNotifier<TypeTabNotifications>(TypeTabNotifications.all);
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Column(
@@ -54,52 +54,57 @@ class NotificationTab extends HookConsumerWidget{
         ),
         Padding(
           padding: EdgeInsets.fromLTRB(20.w,12.h,20.w,12.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: PrimaryNoIconLargeButton(
-                  title: AppStrings.all,
-                  onTap: () {
-                    currentPage.value = TypeTabNotifications.all;
-                    pageController.jumpToPage(0);
-                  },
-                  size: Size(107.w,34.h),
-                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-                  textSize: 12.sp,
-                  isHighLight: currentPage.value == TypeTabNotifications.all,
-                ),
-              ),
-              SizedBox(width: 7.w,),
-              Expanded(
-                child: PrimaryNoIconLargeButton(
-                  title: AppStrings.unRead,
-                  size: Size(107.w,34.h),
-                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-                  onTap: () {
-                    currentPage.value = TypeTabNotifications.unread;
-                    pageController.jumpToPage(1);
-                  },
-                  textSize: 12.sp,
-                  isHighLight: currentPage.value == TypeTabNotifications.unread,
-                ),
-              ),
-              SizedBox(width: 7.w,),
-              Expanded(
-                child: PrimaryNoIconLargeButton(
-                  title: AppStrings.read,
-                  size: Size(107.w,34.h),
-                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-                  onTap: () {
-                    currentPage.value = TypeTabNotifications.read;
-                    pageController.jumpToPage(2);
-                  },
-                  textSize: 12.sp,
-                  isHighLight: currentPage.value == TypeTabNotifications.read,
-                ),
-              ),
-            ],
+          child: ValueListenableBuilder(
+            valueListenable: currentPage,
+            builder: (context, currentTab, child) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: PrimaryNoIconLargeButton(
+                      title: AppStrings.all,
+                      onTap: () {
+                        currentPage.value = TypeTabNotifications.all;
+                        pageController.jumpToPage(0);
+                      },
+                      size: Size(107.w,34.h),
+                      padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
+                      textSize: 12.sp,
+                      isHighLight: currentPage == TypeTabNotifications.all,
+                    ),
+                  ),
+                  SizedBox(width: 7.w,),
+                  Expanded(
+                    child: PrimaryNoIconLargeButton(
+                      title: AppStrings.unRead,
+                      size: Size(107.w,34.h),
+                      padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
+                      onTap: () {
+                        currentPage.value = TypeTabNotifications.unread;
+                        pageController.jumpToPage(1);
+                      },
+                      textSize: 12.sp,
+                      isHighLight: currentPage == TypeTabNotifications.unread,
+                    ),
+                  ),
+                  SizedBox(width: 7.w,),
+                  Expanded(
+                    child: PrimaryNoIconLargeButton(
+                      title: AppStrings.read,
+                      size: Size(107.w,34.h),
+                      padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
+                      onTap: () {
+                        currentPage.value = TypeTabNotifications.read;
+                        pageController.jumpToPage(2);
+                      },
+                      textSize: 12.sp,
+                      isHighLight: currentPage.value == TypeTabNotifications.read,
+                    ),
+                  ),
+                ],
+              );
+            }
           ),
         ),
         Expanded(

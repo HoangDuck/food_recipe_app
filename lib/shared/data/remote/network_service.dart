@@ -14,10 +14,12 @@ abstract class NetworkService {
   Future<Either<AppException, Response>> get(
       String endpoint, {
         Map<String, dynamic>? queryParameters,
+        Map<String, String>? header
       });
 
   Future<Either<AppException, Response>> post(
       String endpoint, {
         Map<String, dynamic>? data,
+        Map<String, String>? header
       });
 }

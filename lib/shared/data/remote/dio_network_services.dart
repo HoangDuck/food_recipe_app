@@ -46,11 +46,13 @@ class DioNetworkService extends NetworkService with ExceptionHandlerMixin {
 
   @override
   Future<Either<AppException, response.Response>> post(String endpoint,
-      {Map<String, dynamic>? data}) {
+      {Map<String, dynamic>? data, Map<String, String>? header}) {
     final res = handleException(
           () => dio.post(
         endpoint,
-        options: AppConfig.optionHeader,
+        options: Options(
+          headers: header,
+        ),
         data: data,
       ),
       endpoint: endpoint,
@@ -60,11 +62,13 @@ class DioNetworkService extends NetworkService with ExceptionHandlerMixin {
 
   @override
   Future<Either<AppException, response.Response>> get(String endpoint,
-      {Map<String, dynamic>? queryParameters}) {
+      {Map<String, dynamic>? queryParameters, Map<String, String>? header}) {
     final res = handleException(
           () => dio.get(
         endpoint,
-            options: AppConfig.optionHeader,
+            options: Options(
+              headers: header,
+            ),
         queryParameters: queryParameters,
       ),
       endpoint: endpoint,

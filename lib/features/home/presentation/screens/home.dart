@@ -32,7 +32,7 @@ class HomeScreen extends HookConsumerWidget {
     // TODO: implement build
     ScreenUtil.init(context, designSize: const Size(375,812));
     final pageController = usePageController(initialPage: 0);
-    var currentPage = useState<TypeTabBottomAppBar>(TypeTabBottomAppBar.home);
+    var currentPage = useValueNotifier<TypeTabBottomAppBar>(TypeTabBottomAppBar.home);
     return Scaffold(
       backgroundColor: Colors.white,extendBody: true,
       resizeToAvoidBottomInset: false,
@@ -47,81 +47,85 @@ class HomeScreen extends HookConsumerWidget {
           AccountTab(),
         ],
       ),
-      bottomNavigationBar: BottomAppBar(
-        // color: Colors.white,
-        elevation:30,
-        shadowColor: AppColors.borderTextField,
-        padding: EdgeInsets.zero,
-        notchMargin: 4.sp,
-        // height: 106.sp,
-        shape: const CircularNotchedRectangleCustom(),
-        child: SizedBox(
-          height: 106.h,
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              Expanded(
-                flex:1,
-                child: IconTab(
-                  onTap: () {
-                    currentPage.value = TypeTabBottomAppBar.home;
-                    pageController.jumpToPage(0);
-                  },
-                  isHighLight: currentPage.value==TypeTabBottomAppBar.home,
-                  padding: EdgeInsets.only(top:16.h,left: 0.w,right: 12.w,bottom: 50.h),
-                  iconTabModel: IconTabModel(
-                      enableImage: AppImages.imgIconHomePressed,
-                      disableImage: AppImages.imgIconHome),
-                ),
+      bottomNavigationBar: ValueListenableBuilder(
+          valueListenable: currentPage,
+        builder: (context, currentPageType,child) {
+          return BottomAppBar(
+            // color: Colors.white,
+            elevation:30,
+            shadowColor: AppColors.borderTextField,
+            padding: EdgeInsets.zero,
+            notchMargin: 4.sp,
+            // height: 106.sp,
+            shape: const CircularNotchedRectangleCustom(),
+            child: SizedBox(
+              height: 106.h,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Expanded(
+                    flex:1,
+                    child: IconTab(
+                      onTap: () {
+                        currentPage.value = TypeTabBottomAppBar.home;
+                        pageController.jumpToPage(0);
+                      },
+                      isHighLight: currentPage.value==TypeTabBottomAppBar.home,
+                      padding: EdgeInsets.only(top:16.h,left: 0.w,right: 12.w,bottom: 50.h),
+                      iconTabModel: IconTabModel(
+                          enableImage: AppImages.imgIconHomePressed,
+                          disableImage: AppImages.imgIconHome),
+                    ),
+                  ),
+                  Expanded(
+                    flex:1,
+                    child: IconTab(
+                      onTap: () {
+                        currentPage.value = TypeTabBottomAppBar.discover;
+                        pageController.jumpToPage(1);
+                      },
+                      isHighLight: currentPageType==TypeTabBottomAppBar.discover,
+                      padding: EdgeInsets.only(top:16.h,left: 12.w,right: 103.w,bottom: 50.h),
+                      iconTabModel: IconTabModel(
+                          enableImage: AppImages.imgIconDiscoverPressed,
+                          disableImage: AppImages.imgIconDiscover),
+                    ),
+                  ),
+                  const Spacer(),
+                  Expanded(
+                    flex:1,
+                    child: IconTab(
+                      onTap: () {
+                        currentPage.value = TypeTabBottomAppBar.notification;
+                        pageController.jumpToPage(2);
+                      },
+                      isHighLight: currentPageType==TypeTabBottomAppBar.notification,
+                      padding: EdgeInsets.only(top:16.h,left: 103.w,right: 12.w,bottom: 50.h),
+                      iconTabModel: IconTabModel(
+                          enableImage: AppImages.imgIconNotificationPressed,
+                          disableImage: AppImages.imgIconNotification),
+                    ),
+                  ),
+                  Expanded(
+                    flex:1,
+                    child: IconTab(
+                      onTap: () {
+                        currentPage.value = TypeTabBottomAppBar.profile;
+                        pageController.jumpToPage(3);
+                      },
+                      isHighLight: currentPageType==TypeTabBottomAppBar.profile,
+                      padding: EdgeInsets.only(top:16.h,left: 12.w,right: 32.w,bottom: 50.h),
+                      iconTabModel: IconTabModel(
+                          enableImage: AppImages.imgIconAccountPressed,
+                          disableImage: AppImages.imgIconAccount),
+                    ),
+                  ),
+                ],
               ),
-              Expanded(
-                flex:1,
-                child: IconTab(
-                  onTap: () {
-                    currentPage.value = TypeTabBottomAppBar.discover;
-                    pageController.jumpToPage(1);
-                  },
-                  isHighLight: currentPage.value==TypeTabBottomAppBar.discover,
-                  padding: EdgeInsets.only(top:16.h,left: 12.w,right: 103.w,bottom: 50.h),
-                  iconTabModel: IconTabModel(
-                      enableImage: AppImages.imgIconDiscoverPressed,
-                      disableImage: AppImages.imgIconDiscover),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                flex:1,
-                child: IconTab(
-                  onTap: () {
-                    currentPage.value = TypeTabBottomAppBar.notification;
-                    pageController.jumpToPage(2);
-                  },
-                  isHighLight: currentPage.value==TypeTabBottomAppBar.notification,
-                  padding: EdgeInsets.only(top:16.h,left: 103.w,right: 12.w,bottom: 50.h),
-                  iconTabModel: IconTabModel(
-                      enableImage: AppImages.imgIconNotificationPressed,
-                      disableImage: AppImages.imgIconNotification),
-                ),
-              ),
-              Expanded(
-                flex:1,
-                child: IconTab(
-                  onTap: () {
-                    currentPage.value = TypeTabBottomAppBar.profile;
-                    pageController.jumpToPage(3);
-                  },
-                  isHighLight: currentPage.value==TypeTabBottomAppBar.profile,
-                  padding: EdgeInsets.only(top:16.h,left: 12.w,right: 32.w,bottom: 50.h),
-                  iconTabModel: IconTabModel(
-                      enableImage: AppImages.imgIconAccountPressed,
-                      disableImage: AppImages.imgIconAccount),
-                ),
-              ),
-            ],
-          ),
-        ),
-
+            ),
+          );
+        }
       ),
       floatingActionButton: SizedBox(
         height: 48.sp,

@@ -19,7 +19,7 @@ class AccountTab extends HookConsumerWidget{
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    var currentPage = useState<TypeTabAccount>(TypeTabAccount.video);
+    var currentPage = useValueNotifier<TypeTabAccount>(TypeTabAccount.video);
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return SingleChildScrollView(
@@ -52,49 +52,59 @@ class AccountTab extends HookConsumerWidget{
           const DividerBorder(),
           Padding(
             padding: EdgeInsets.fromLTRB(20.w,12.h,20.w,12.h),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: PrimaryNoIconLargeButton(
-                    title: AppStrings.video,
-                    onTap: () {
-                      currentPage.value = TypeTabAccount.video;
-                    },
-                    size: Size(160.w,34.h),
-                    padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-                    textSize: 12.sp,
-                    isHighLight: currentPage.value == TypeTabAccount.video,
-                  ),
-                ),
-                SizedBox(width: 16.w,),
-                Expanded(
-                  child: PrimaryNoIconLargeButton(
-                    title: AppStrings.recipe,
-                    size: Size(160.w,34.h),
-                    padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-                    onTap: () {
-                      currentPage.value = TypeTabAccount.recipe;
-                    },
-                    textSize: 12.sp,
-                    isHighLight: currentPage.value == TypeTabAccount.recipe,
-                  ),
-                ),
-              ],
+            child: ValueListenableBuilder(
+              valueListenable:currentPage,
+              builder: (context, currentTab, child) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: PrimaryNoIconLargeButton(
+                        title: AppStrings.video,
+                        onTap: () {
+                          currentPage.value = TypeTabAccount.video;
+                        },
+                        size: Size(160.w,34.h),
+                        padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
+                        textSize: 12.sp,
+                        isHighLight: currentTab == TypeTabAccount.video,
+                      ),
+                    ),
+                    SizedBox(width: 16.w,),
+                    Expanded(
+                      child: PrimaryNoIconLargeButton(
+                        title: AppStrings.recipe,
+                        size: Size(160.w,34.h),
+                        padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
+                        onTap: () {
+                          currentPage.value = TypeTabAccount.recipe;
+                        },
+                        textSize: 12.sp,
+                        isHighLight: currentTab == TypeTabAccount.recipe,
+                      ),
+                    ),
+                  ],
+                );
+              }
             ),
           ),
-          Row(
-            children: [
-              Visibility(
-                visible: currentPage.value == TypeTabAccount.video,
-                child: Expanded(child: Container()),
-              ),
-              Visibility(
-                visible: currentPage.value == TypeTabAccount.recipe,
-                child: const Expanded(child: ListRecipeProfile()),
-              ),
-            ],
+          ValueListenableBuilder(
+            valueListenable: currentPage,
+            builder: (context, currentTab, child) {
+              return Row(
+                children: [
+                  Visibility(
+                    visible: currentTab == TypeTabAccount.video,
+                    child: Expanded(child: Container()),
+                  ),
+                  Visibility(
+                    visible: currentTab == TypeTabAccount.recipe,
+                    child: const Expanded(child: ListRecipeProfile()),
+                  ),
+                ],
+              );
+            }
           ),
           SizedBox(height: 106.h,)
         ],

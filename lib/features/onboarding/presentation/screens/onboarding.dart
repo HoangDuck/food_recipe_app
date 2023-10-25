@@ -19,15 +19,10 @@ class OnBoardingScreen extends ConsumerWidget {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return Scaffold(
       backgroundColor: Colors.black,
-      body: SingleChildScrollView(
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(AppImages.imgBackgroundOnBoard),
-                fit: BoxFit.cover
-            ),
-          ),
-          child: Container(
+      body: Stack(
+        children: [
+          Image.asset(AppImages.imgBackgroundOnBoard),
+          Container(
             decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
@@ -45,7 +40,7 @@ class OnBoardingScreen extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left:85.w,top: 57.h,right: 85.w),
+                  padding: EdgeInsets.only(top: 57.h),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,17 +60,15 @@ class OnBoardingScreen extends ConsumerWidget {
                           style: AppTextStyles.onBoardBold600,
                         ),
                       ),
-                      Expanded(
-                        child: Text(
-                          AppStrings.premiumRecipe,
-                          style: AppTextStyles.onBoardBold400,
-                        ),
+                      Text(
+                        AppStrings.premiumRecipe,
+                        style: AppTextStyles.onBoardBold400,
                       ),
                     ],
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 317.h,right: 64.w,left: 64.w,bottom: 0.h),
+                  padding: EdgeInsets.only(top: 377.h,bottom: 0.h),
                   child: Text(
                     AppStrings.letsCooking,
                     textAlign: TextAlign.center,
@@ -83,7 +76,7 @@ class OnBoardingScreen extends ConsumerWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 24.h,right: 73.w,left: 73.w,bottom: 40.h),
+                  padding: EdgeInsets.only(top: 24.h,bottom: 40.h),
                   child: Text(
                     AppStrings.findBestRecipeForCooking,
                     textAlign: TextAlign.center,
@@ -92,7 +85,7 @@ class OnBoardingScreen extends ConsumerWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(84.w, 0.h, 84.w, 82.h),
+                  padding: EdgeInsets.fromLTRB(84.w, 0.h, 84.w,0.w),
                   child: PrimaryIconLargeButton(
                     onTap: () {
                       context.pushRoute(
@@ -106,7 +99,7 @@ class OnBoardingScreen extends ConsumerWidget {
               ],
             ),
           ),
-        ),
+        ],
       ),
     );
   }

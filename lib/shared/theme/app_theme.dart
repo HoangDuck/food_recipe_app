@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app/shared/data/local/storage_service.dart';
-import 'package:food_recipe_app/shared/domain/providers/sharedpreferences_storage_service_provider.dart';
+// import 'package:food_recipe_app/shared/domain/providers/sharedpreferences_storage_service_provider.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 import 'package:food_recipe_app/shared/theme/text_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final appThemeProvider = StateNotifierProvider<AppThemeModeNotifier, ThemeMode>(
-      (ref) {
-    final storage = ref.watch(storageServiceProvider);
-    return AppThemeModeNotifier(storage);
-  },
-);
+// final appThemeProvider = StateNotifierProvider<AppThemeModeNotifier, ThemeMode>(
+//       (ref) {
+//     final storage = ref.watch(storageServiceProvider);
+//     return AppThemeModeNotifier(storage);
+//   },
+// );
 
 class AppThemeModeNotifier extends StateNotifier<ThemeMode> {
   final StorageService storageService;

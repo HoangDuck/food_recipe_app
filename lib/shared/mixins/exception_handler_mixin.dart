@@ -9,8 +9,7 @@ import 'package:food_recipe_app/shared/domain/models/response.dart' as response;
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
 mixin ExceptionHandlerMixin on NetworkService {
-  Future<Either<AppException, response.Response>>
-  handleException<T extends Object>(
+  Future<Either<AppException, response.Response>> handleException<T extends Object>(
       Future<Response<dynamic>> Function() handler,
       {String endpoint = ''}) async {
     try {

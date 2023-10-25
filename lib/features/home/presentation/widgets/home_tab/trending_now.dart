@@ -19,14 +19,21 @@ class TrendingNowWidget extends HookConsumerWidget{
     final state = ref.watch(homeNotifierTrendingProvider);
     List<Meals> listFoodTrending = state.productList as List<Meals>;
     final scrollController = useScrollController();
-    scrollController.addListener(() {
-      double maxScroll = scrollController.position.maxScrollExtent;
-      double currentScroll = scrollController.position.pixels;
-      double delta = MediaQuery.of(context).size.width * 0.20;
-      if (maxScroll - currentScroll <= delta) {
-        // ref.read(homeNotifierTrendingProvider.notifier).();
+    useEffect(() {
+      listenerLoadMore(){
+        double maxScroll = scrollController.position.maxScrollExtent;
+        double currentScroll = scrollController.position.pixels;
+        double delta = MediaQuery.of(context).size.width * 0.20;
+        if (maxScroll - currentScroll <= delta) {
+
+        }
       }
-    });
+      scrollController.addListener(listenerLoadMore);
+      return (){
+        scrollController.removeListener(listenerLoadMore);
+      };
+    }, [key]);
+
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Padding(
