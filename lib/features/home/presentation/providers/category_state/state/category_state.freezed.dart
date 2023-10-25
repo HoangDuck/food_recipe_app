@@ -15,39 +15,41 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$CategoryState {
+mixin _$CategoryState<T> {
   int get total => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
+  CategoryConcreteState get state => throw _privateConstructorUsedError;
   bool get hasData => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   int get selectIndex => throw _privateConstructorUsedError;
-  List<Meals> get listMealsByCategory => throw _privateConstructorUsedError;
+  List<T> get listMealsByCategory => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CategoryStateCopyWith<CategoryState> get copyWith =>
+  $CategoryStateCopyWith<T, CategoryState<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CategoryStateCopyWith<$Res> {
+abstract class $CategoryStateCopyWith<T, $Res> {
   factory $CategoryStateCopyWith(
-          CategoryState value, $Res Function(CategoryState) then) =
-      _$CategoryStateCopyWithImpl<$Res, CategoryState>;
+          CategoryState<T> value, $Res Function(CategoryState<T>) then) =
+      _$CategoryStateCopyWithImpl<T, $Res, CategoryState<T>>;
   @useResult
   $Res call(
       {int total,
       int page,
+      CategoryConcreteState state,
       bool hasData,
       String message,
       bool isLoading,
       int selectIndex,
-      List<Meals> listMealsByCategory});
+      List<T> listMealsByCategory});
 }
 
 /// @nodoc
-class _$CategoryStateCopyWithImpl<$Res, $Val extends CategoryState>
-    implements $CategoryStateCopyWith<$Res> {
+class _$CategoryStateCopyWithImpl<T, $Res, $Val extends CategoryState<T>>
+    implements $CategoryStateCopyWith<T, $Res> {
   _$CategoryStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -60,6 +62,7 @@ class _$CategoryStateCopyWithImpl<$Res, $Val extends CategoryState>
   $Res call({
     Object? total = null,
     Object? page = null,
+    Object? state = null,
     Object? hasData = null,
     Object? message = null,
     Object? isLoading = null,
@@ -75,6 +78,10 @@ class _$CategoryStateCopyWithImpl<$Res, $Val extends CategoryState>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as CategoryConcreteState,
       hasData: null == hasData
           ? _value.hasData
           : hasData // ignore: cast_nullable_to_non_nullable
@@ -94,35 +101,36 @@ class _$CategoryStateCopyWithImpl<$Res, $Val extends CategoryState>
       listMealsByCategory: null == listMealsByCategory
           ? _value.listMealsByCategory
           : listMealsByCategory // ignore: cast_nullable_to_non_nullable
-              as List<Meals>,
+              as List<T>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$CategoryStateImplCopyWith<$Res>
-    implements $CategoryStateCopyWith<$Res> {
-  factory _$$CategoryStateImplCopyWith(
-          _$CategoryStateImpl value, $Res Function(_$CategoryStateImpl) then) =
-      __$$CategoryStateImplCopyWithImpl<$Res>;
+abstract class _$$CategoryStateImplCopyWith<T, $Res>
+    implements $CategoryStateCopyWith<T, $Res> {
+  factory _$$CategoryStateImplCopyWith(_$CategoryStateImpl<T> value,
+          $Res Function(_$CategoryStateImpl<T>) then) =
+      __$$CategoryStateImplCopyWithImpl<T, $Res>;
   @override
   @useResult
   $Res call(
       {int total,
       int page,
+      CategoryConcreteState state,
       bool hasData,
       String message,
       bool isLoading,
       int selectIndex,
-      List<Meals> listMealsByCategory});
+      List<T> listMealsByCategory});
 }
 
 /// @nodoc
-class __$$CategoryStateImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$CategoryStateImpl>
-    implements _$$CategoryStateImplCopyWith<$Res> {
-  __$$CategoryStateImplCopyWithImpl(
-      _$CategoryStateImpl _value, $Res Function(_$CategoryStateImpl) _then)
+class __$$CategoryStateImplCopyWithImpl<T, $Res>
+    extends _$CategoryStateCopyWithImpl<T, $Res, _$CategoryStateImpl<T>>
+    implements _$$CategoryStateImplCopyWith<T, $Res> {
+  __$$CategoryStateImplCopyWithImpl(_$CategoryStateImpl<T> _value,
+      $Res Function(_$CategoryStateImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -130,13 +138,14 @@ class __$$CategoryStateImplCopyWithImpl<$Res>
   $Res call({
     Object? total = null,
     Object? page = null,
+    Object? state = null,
     Object? hasData = null,
     Object? message = null,
     Object? isLoading = null,
     Object? selectIndex = null,
     Object? listMealsByCategory = null,
   }) {
-    return _then(_$CategoryStateImpl(
+    return _then(_$CategoryStateImpl<T>(
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -145,6 +154,10 @@ class __$$CategoryStateImplCopyWithImpl<$Res>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as CategoryConcreteState,
       hasData: null == hasData
           ? _value.hasData
           : hasData // ignore: cast_nullable_to_non_nullable
@@ -164,22 +177,23 @@ class __$$CategoryStateImplCopyWithImpl<$Res>
       listMealsByCategory: null == listMealsByCategory
           ? _value._listMealsByCategory
           : listMealsByCategory // ignore: cast_nullable_to_non_nullable
-              as List<Meals>,
+              as List<T>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$CategoryStateImpl implements _CategoryState {
+class _$CategoryStateImpl<T> implements _CategoryState<T> {
   const _$CategoryStateImpl(
       {this.total = 0,
       this.page = 0,
+      this.state = CategoryConcreteState.initial,
       this.hasData = false,
       this.message = '',
       this.isLoading = false,
       this.selectIndex = 0,
-      final List<Meals> listMealsByCategory = const []})
+      final List<T> listMealsByCategory = const []})
       : _listMealsByCategory = listMealsByCategory;
 
   @override
@@ -188,6 +202,9 @@ class _$CategoryStateImpl implements _CategoryState {
   @override
   @JsonKey()
   final int page;
+  @override
+  @JsonKey()
+  final CategoryConcreteState state;
   @override
   @JsonKey()
   final bool hasData;
@@ -200,10 +217,10 @@ class _$CategoryStateImpl implements _CategoryState {
   @override
   @JsonKey()
   final int selectIndex;
-  final List<Meals> _listMealsByCategory;
+  final List<T> _listMealsByCategory;
   @override
   @JsonKey()
-  List<Meals> get listMealsByCategory {
+  List<T> get listMealsByCategory {
     if (_listMealsByCategory is EqualUnmodifiableListView)
       return _listMealsByCategory;
     // ignore: implicit_dynamic_type
@@ -212,16 +229,17 @@ class _$CategoryStateImpl implements _CategoryState {
 
   @override
   String toString() {
-    return 'CategoryState(total: $total, page: $page, hasData: $hasData, message: $message, isLoading: $isLoading, selectIndex: $selectIndex, listMealsByCategory: $listMealsByCategory)';
+    return 'CategoryState<$T>(total: $total, page: $page, state: $state, hasData: $hasData, message: $message, isLoading: $isLoading, selectIndex: $selectIndex, listMealsByCategory: $listMealsByCategory)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CategoryStateImpl &&
+            other is _$CategoryStateImpl<T> &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.page, page) || other.page == page) &&
+            (identical(other.state, state) || other.state == state) &&
             (identical(other.hasData, hasData) || other.hasData == hasData) &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.isLoading, isLoading) ||
@@ -237,6 +255,7 @@ class _$CategoryStateImpl implements _CategoryState {
       runtimeType,
       total,
       page,
+      state,
       hasData,
       message,
       isLoading,
@@ -246,24 +265,28 @@ class _$CategoryStateImpl implements _CategoryState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CategoryStateImplCopyWith<_$CategoryStateImpl> get copyWith =>
-      __$$CategoryStateImplCopyWithImpl<_$CategoryStateImpl>(this, _$identity);
+  _$$CategoryStateImplCopyWith<T, _$CategoryStateImpl<T>> get copyWith =>
+      __$$CategoryStateImplCopyWithImpl<T, _$CategoryStateImpl<T>>(
+          this, _$identity);
 }
 
-abstract class _CategoryState implements CategoryState {
+abstract class _CategoryState<T> implements CategoryState<T> {
   const factory _CategoryState(
       {final int total,
       final int page,
+      final CategoryConcreteState state,
       final bool hasData,
       final String message,
       final bool isLoading,
       final int selectIndex,
-      final List<Meals> listMealsByCategory}) = _$CategoryStateImpl;
+      final List<T> listMealsByCategory}) = _$CategoryStateImpl<T>;
 
   @override
   int get total;
   @override
   int get page;
+  @override
+  CategoryConcreteState get state;
   @override
   bool get hasData;
   @override
@@ -273,9 +296,9 @@ abstract class _CategoryState implements CategoryState {
   @override
   int get selectIndex;
   @override
-  List<Meals> get listMealsByCategory;
+  List<T> get listMealsByCategory;
   @override
   @JsonKey(ignore: true)
-  _$$CategoryStateImplCopyWith<_$CategoryStateImpl> get copyWith =>
+  _$$CategoryStateImplCopyWith<T, _$CategoryStateImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

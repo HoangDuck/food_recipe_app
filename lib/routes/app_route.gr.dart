@@ -34,7 +34,10 @@ abstract class _$AppRoute extends RootStackRouter {
       );
     },
     RecipeDetailsRoute.name: (routeData) {
-      final args = routeData.argsAs<RecipeDetailsRouteArgs>();
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<RecipeDetailsRouteArgs>(
+          orElse: () =>
+              RecipeDetailsRouteArgs(idMeal: pathParams.getString('id')));
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: RecipeDetailsScreen(
@@ -101,6 +104,7 @@ class RecipeDetailsRoute extends PageRouteInfo<RecipeDetailsRouteArgs> {
             key: key,
             idMeal: idMeal,
           ),
+          rawPathParams: {'id': idMeal},
           initialChildren: children,
         );
 

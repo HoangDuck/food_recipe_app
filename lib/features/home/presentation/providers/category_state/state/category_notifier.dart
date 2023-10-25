@@ -2,59 +2,71 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:food_recipe_app/features/home/domain/repositories/home_repository.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/category_state/state/category_state.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
+import 'package:food_recipe_app/shared/domain/models/categories/category_list/categories.dart';
+import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories/meals.dart';
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
-class CategoryNotifier extends StateNotifier<CategoryState> {
+enum CategoryConcreteState {
+  initial,
+  loading,
+  loaded,
+  failure
+}
+
+class CategoryNotifier<T> extends StateNotifier<CategoryState<T>> {
   final HomeRepository homeRepository;
   CategoryNotifier(this.homeRepository) : super(const CategoryState());
 
-  // bool get isFetching =>
-  //     state.state != HomeConcreteState.loading &&
-  //         state.state != HomeConcreteState.fetchingMore;
+  bool get isFetching =>
+      state.state != CategoryConcreteState.loading;
 
   Future<void> fetchMealsByCategory({String category = ''}) async {
-    // if (isFetching &&
-    //     state.state != HomeConcreteState.fetchedAllProducts) {
-    //   state = state.copyWith(
-    //     state: state.page > 0
-    //         ? HomeConcreteState.fetchingMore
-    //         : HomeConcreteState.loading,
-    //     isLoading: true,
-    //   );
-    //
-    //   final response = await homeRepository.fetchTrendingMeals();
-    //
-    //   updateStateFromResponse<Meals>(response);
-    // } else {
-    //   state = state.copyWith(
-    //     state: HomeConcreteState.fetchedAllProducts,
-    //     message: 'No more meals available',
-    //     isLoading: false,
-    //   );
-    // }
+    if (isFetching &&
+        state.state != CategoryConcreteState.loaded) {
+      state = state.copyWith(
+        state: CategoryConcreteState.loading,
+        isLoading: true,
+      );
       final response = await homeRepository.fetchMealsByCategory(category: category);
-      updateStateFromResponse(response);
+      updateStateFromResponse<Meals>(response);
+    } else {
+      state = state.copyWith(
+        state: CategoryConcreteState.loaded,
+        message: 'No more meals available',
+        isLoading: false,
+      );
+    }
   }
 
-  void updateStateFromResponse(Either<AppException, List<meal_by_category.Meals>> response) {
+  Future<void> fetchPopularCategory() async {
+    if (isFetching &&
+        state.state != CategoryConcreteState.loaded) {
+      state = state.copyWith(
+        state: CategoryConcreteState.loading,
+        isLoading: true,
+      );
+      final response = await homeRepository.fetchAllCategories();
+      updateStateFromResponse<Categories>(response);
+    } else {
+      state = state.copyWith(
+        state: CategoryConcreteState.loaded,
+        message: 'No more category available',
+        isLoading: false,
+      );
+    }
+  }
+
+  void updateStateFromResponse<T>(Either<AppException, List<T>> response) {
     response.fold((failure) {
       state = state.copyWith(
-        // state: HomeConcreteState.failure,
         message: failure.message??'',
         isLoading: false,
       );
     }, (data) {
-      final productList = data;
-
-      final List<meal_by_category.Meals> totalProducts = productList;
-
+      final List<T> totalProducts = data;
+      // final List<T> totalProducts = [...state.listMealsByCategory, ...data];
       state = state.copyWith(
-        // productList: totalProducts,
-        // state: totalProducts.length == data.length
-        //     ? HomeConcreteState.fetchedAllProducts
-        //     : HomeConcreteState.loaded,
-        listMealsByCategory: totalProducts,
+        listMealsByCategory: [],
         hasData: true,
         message: totalProducts.isEmpty ? 'No products found' : '',
         isLoading: false,

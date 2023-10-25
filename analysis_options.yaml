@@ -30,3 +30,10 @@ linter:
 analyzer:
   errors:
     invalid_annotation_target: ignore
+
+targets:
+  $default:
+    builders:
+      freezed:
+        options:
+          generic_argument_factories: true

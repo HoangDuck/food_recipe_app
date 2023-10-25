@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/recipe_details/presentation/providers/recipe_detail_state/recipe_detail_state_provider.dart';
 import 'package:food_recipe_app/features/recipe_details/presentation/providers/recipe_detail_state/state/recipe_detail_notifier.dart';
-import 'package:food_recipe_app/features/recipe_details/presentation/providers/recipe_detail_state/state/recipe_detail_state.dart';
 import 'package:food_recipe_app/features/recipe_details/presentation/widgets/list_ingredients.dart';
 import 'package:food_recipe_app/features/recipe_details/presentation/widgets/video_recipe_detail.dart';
 import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
@@ -13,7 +12,7 @@ import 'package:food_recipe_app/shared/theme/text_style.dart';
 @RoutePage()
 class RecipeDetailsScreen extends ConsumerWidget{
   final String idMeal;
-  const RecipeDetailsScreen({super.key,required this.idMeal});
+  const RecipeDetailsScreen({super.key,@PathParam('id') required this.idMeal});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -73,7 +72,7 @@ class RecipeDetailsScreen extends ConsumerWidget{
                   ],
                 ),
               ),
-              VideoRecipeDetail(meal: meal,),
+              VideoRecipeDetail(meal: meal),
               ListIngredients(
                 listIngredients: meal.listIngredients,
               ),

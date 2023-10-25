@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'home_state.dart';
+part of 'trending_now_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,40 +15,40 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$HomeState<T> {
-  List<T> get productList => throw _privateConstructorUsedError;
+mixin _$TrendingNowState {
+  List<Meals> get productList => throw _privateConstructorUsedError;
   int get total => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
   bool get hasData => throw _privateConstructorUsedError;
-  HomeConcreteState get state => throw _privateConstructorUsedError;
+  TrendingNowConcreteState get state => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HomeStateCopyWith<T, HomeState<T>> get copyWith =>
+  $TrendingNowStateCopyWith<TrendingNowState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomeStateCopyWith<T, $Res> {
-  factory $HomeStateCopyWith(
-          HomeState<T> value, $Res Function(HomeState<T>) then) =
-      _$HomeStateCopyWithImpl<T, $Res, HomeState<T>>;
+abstract class $TrendingNowStateCopyWith<$Res> {
+  factory $TrendingNowStateCopyWith(
+          TrendingNowState value, $Res Function(TrendingNowState) then) =
+      _$TrendingNowStateCopyWithImpl<$Res, TrendingNowState>;
   @useResult
   $Res call(
-      {List<T> productList,
+      {List<Meals> productList,
       int total,
       int page,
       bool hasData,
-      HomeConcreteState state,
+      TrendingNowConcreteState state,
       String message,
       bool isLoading});
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<T, $Res, $Val extends HomeState<T>>
-    implements $HomeStateCopyWith<T, $Res> {
-  _$HomeStateCopyWithImpl(this._value, this._then);
+class _$TrendingNowStateCopyWithImpl<$Res, $Val extends TrendingNowState>
+    implements $TrendingNowStateCopyWith<$Res> {
+  _$TrendingNowStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -70,7 +70,7 @@ class _$HomeStateCopyWithImpl<T, $Res, $Val extends HomeState<T>>
       productList: null == productList
           ? _value.productList
           : productList // ignore: cast_nullable_to_non_nullable
-              as List<T>,
+              as List<Meals>,
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -86,7 +86,7 @@ class _$HomeStateCopyWithImpl<T, $Res, $Val extends HomeState<T>>
       state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as HomeConcreteState,
+              as TrendingNowConcreteState,
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -100,29 +100,29 @@ class _$HomeStateCopyWithImpl<T, $Res, $Val extends HomeState<T>>
 }
 
 /// @nodoc
-abstract class _$$HomeStateImplCopyWith<T, $Res>
-    implements $HomeStateCopyWith<T, $Res> {
-  factory _$$HomeStateImplCopyWith(
-          _$HomeStateImpl<T> value, $Res Function(_$HomeStateImpl<T>) then) =
-      __$$HomeStateImplCopyWithImpl<T, $Res>;
+abstract class _$$TrendingNowStateImplCopyWith<$Res>
+    implements $TrendingNowStateCopyWith<$Res> {
+  factory _$$TrendingNowStateImplCopyWith(_$TrendingNowStateImpl value,
+          $Res Function(_$TrendingNowStateImpl) then) =
+      __$$TrendingNowStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {List<T> productList,
+      {List<Meals> productList,
       int total,
       int page,
       bool hasData,
-      HomeConcreteState state,
+      TrendingNowConcreteState state,
       String message,
       bool isLoading});
 }
 
 /// @nodoc
-class __$$HomeStateImplCopyWithImpl<T, $Res>
-    extends _$HomeStateCopyWithImpl<T, $Res, _$HomeStateImpl<T>>
-    implements _$$HomeStateImplCopyWith<T, $Res> {
-  __$$HomeStateImplCopyWithImpl(
-      _$HomeStateImpl<T> _value, $Res Function(_$HomeStateImpl<T>) _then)
+class __$$TrendingNowStateImplCopyWithImpl<$Res>
+    extends _$TrendingNowStateCopyWithImpl<$Res, _$TrendingNowStateImpl>
+    implements _$$TrendingNowStateImplCopyWith<$Res> {
+  __$$TrendingNowStateImplCopyWithImpl(_$TrendingNowStateImpl _value,
+      $Res Function(_$TrendingNowStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -136,11 +136,11 @@ class __$$HomeStateImplCopyWithImpl<T, $Res>
     Object? message = null,
     Object? isLoading = null,
   }) {
-    return _then(_$HomeStateImpl<T>(
+    return _then(_$TrendingNowStateImpl(
       productList: null == productList
           ? _value._productList
           : productList // ignore: cast_nullable_to_non_nullable
-              as List<T>,
+              as List<Meals>,
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -156,7 +156,7 @@ class __$$HomeStateImplCopyWithImpl<T, $Res>
       state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as HomeConcreteState,
+              as TrendingNowConcreteState,
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -171,21 +171,21 @@ class __$$HomeStateImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$HomeStateImpl<T> implements _HomeState<T> {
-  const _$HomeStateImpl(
-      {final List<T> productList = const [],
+class _$TrendingNowStateImpl implements _TrendingNowState {
+  const _$TrendingNowStateImpl(
+      {final List<Meals> productList = const [],
       this.total = 0,
       this.page = 0,
       this.hasData = false,
-      this.state = HomeConcreteState.initial,
+      this.state = TrendingNowConcreteState.initial,
       this.message = '',
       this.isLoading = false})
       : _productList = productList;
 
-  final List<T> _productList;
+  final List<Meals> _productList;
   @override
   @JsonKey()
-  List<T> get productList {
+  List<Meals> get productList {
     if (_productList is EqualUnmodifiableListView) return _productList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_productList);
@@ -202,7 +202,7 @@ class _$HomeStateImpl<T> implements _HomeState<T> {
   final bool hasData;
   @override
   @JsonKey()
-  final HomeConcreteState state;
+  final TrendingNowConcreteState state;
   @override
   @JsonKey()
   final String message;
@@ -212,14 +212,14 @@ class _$HomeStateImpl<T> implements _HomeState<T> {
 
   @override
   String toString() {
-    return 'HomeState<$T>(productList: $productList, total: $total, page: $page, hasData: $hasData, state: $state, message: $message, isLoading: $isLoading)';
+    return 'TrendingNowState(productList: $productList, total: $total, page: $page, hasData: $hasData, state: $state, message: $message, isLoading: $isLoading)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HomeStateImpl<T> &&
+            other is _$TrendingNowStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._productList, _productList) &&
             (identical(other.total, total) || other.total == total) &&
@@ -245,22 +245,23 @@ class _$HomeStateImpl<T> implements _HomeState<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HomeStateImplCopyWith<T, _$HomeStateImpl<T>> get copyWith =>
-      __$$HomeStateImplCopyWithImpl<T, _$HomeStateImpl<T>>(this, _$identity);
+  _$$TrendingNowStateImplCopyWith<_$TrendingNowStateImpl> get copyWith =>
+      __$$TrendingNowStateImplCopyWithImpl<_$TrendingNowStateImpl>(
+          this, _$identity);
 }
 
-abstract class _HomeState<T> implements HomeState<T> {
-  const factory _HomeState(
-      {final List<T> productList,
+abstract class _TrendingNowState implements TrendingNowState {
+  const factory _TrendingNowState(
+      {final List<Meals> productList,
       final int total,
       final int page,
       final bool hasData,
-      final HomeConcreteState state,
+      final TrendingNowConcreteState state,
       final String message,
-      final bool isLoading}) = _$HomeStateImpl<T>;
+      final bool isLoading}) = _$TrendingNowStateImpl;
 
   @override
-  List<T> get productList;
+  List<Meals> get productList;
   @override
   int get total;
   @override
@@ -268,13 +269,13 @@ abstract class _HomeState<T> implements HomeState<T> {
   @override
   bool get hasData;
   @override
-  HomeConcreteState get state;
+  TrendingNowConcreteState get state;
   @override
   String get message;
   @override
   bool get isLoading;
   @override
   @JsonKey(ignore: true)
-  _$$HomeStateImplCopyWith<T, _$HomeStateImpl<T>> get copyWith =>
+  _$$TrendingNowStateImplCopyWith<_$TrendingNowStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

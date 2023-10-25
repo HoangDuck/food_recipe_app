@@ -13,9 +13,12 @@ class AppRoute extends _$AppRoute {
 
   @override
   List<AutoRoute> get routes => [
-    AutoRoute(page: OnBoardingRoute.page,initial: true),
-    AutoRoute(page: HomeRoute.page),
-    AutoRoute(page: CreateRecipeRoute.page),
-    AutoRoute(page: RecipeDetailsRoute.page),
-  ];
+        AutoRoute(page: OnBoardingRoute.page, initial: true),
+        AutoRoute(page: HomeRoute.page),
+        AutoRoute(page: CreateRecipeRoute.page),
+        AutoRoute(
+          path: '/recipe_detail/:id',
+          page: RecipeDetailsRoute.page,
+        ),
+      ];
 }
