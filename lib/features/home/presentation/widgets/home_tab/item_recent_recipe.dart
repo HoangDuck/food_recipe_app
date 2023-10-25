@@ -13,7 +13,7 @@ class ItemRecentRecipe extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(right: 16.w),
       child: SizedBox(
-        // height: 191.h,
+        height: 191.h,
         width: 124.w,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -40,6 +40,7 @@ class ItemRecentRecipe extends StatelessWidget {
                 maxLines: 2,
               ),
             ),
+            const Spacer(),
             Padding(
               padding: EdgeInsets.only(left: 4.w, right: 31.w),
               child: Text(

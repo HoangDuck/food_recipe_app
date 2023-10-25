@@ -12,14 +12,12 @@ import 'package:food_recipe_app/shared/theme/text_style.dart';
 import 'package:food_recipe_app/shared/widgets/app_button.dart';
 
 class MyProfile extends ConsumerWidget{
-  MyProfile({super.key});
-  final AppRoute appRouter = AppRoute();
+  const MyProfile({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     final state = ref.watch(userNotifierProvider);
-
     if(state.isLoading){
       return const Center(
         child: CircularProgressIndicator(),
@@ -32,95 +30,84 @@ class MyProfile extends ConsumerWidget{
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _viewPersonalInfo(context,user),
-            _viewStatisticInfo(user),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(48.sp),
+                      child: Image.network(
+                        user.avatar,
+                        fit: BoxFit.cover,
+                        height: 99.h,
+                        width: 100.w,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Image.asset(AppImages.imgIconAvatarMock);
+                        },
+                      ),
+                    ),
+                    const Spacer(),
+                    SecondaryNoIconLargeButton(
+                      title: AppStrings.editProfile,
+                      onTap: () {
+                        AutoRouter.of(context).pushNamed(OnBoardingRoute.name);
+                      },
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 16.h),
+                  child: Text(
+                    user.fullName ?? '',
+                    style: AppTextStyles.poppinsH5Bold,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 12.h,right: 99.w),
+                  child: Text(
+                    user.intro ?? '',
+                    maxLines: 2,
+                    overflow: TextOverflow.fade,
+                    style: AppTextStyles.poppinsSmallRegularV3,
+                  ),
+                )
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 20.h),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ItemStatistic(
+                    keyStatistic: AppStrings.recipe,
+                    value: user.statistic!.recipe.toString(),
+                  ),
+                  const Spacer(),
+                  ItemStatistic(
+                    keyStatistic: AppStrings.videos,
+                    value: user.statistic!.videos.toString(),
+                  ),
+                  const Spacer(),
+                  ItemStatistic(
+                    keyStatistic: AppStrings.followers,
+                    value: user.statistic!.followers.toString(),
+                  ),
+                  const Spacer(),
+                  ItemStatistic(
+                    keyStatistic: AppStrings.following,
+                    value: user.statistic!.following.toString(),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       );
     }
-
   }
-
-  Widget _viewPersonalInfo(BuildContext context,User user){
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(48.sp),
-              child: Image.network(
-                user.avatar,
-                fit: BoxFit.cover,
-                height: 99.h,
-                width: 100.w,
-                errorBuilder: (context, error, stackTrace) {
-                  return Image.asset(AppImages.imgIconAvatarMock);
-                },
-              ),
-            ),
-            const Spacer(),
-            SecondaryNoIconLargeButton(
-              title: AppStrings.editProfile,
-              onTap: () {
-                // appRouter.pushNamed('OnBoardingRoute');
-                AutoRouter.of(context).pushNamed('OnBoardingRoute');
-              },
-            ),
-          ],
-        ),
-        Padding(
-          padding: EdgeInsets.only(top: 16.h),
-          child: Text(
-            user.fullName ?? '',
-            style: AppTextStyles.poppinsH5Bold,
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(top: 12.h,right: 99.w),
-          child: Text(
-            user.intro ?? '',
-            maxLines: 2,
-            overflow: TextOverflow.fade,
-            style: AppTextStyles.poppinsSmallRegularV3,
-          ),
-        )
-      ],
-    );
-  }
-
-  Widget _viewStatisticInfo(User user){
-    return Padding(
-      padding: EdgeInsets.only(top: 20.h),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          ItemStatistic(
-            keyStatistic: AppStrings.recipe,
-            value: user.statistic!.recipe.toString(),
-          ),
-          const Spacer(),
-          ItemStatistic(
-            keyStatistic: AppStrings.videos,
-            value: user.statistic!.videos.toString(),
-          ),
-          const Spacer(),
-          ItemStatistic(
-            keyStatistic: AppStrings.followers,
-            value: user.statistic!.followers.toString(),
-          ),
-          const Spacer(),
-          ItemStatistic(
-            keyStatistic: AppStrings.following,
-            value: user.statistic!.following.toString(),
-          ),
-        ],
-      ),
-    );
-  }
-
 }

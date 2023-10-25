@@ -65,9 +65,14 @@ class TrendingNowWidget extends HookConsumerWidget{
               ],
             ),
           ),
-          SingleChildScrollView(scrollDirection: Axis.horizontal,child: Row(
-            children: [
-              ...List.generate(listFoodTrending.length, (index) => GestureDetector(
+          SizedBox(
+            height: 254.h,
+            child: ListView.custom(
+              scrollDirection: Axis.horizontal,
+              childrenDelegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                  debugPrint("Meals: ${listFoodTrending[index].strMeal}");
+                  return GestureDetector(
                     onTap: () {
                       context.pushRoute(RecipeDetailsRoute(idMeal: listFoodTrending[index].idMeal??''));
                     },
@@ -75,9 +80,12 @@ class TrendingNowWidget extends HookConsumerWidget{
                       padding: EdgeInsets.only(right: 16.w),
                       child: ItemVideo(meal: listFoodTrending[index]),
                     ),
-                  ))
-            ],
-          ),),
+                  );
+                },
+                childCount: listFoodTrending.length,
+              ),
+            ),
+          ),
         ]
       ),
     );

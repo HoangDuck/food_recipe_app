@@ -14,10 +14,9 @@ class ListVideoRecipes extends ConsumerWidget{
     List<Meals> listFoodTrending = state.productList as List<Meals>;
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
-    return ListView.builder(
-      itemCount: listFoodTrending.length,
+    return ListView.custom(
       padding: EdgeInsets.zero,
-      itemBuilder: (context, index) {
+      childrenDelegate: SliverChildBuilderDelegate((context, index) {
         return Padding(
           padding: EdgeInsets.only(bottom: 16.h),
           child: ItemVideo(
@@ -26,7 +25,7 @@ class ListVideoRecipes extends ConsumerWidget{
             isMarked: true,
           ),
         );
-      },
+      }, childCount: listFoodTrending.length),
     );
   }
 

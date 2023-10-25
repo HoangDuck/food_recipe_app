@@ -71,7 +71,7 @@ class NotificationTab extends HookConsumerWidget{
                       size: Size(107.w,34.h),
                       padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
                       textSize: 12.sp,
-                      isHighLight: currentPage == TypeTabNotifications.all,
+                      isHighLight: currentTab == TypeTabNotifications.all,
                     ),
                   ),
                   SizedBox(width: 7.w,),
@@ -85,7 +85,7 @@ class NotificationTab extends HookConsumerWidget{
                         pageController.jumpToPage(1);
                       },
                       textSize: 12.sp,
-                      isHighLight: currentPage == TypeTabNotifications.unread,
+                      isHighLight: currentTab == TypeTabNotifications.unread,
                     ),
                   ),
                   SizedBox(width: 7.w,),
@@ -99,7 +99,7 @@ class NotificationTab extends HookConsumerWidget{
                         pageController.jumpToPage(2);
                       },
                       textSize: 12.sp,
-                      isHighLight: currentPage.value == TypeTabNotifications.read,
+                      isHighLight: currentTab == TypeTabNotifications.read,
                     ),
                   ),
                 ],
@@ -109,7 +109,7 @@ class NotificationTab extends HookConsumerWidget{
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(20.w,12.h,20.w,12.h),
+            padding: EdgeInsets.fromLTRB(16.w,12.h,16.w,12.h),
             child: PageView(
               controller: pageController,
               physics: const NeverScrollableScrollPhysics(),

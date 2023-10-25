@@ -53,33 +53,17 @@ class RecentRecipe extends ConsumerWidget {
                 ],
               ),
             ),
-            // CustomScrollView(
-            //   slivers: [
-            //     SliverList(delegate: (delegate))
-            //   ],
-            // ),
-            SingleChildScrollView(
+            SizedBox(
+              height: 191.h,
+              child: ListView.builder(
+                itemCount: listRecentRecipe.length,
                 scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    ...List.generate(
-                        listRecentRecipe.length,
-                        (index) => ItemRecentRecipe(
-                              meal: listRecentRecipe[index],
-                            ))
-                  ],
-                )),
-            // SizedBox(
-            //   // height: 191.h,
-            //   child: ListView.builder(
-            //     itemCount: listRecentRecipe.length,
-            //     scrollDirection: Axis.horizontal,
-            //     shrinkWrap: true,
-            //     itemBuilder: (context, index) {
-            //       return ItemRecentRecipe(meal: listRecentRecipe[index],);
-            //     },
-            //   ),
-            // ),
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return ItemRecentRecipe(meal: listRecentRecipe[index],);
+                },
+              ),
+            ),
           ]),
     );
   }

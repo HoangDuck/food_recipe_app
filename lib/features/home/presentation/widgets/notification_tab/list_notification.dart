@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/notification_state/notification_state_provider.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/notification_tab/item_notification.dart';
@@ -19,48 +20,55 @@ class ListNotification extends HookConsumerWidget{
     ScreenUtil.init(context, designSize: const Size(375,812));
     final state = ref.watch(notificationNotifierProvider);
     List<Notifications> listFoodTrending = state.listNotifications;
+    final scrollController = useScrollController();
+    useEffect(() {
+      listenerLoadMore(){
+        double maxScroll = scrollController.position.maxScrollExtent;
+        double currentScroll = scrollController.position.pixels;
+        double delta = MediaQuery.of(context).size.width * 0.20;
+        if (maxScroll - currentScroll <= delta) {
+
+        }
+      }
+      scrollController.addListener(listenerLoadMore);
+      return (){
+        scrollController.removeListener(listenerLoadMore);
+      };
+    }, [key]);
     // TODO: implement build
-    return SingleChildScrollView(
+    return GroupedListView<Notifications, String>(
+      controller: scrollController,
+      elements: listFoodTrending,
       padding: EdgeInsets.zero,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          GroupedListView<Notifications, String>(
-            elements: listFoodTrending,
-            padding: EdgeInsets.zero,
-            groupBy: (element) => element.time.toString(),
-            groupComparator: (value1, value2) => value1.toString().compareTo(value2.toString()),
-            itemComparator: (item1, item2) =>
-                item2.idNotification!.compareTo(item1.idNotification!),
-            order: GroupedListOrder.ASC,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            useStickyGroupSeparators: true,
-            groupSeparatorBuilder: (value) => Container(
-              padding: EdgeInsets.fromLTRB(16.w,12.h,0.w,12.h),
-              color: AppColors.white,
-              child: Text(
-                value,
-                style: AppTextStyles.poppinsLabelBoldV2,
-              ),
-            ),
-            indexedItemBuilder: (context, element, index) {
-              return Padding(
-                padding: EdgeInsets.only(bottom: 12.h),
-                child: ItemNotification(notification: element,),
-              );
-            },
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(42.w, 16.h, 42.w, 0.h),
-            child: Text(
-              AppStrings.youreallSet,
-              style: AppTextStyles.poppinsTinyRegular,
-            ),
-          )
-        ],
+      groupBy: (element) => element.time.toString(),
+      groupComparator: (value1, value2) => value1.toString().compareTo(value2.toString()),
+      itemComparator: (item1, item2) =>
+          item2.idNotification!.compareTo(item1.idNotification!),
+      order: GroupedListOrder.ASC,
+      useStickyGroupSeparators: true,
+      groupSeparatorBuilder: (value) => Container(
+        padding: EdgeInsets.fromLTRB(0.w,0.h,0.w,12.h),
+        color: AppColors.white,
+        child: Text(
+          value,
+          style: AppTextStyles.poppinsLabelBoldV2,
+        ),
       ),
+      indexedItemBuilder: (context, element, index) {
+        if(index == -1){
+          return Padding(
+              padding: EdgeInsets.fromLTRB(42.w, 16.h, 42.w, 0.h),
+              child: Text(
+                AppStrings.youreallSet,
+                style: AppTextStyles.poppinsTinyRegular,
+              ),
+            );
+        }
+        return Padding(
+          padding: EdgeInsets.only(left: 4.w,right:4.w,bottom: 12.h),
+          child: ItemNotification(notification: element,),
+        );
+      },
     );
   }
 

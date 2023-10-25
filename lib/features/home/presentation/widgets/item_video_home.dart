@@ -29,6 +29,7 @@ class ItemVideo extends ConsumerWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
+          // height: size.height.h,
           width: size.width.w,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
