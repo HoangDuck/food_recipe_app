@@ -52,6 +52,7 @@ dependencies:
   auto_route_generator: ^7.3.2
   mocktail: ^1.0.1
   state_notifier_test: ^0.0.10
+  freezed: ^2.4.5
 
 dev_dependencies:
   flutter_test:

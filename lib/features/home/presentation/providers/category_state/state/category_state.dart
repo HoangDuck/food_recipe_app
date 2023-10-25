@@ -4,7 +4,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'category_state.freezed.dart';
 
-@freezed
+
+@Freezed(genericArgumentFactories: true)
 class CategoryState<T> with _$CategoryState<T> {
   const factory CategoryState({
     @Default(0) int total,
@@ -16,4 +17,5 @@ class CategoryState<T> with _$CategoryState<T> {
     @Default(0) int selectIndex,
     @Default([]) List<T> listMealsByCategory,
   }) = _CategoryState<T>;
+
 }

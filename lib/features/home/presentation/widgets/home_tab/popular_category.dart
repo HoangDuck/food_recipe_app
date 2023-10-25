@@ -17,12 +17,12 @@ class PopularCategory extends HookConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final stateCategory = ref.watch(categoryPopularNotifierProvider);
-    List<Categories> listCategories = stateCategory.listMealsByCategory;
+    List<Categories> listCategories = stateCategory.listMealsByCategory as List<Categories>;
     var currentIndexCategory = useValueNotifier<String>(listCategories.isEmpty
         ? 'Beef'
         : (listCategories.first.strCategory ?? 'Beef'));
     var stateMealByCategory = ref.watch(categoryNotifierProvider(currentIndexCategory.value));
-    List<meal_by_category.Meals> listMealByCategories = stateMealByCategory.listMealsByCategory;
+    List<meal_by_category.Meals> listMealByCategories = stateMealByCategory.listMealsByCategory as List<meal_by_category.Meals>;
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Padding(
@@ -62,7 +62,7 @@ class PopularCategory extends HookConsumerWidget{
                           return ItemCategoryPopular(
                             onTap: (id) async {
                               currentIndexCategory.value = id;
-                              ref.invalidate(categoryNotifierProvider(currentCategory));
+                              // ref.invalidate(categoryNotifierProvider(currentCategory));
                             },
                             categories: listCategories[index],
                             isHighLight: listCategories[index].strCategory ==

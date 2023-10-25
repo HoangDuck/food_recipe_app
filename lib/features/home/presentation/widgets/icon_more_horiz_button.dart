@@ -12,9 +12,7 @@ class IconMoreHorizFood extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return GestureDetector(
-      onTap: () {
-        onTap();
-      },
+      onTap: onTap,
       child: Container(
         height: 32.w,
         width: 32.w,

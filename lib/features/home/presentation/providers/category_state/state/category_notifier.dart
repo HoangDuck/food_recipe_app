@@ -13,7 +13,7 @@ enum CategoryConcreteState {
   failure
 }
 
-class CategoryNotifier<T> extends StateNotifier<CategoryState<T>> {
+class CategoryNotifier extends StateNotifier<CategoryState> {
   final HomeRepository homeRepository;
   CategoryNotifier(this.homeRepository) : super(const CategoryState());
 
@@ -63,10 +63,9 @@ class CategoryNotifier<T> extends StateNotifier<CategoryState<T>> {
         isLoading: false,
       );
     }, (data) {
-      final List<T> totalProducts = data;
-      // final List<T> totalProducts = [...state.listMealsByCategory, ...data];
+      final totalProducts = data;
       state = state.copyWith(
-        listMealsByCategory: [],
+        listMealsByCategory: totalProducts,
         hasData: true,
         message: totalProducts.isEmpty ? 'No products found' : '',
         isLoading: false,
