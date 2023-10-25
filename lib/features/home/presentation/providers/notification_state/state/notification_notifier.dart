@@ -6,9 +6,18 @@ import 'package:food_recipe_app/shared/domain/models/notifications/notifications
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+enum NotificationConcreteState {
+  initial,
+  loading,
+  loaded,
+  failure,
+  fetchingMore,
+  fetchedAllNotifications
+}
+
 class NotificationNotifier extends StateNotifier<NotificationState> {
   final NotificationRepository notificationRepository;
-  NotificationNotifier(this.notificationRepository) : super(const NotificationState.initial());
+  NotificationNotifier(this.notificationRepository) : super(const NotificationState());
 
   bool get isFetching =>
       state.state != NotificationConcreteState.loading &&
@@ -40,7 +49,7 @@ class NotificationNotifier extends StateNotifier<NotificationState> {
     response.fold((failure) {
       state = state.copyWith(
         // state: HomeConcreteState.failure,
-        message: failure.message,
+        message: failure.message??'',
         isLoading: false,
       );
     }, (data) {

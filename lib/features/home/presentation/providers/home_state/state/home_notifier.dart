@@ -6,12 +6,21 @@ import 'package:food_recipe_app/shared/domain/models/categories/category_list/ca
 import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
+enum HomeConcreteState {
+  initial,
+  loading,
+  loaded,
+  failure,
+  fetchingMore,
+  fetchedAllProducts
+}
+
 class HomeNotifier extends StateNotifier<HomeState> {
   final HomeRepository homeRepository;
 
   HomeNotifier(
       this.homeRepository,
-      ) : super(const HomeState.initial());
+      ) : super(const HomeState());
 
   bool get isFetching =>
       state.state != HomeConcreteState.loading &&
@@ -67,7 +76,7 @@ class HomeNotifier extends StateNotifier<HomeState> {
     response.fold((failure) {
       state = state.copyWith(
         state: HomeConcreteState.failure,
-        message: failure.message,
+        message: failure.message??'',
         isLoading: false,
       );
     }, (data) {
@@ -75,7 +84,7 @@ class HomeNotifier extends StateNotifier<HomeState> {
 
       final List<T> totalProducts = [...state.productList, ...productList];
 
-      state = state.copyWith<T>(
+      state = state.copyWith(
         productList: totalProducts,
         state: totalProducts.length == data.length
             ? HomeConcreteState.fetchedAllProducts
@@ -110,6 +119,6 @@ class HomeNotifier extends StateNotifier<HomeState> {
   }
 
   void resetState() {
-    state = const HomeState.initial();
+    state = const HomeState();
   }
 }

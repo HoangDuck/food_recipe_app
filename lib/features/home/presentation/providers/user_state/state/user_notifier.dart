@@ -7,9 +7,18 @@ import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/domain/models/users/user.dart';
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
+enum UserConcreteState {
+  initial,
+  loading,
+  loaded,
+  failure,
+  fetchingMore,
+  fetchedAllData
+}
+
 class UserNotifier extends StateNotifier<UserState> {
   final UserRepository userRepository;
-  UserNotifier(this.userRepository) : super(const UserState.initial());
+  UserNotifier(this.userRepository) : super(const UserState());
 
   bool get isFetching =>
       state.state != UserConcreteState.loading &&
@@ -42,7 +51,7 @@ class UserNotifier extends StateNotifier<UserState> {
     response.fold((failure) {
       state = state.copyWith(
         state: UserConcreteState.failure,
-        message: failure.message,
+        message: failure.message??'',
         isLoading: false,
       );
     }, (data) {

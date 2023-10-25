@@ -97,7 +97,6 @@ class AccountTab extends HookConsumerWidget{
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
                   (context, index) {
-                debugPrint("Videos: ${ listMealsProfile[index].strMeal}");
                 return Padding(
                   padding: EdgeInsets.fromLTRB(0.w,0.w,0.w,16.w),
                   child: ItemVideoRecipe(

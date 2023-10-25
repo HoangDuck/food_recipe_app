@@ -6,9 +6,15 @@ import 'package:food_recipe_app/features/recipe_details/presentation/providers/r
 import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
+enum RecipeDetailConcreteState {
+  initial,
+  loading,
+  loaded,
+  failure
+}
 class RecipeDetailNotifier extends StateNotifier<RecipeDetailState> {
   final MealRepository mealRepository;
-  RecipeDetailNotifier(this.mealRepository) : super(const RecipeDetailState.initial());
+  RecipeDetailNotifier(this.mealRepository) : super(const RecipeDetailState());
 
   bool get isFetching => state.state != RecipeDetailConcreteState.loading;
 
@@ -37,7 +43,7 @@ class RecipeDetailNotifier extends StateNotifier<RecipeDetailState> {
     response.fold((failure) {
       state = state.copyWith(
         state: RecipeDetailConcreteState.failure,
-        message: failure.message,
+        message: failure.message??'',
         isLoading: false,
       );
     }, (data) {

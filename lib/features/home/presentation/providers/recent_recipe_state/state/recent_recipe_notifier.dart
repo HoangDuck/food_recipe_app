@@ -6,9 +6,18 @@ import 'package:food_recipe_app/features/home/presentation/providers/recent_reci
 import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
+enum RecentRecipeConcreteState {
+  initial,
+  loading,
+  loaded,
+  failure,
+  fetchingMore,
+  fetchedAllProducts
+}
+
 class RecentRecipeNotifier extends StateNotifier<RecentRecipeState> {
   final HomeRepository homeRepository;
-  RecentRecipeNotifier(this.homeRepository) : super(const RecentRecipeState.initial());
+  RecentRecipeNotifier(this.homeRepository) : super(const RecentRecipeState());
 
   // bool get isFetching =>
   //     state.state != HomeConcreteState.loading &&
@@ -42,7 +51,7 @@ class RecentRecipeNotifier extends StateNotifier<RecentRecipeState> {
     response.fold((failure) {
       state = state.copyWith(
         // state: HomeConcreteState.failure,
-        message: failure.message,
+        message: failure.message??'',
         isLoading: false,
       );
     }, (data) {

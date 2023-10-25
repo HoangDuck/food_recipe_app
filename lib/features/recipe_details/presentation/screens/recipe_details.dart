@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/recipe_details/presentation/providers/recipe_detail_state/recipe_detail_state_provider.dart';
+import 'package:food_recipe_app/features/recipe_details/presentation/providers/recipe_detail_state/state/recipe_detail_notifier.dart';
 import 'package:food_recipe_app/features/recipe_details/presentation/providers/recipe_detail_state/state/recipe_detail_state.dart';
 import 'package:food_recipe_app/features/recipe_details/presentation/widgets/list_ingredients.dart';
 import 'package:food_recipe_app/features/recipe_details/presentation/widgets/video_recipe_detail.dart';

@@ -7,7 +7,7 @@ import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
 class CategoryNotifier extends StateNotifier<CategoryState> {
   final HomeRepository homeRepository;
-  CategoryNotifier(this.homeRepository) : super(const CategoryState.initial());
+  CategoryNotifier(this.homeRepository) : super(const CategoryState());
 
   // bool get isFetching =>
   //     state.state != HomeConcreteState.loading &&
@@ -41,7 +41,7 @@ class CategoryNotifier extends StateNotifier<CategoryState> {
     response.fold((failure) {
       state = state.copyWith(
         // state: HomeConcreteState.failure,
-        message: failure.message,
+        message: failure.message??'',
         isLoading: false,
       );
     }, (data) {
