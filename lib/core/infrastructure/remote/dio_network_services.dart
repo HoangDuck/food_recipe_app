@@ -34,14 +34,14 @@ class DioNetworkService extends NetworkService with ExceptionHandlerMixin {
     'content-type': 'application/json',
   };
 
-  @override
-  Map<String, dynamic>? updateHeader(Map<String, dynamic> data) {
-    final header = {...data, ...headers};
-    if (!kTestMode) {
-      dio.options.headers = header;
-    }
-    return header;
-  }
+  // @override
+  // Map<String, dynamic>? updateHeader(Map<String, dynamic> data) {
+  //   final header = {...data, ...headers};
+  //   if (!kTestMode) {
+  //     dio.options.headers = header;
+  //   }
+  //   return header;
+  // }
 
   @override
   Future<Either<AppException, response.Response>> post(String endpoint,

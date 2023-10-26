@@ -9,7 +9,7 @@ abstract class NetworkService {
 
   Map<String, Object> get headers;
 
-  void updateHeader(Map<String, dynamic> data);
+  // void updateHeader(Map<String, dynamic> data);
 
   Future<Either<AppException, Response>> get(
       String endpoint, {
