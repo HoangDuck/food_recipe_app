@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/configs/app_configs.dart';
+import 'package:food_recipe_app/app_configs.dart';
 import 'package:food_recipe_app/recipe_details/presentation/widgets/item_video_recipe_detail.dart';
 import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/core/presentation/theme/app_images.dart';

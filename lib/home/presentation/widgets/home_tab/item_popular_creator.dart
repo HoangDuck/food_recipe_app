@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/configs/app_configs.dart';
+import 'package:food_recipe_app/app_configs.dart';
 import 'package:food_recipe_app/core/presentation/theme/text_style.dart';
 
 class ItemPopularCreator extends StatelessWidget {

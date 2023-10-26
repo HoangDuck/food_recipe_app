@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/configs/app_configs.dart';
+import 'package:food_recipe_app/app_configs.dart';
 import 'package:food_recipe_app/create_recipe/presentation/widgets/item_description_cook_serve.dart';
 import 'package:food_recipe_app/create_recipe/presentation/widgets/item_video_recipe_detail_description.dart';
 import 'package:food_recipe_app/home/presentation/widgets/text_field_search.dart';

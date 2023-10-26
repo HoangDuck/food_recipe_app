@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:food_recipe_app/configs/app_configs.dart';
+import 'package:food_recipe_app/app_configs.dart';
 import 'package:food_recipe_app/core/infrastructure/remote/exceptions/http_exception.dart';
 import 'package:food_recipe_app/core/infrastructure/remote/mixins/exception_handler_mixin.dart';
 import 'package:food_recipe_app/core/infrastructure/remote/network_service.dart';
