@@ -2,9 +2,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:food_recipe_app/home/application/category_state/category_notifier.dart';
 import 'package:food_recipe_app/home/application/category_state/state/category_state.dart';
-import 'package:food_recipe_app/home/domain/providers/home_providers.dart';
 import 'package:food_recipe_app/core/domain/models/categories/category_list/categories.dart';
 import 'package:food_recipe_app/core/domain/models/categories/meal_by_categories/meals.dart';
+import 'package:food_recipe_app/home/shared/repository_providers/home_providers.dart';
 
 final categoryPopularNotifierProvider = StateNotifierProvider<CategoryNotifier<Categories>,CategoryState<Categories>>((ref) {
   final repository = ref.watch(homeRepositoryProvider);
