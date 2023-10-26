@@ -13,7 +13,7 @@ class ListVideoRecipes extends ConsumerWidget{
     final state = ref.watch(trendingNowNotifierProvider);
     List<Meals> listFoodTrending = state.productList;
     ScreenUtil.init(context, designSize: const Size(375,812));
-    // TODO: implement build
+
     return ListView.custom(
       padding: EdgeInsets.zero,
       childrenDelegate: SliverChildBuilderDelegate((context, index) {

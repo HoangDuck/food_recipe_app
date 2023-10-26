@@ -28,7 +28,7 @@ class HomeScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // TODO: implement build
+
     ScreenUtil.init(context, designSize: const Size(375,812));
     final pageController = usePageController(initialPage: 0);
     var currentPage = useValueNotifier<TypeTabBottomAppBar>(TypeTabBottomAppBar.home);

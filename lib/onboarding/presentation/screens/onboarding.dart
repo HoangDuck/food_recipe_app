@@ -15,7 +15,7 @@ class OnBoardingScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // TODO: implement build
+
     ScreenUtil.init(context, designSize: const Size(375,812));
     return Scaffold(
       backgroundColor: Colors.black,

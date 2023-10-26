@@ -12,7 +12,7 @@ class ItemVideoRecipeDetailDescription extends ConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
-    // TODO: implement build
+
     return ItemVideoRecipeDetail(
       meal: meal,
       size: Size(335.w, 200.h),

@@ -17,7 +17,7 @@ class ItemFormIngredients extends HookConsumerWidget{
     ScreenUtil.init(context, designSize: const Size(375,812));
     final textEditControllerTitle = useTextEditingController(text: formIngredient.title);
     final textEditControllerValue = useTextEditingController(text: formIngredient.value);
-    // TODO: implement build
+
     return Padding(
       padding: EdgeInsets.only(bottom: 16.sp),
       child: Row(

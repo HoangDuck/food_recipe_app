@@ -18,7 +18,7 @@ class ItemCategoryPopular extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return Padding(
       padding: EdgeInsets.only(right: 8.w),
       child: GestureDetector(

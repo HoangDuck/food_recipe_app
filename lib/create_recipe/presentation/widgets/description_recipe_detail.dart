@@ -18,7 +18,7 @@ class DescriptionRecipeDetail extends HookConsumerWidget{
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     // final textEditController = useTextEditingController();
-    // TODO: implement build
+
     return Padding(
       padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 16.h),
       child: Column(

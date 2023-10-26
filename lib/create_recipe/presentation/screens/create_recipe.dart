@@ -16,7 +16,7 @@ class CreateRecipeScreen extends HookConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
-    // TODO: implement build
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,

@@ -23,7 +23,7 @@ class NotificationTab extends HookConsumerWidget{
     final pageController = usePageController(initialPage: 0);
     var currentPage = useValueNotifier<TypeTabNotifications>(TypeTabNotifications.all);
     ScreenUtil.init(context, designSize: const Size(375,812));
-    // TODO: implement build
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,

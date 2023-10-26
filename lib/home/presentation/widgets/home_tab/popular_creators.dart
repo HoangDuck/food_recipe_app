@@ -12,7 +12,7 @@ class PopularCreators extends ConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
-    // TODO: implement build
+
     return Padding(
       padding: EdgeInsets.fromLTRB(20.w, 12.h, 19.w, 12.h),
       child: SizedBox(
