@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:food_recipe_app/main/app.dart';
-import 'package:food_recipe_app/main/observers.dart';
-import 'package:food_recipe_app/shared/domain/providers/sharedpreferences_storage_service_provider.dart';
+import 'package:food_recipe_app/app.dart';
+import 'package:food_recipe_app/observers.dart';
+import 'package:food_recipe_app/core/shared/sharedpreferences_storage_service_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
