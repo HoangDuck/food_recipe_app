@@ -1,6 +1,6 @@
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:food_recipe_app/home/domain/repositories/repositories_impl/home_repository.dart';
+import 'package:food_recipe_app/home/domain/repositories/repositories_impl/home_repository_impl.dart';
 import 'package:food_recipe_app/home/domain/repositories/home_repository.dart';
 import 'package:food_recipe_app/core/infrastructure/remote/network_service.dart';
 import 'package:food_recipe_app/core/shared/dio_network_provider.dart';
