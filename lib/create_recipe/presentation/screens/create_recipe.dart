@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/create_recipe/presentation/providers/create_recipe_provider.dart';
+import 'package:food_recipe_app/create_recipe/shared/create_recipe_provider.dart';
 import 'package:food_recipe_app/create_recipe/presentation/widgets/description_recipe_detail.dart';
 import 'package:food_recipe_app/create_recipe/presentation/widgets/form_add_ingredients.dart';
 import 'package:food_recipe_app/core/presentation/theme/app_colors.dart';

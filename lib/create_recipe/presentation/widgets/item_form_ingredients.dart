@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/create_recipe/presentation/model/form_ingredient_model.dart';
-import 'package:food_recipe_app/create_recipe/presentation/providers/create_recipe_provider.dart';
+import 'package:food_recipe_app/create_recipe/domain/form_ingredient_model.dart';
+import 'package:food_recipe_app/create_recipe/shared/create_recipe_provider.dart';
 import 'package:food_recipe_app/home/presentation/widgets/text_field_search.dart';
 import 'package:food_recipe_app/core/presentation/theme/app_images.dart';
 import 'package:food_recipe_app/core/presentation/theme/app_strings.dart';

@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/home/presentation/providers/user_state/user_state_provider.dart';
+import 'package:food_recipe_app/home/shared/user_state_provider.dart';
 import 'package:food_recipe_app/home/presentation/widgets/account_tab/item_statistic.dart';
 import 'package:food_recipe_app/routes/app_route.dart';
 import 'package:food_recipe_app/core/domain/models/users/user.dart';

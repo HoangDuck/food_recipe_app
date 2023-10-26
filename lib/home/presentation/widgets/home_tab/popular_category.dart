@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/home/presentation/providers/category_state/category_state_provider.dart';
+import 'package:food_recipe_app/home/shared/category_state_provider.dart';
 import 'package:food_recipe_app/home/presentation/widgets/home_tab/item_category_popular.dart';
 import 'package:food_recipe_app/home/presentation/widgets/home_tab/item_meals_by_category.dart';
 import 'package:food_recipe_app/core/domain/models/categories/category_list/categories.dart';

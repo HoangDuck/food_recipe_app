@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:food_recipe_app/home/presentation/providers/user_state/state/user_notifier.dart';
-import 'package:food_recipe_app/home/presentation/providers/user_state/state/user_state.dart';
-import 'package:food_recipe_app/home/presentation/providers/user_state/user_state_provider.dart';
+import 'package:food_recipe_app/home/application/user_state/state/user_state.dart';
+import 'package:food_recipe_app/home/application/user_state/user_notifier.dart';
+import 'package:food_recipe_app/home/shared/user_state_provider.dart';
 import 'package:mocktail/mocktail.dart';
 
 

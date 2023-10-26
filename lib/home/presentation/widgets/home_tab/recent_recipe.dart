@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/home/presentation/providers/recent_recipe_state/recent_recipe_state_provider.dart';
+import 'package:food_recipe_app/home/shared/recent_recipe_state_provider.dart';
 import 'package:food_recipe_app/home/presentation/widgets/home_tab/item_recent_recipe.dart';
 import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/core/presentation/theme/app_colors.dart';

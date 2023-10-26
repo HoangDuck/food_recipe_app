@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/home/presentation/providers/trending_now_state/trending_now_state_provider.dart';
+import 'package:food_recipe_app/home/shared/trending_now_state_provider.dart';
 import 'package:food_recipe_app/home/presentation/widgets/item_video_home.dart';
 import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 

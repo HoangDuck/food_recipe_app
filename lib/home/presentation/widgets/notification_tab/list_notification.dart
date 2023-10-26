@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_recipe_app/home/presentation/providers/notification_state/notification_state_provider.dart';
+import 'package:food_recipe_app/home/shared/notification_state_provider.dart';
 import 'package:food_recipe_app/home/presentation/widgets/notification_tab/item_notification.dart';
 import 'package:food_recipe_app/core/domain/models/notifications/notifications.dart';
 import 'package:food_recipe_app/core/presentation/theme/app_colors.dart';
