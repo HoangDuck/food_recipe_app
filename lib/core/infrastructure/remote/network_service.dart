@@ -5,10 +5,6 @@ import 'package:food_recipe_app/core/infrastructure/remote/exceptions/http_excep
 
 
 abstract class NetworkService {
-  String get baseUrl;
-
-  Map<String, Object> get headers;
-
   // void updateHeader(Map<String, dynamic> data);
 
   Future<Either<AppException, Response>> get(
