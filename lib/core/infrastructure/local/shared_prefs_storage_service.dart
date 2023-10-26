@@ -9,11 +9,6 @@ class SharedPrefsService implements StorageService {
   final Completer<SharedPreferences> initCompleter = Completer<SharedPreferences>();
 
   @override
-  void init() {
-    initCompleter.complete(SharedPreferences.getInstance());
-  }
-
-  @override
   bool get hasInitialized => sharedPreferences != null;
 
   @override

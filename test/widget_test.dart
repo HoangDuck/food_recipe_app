@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:food_recipe_app/home/application/user_state/state/user_state.dart';
 import 'package:food_recipe_app/home/application/user_state/user_notifier.dart';
 import 'package:food_recipe_app/home/shared/user_state_provider.dart';
-import 'package:mocktail/mocktail.dart';
+// import 'package:mocktail/mocktail.dart';
 
 
 /// A testing utility which creates a [ProviderContainer] and automatically
