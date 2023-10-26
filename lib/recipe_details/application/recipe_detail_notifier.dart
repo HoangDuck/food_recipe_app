@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:food_recipe_app/core/infrastructure/remote/exceptions/http_exception.dart';
 import 'package:food_recipe_app/recipe_details/application/recipe_detail_state.dart';
 import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
-import 'package:food_recipe_app/recipe_details/domain/repositories/meal_repository.dart';
+import 'package:food_recipe_app/recipe_details/infrastructure/repositories/meal_repository.dart';
 
 enum RecipeDetailConcreteState {
   initial,

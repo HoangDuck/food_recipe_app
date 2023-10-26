@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:food_recipe_app/core/infrastructure/remote/exceptions/http_exception.dart';
 import 'package:food_recipe_app/home/application/category_state/state/category_state.dart';
-import 'package:food_recipe_app/home/domain/repositories/home_repository.dart';
+import 'package:food_recipe_app/home/infrastructure/repositories/home_repository.dart';
 import 'package:food_recipe_app/core/domain/models/categories/category_list/categories.dart';
 import 'package:food_recipe_app/core/domain/models/categories/meal_by_categories/meals.dart';
 

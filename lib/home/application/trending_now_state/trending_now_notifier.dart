@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:food_recipe_app/core/infrastructure/remote/exceptions/http_exception.dart';
 import 'package:food_recipe_app/home/application/trending_now_state/state/trending_now_state.dart';
-import 'package:food_recipe_app/home/domain/repositories/home_repository.dart';
+import 'package:food_recipe_app/home/infrastructure/repositories/home_repository.dart';
 import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 
 enum TrendingNowConcreteState {

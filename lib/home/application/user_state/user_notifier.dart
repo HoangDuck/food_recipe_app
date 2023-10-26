@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:food_recipe_app/core/infrastructure/remote/exceptions/http_exception.dart';
 import 'package:food_recipe_app/home/application/user_state/state/user_state.dart';
-import 'package:food_recipe_app/home/domain/repositories/user_repository.dart';
+import 'package:food_recipe_app/home/infrastructure/repositories/user_repository.dart';
 import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/core/domain/models/users/user.dart';
 
