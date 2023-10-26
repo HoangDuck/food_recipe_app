@@ -5,7 +5,7 @@ import 'package:food_recipe_app/configs/app_configs.dart';
 import 'package:food_recipe_app/features/create_recipe/presentation/widgets/item_description_cook_serve.dart';
 import 'package:food_recipe_app/features/create_recipe/presentation/widgets/item_video_recipe_detail_description.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/text_field_search.dart';
-import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
+import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/app_images.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';

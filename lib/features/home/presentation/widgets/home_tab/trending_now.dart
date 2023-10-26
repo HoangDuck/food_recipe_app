@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/trending_now_state/trending_now_state_provider.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/item_video_home.dart';
 import 'package:food_recipe_app/routes/app_route.dart';
-import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
+import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
@@ -37,14 +37,14 @@ class TrendingNowWidget extends HookConsumerWidget{
     ScreenUtil.init(context, designSize: const Size(375,812));
     // TODO: implement build
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 12.h, 0, 12.h),
+      padding: EdgeInsets.fromLTRB(0.w, 12.h, 0, 12.h),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
         children:[
           Padding(
-            padding: EdgeInsets.fromLTRB(0.w,0.h,20.w,16.h),
+            padding: EdgeInsets.fromLTRB(20.w,0.h,20.w,16.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -69,6 +69,7 @@ class TrendingNowWidget extends HookConsumerWidget{
             height: 254.h,
             child: ListView.custom(
               scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.only(left: 20.w),
               childrenDelegate: SliverChildBuilderDelegate(
                     (context, index) {
                   debugPrint("Meals: ${listFoodTrending[index].strMeal}");

@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:food_recipe_app/features/home/domain/repositories/home_repository.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/recent_recipe_state/state/recent_recipe_state.dart';
-import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
+import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
 enum RecentRecipeConcreteState {

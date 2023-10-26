@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_recipe_app/shared/data/local/storage_service.dart';
+import 'package:food_recipe_app/core/infrastructure/local/storage_service.dart';
 // import 'package:food_recipe_app/shared/domain/providers/sharedpreferences_storage_service_provider.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';

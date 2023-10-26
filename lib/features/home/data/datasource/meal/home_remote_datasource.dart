@@ -1,14 +1,14 @@
 
 import 'package:dartz/dartz.dart';
 import 'package:food_recipe_app/configs/app_configs.dart';
-import 'package:food_recipe_app/shared/data/remote/network_service.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/category_list/categories.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/category_list/category_list.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories/meal_by_category_list.dart';
-import 'package:food_recipe_app/shared/domain/models/meals/meal_list.dart';
-import 'package:food_recipe_app/shared/domain/models/meals/meals.dart' as meals;
+import 'package:food_recipe_app/core/infrastructure/remote/network_service.dart';
+import 'package:food_recipe_app/core/domain/models/categories/category_list/categories.dart';
+import 'package:food_recipe_app/core/domain/models/categories/category_list/category_list.dart';
+import 'package:food_recipe_app/core/domain/models/categories/meal_by_categories/meal_by_category_list.dart';
+import 'package:food_recipe_app/core/domain/models/meals/meal_list.dart';
+import 'package:food_recipe_app/core/domain/models/meals/meals.dart' as meals;
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
+import 'package:food_recipe_app/core/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
 
 abstract class HomeDatasource {
   Future<Either<AppException, List<meals.Meals>>> fetchTrendingMeals();

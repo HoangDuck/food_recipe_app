@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/notification_tab/list_notification.dart';
-import 'package:food_recipe_app/shared/domain/models/notifications/notifications.dart';
+import 'package:food_recipe_app/core/domain/models/notifications/notifications.dart';
 import 'package:food_recipe_app/shared/theme/app_images.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
-import 'package:food_recipe_app/shared/widgets/app_button.dart';
+import 'package:food_recipe_app/core/presentation/app_button.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 enum TypeTabNotifications {

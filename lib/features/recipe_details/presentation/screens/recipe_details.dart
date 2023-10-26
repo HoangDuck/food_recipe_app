@@ -6,7 +6,7 @@ import 'package:food_recipe_app/features/recipe_details/presentation/providers/r
 import 'package:food_recipe_app/features/recipe_details/presentation/providers/recipe_detail_state/state/recipe_detail_notifier.dart';
 import 'package:food_recipe_app/features/recipe_details/presentation/widgets/list_ingredients.dart';
 import 'package:food_recipe_app/features/recipe_details/presentation/widgets/video_recipe_detail.dart';
-import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
+import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 
 @RoutePage()

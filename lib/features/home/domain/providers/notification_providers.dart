@@ -4,7 +4,7 @@ import 'package:food_recipe_app/features/home/data/datasource/notification/notif
 import 'package:food_recipe_app/features/home/data/datasource/notification/notification_remote_datasource.dart';
 import 'package:food_recipe_app/features/home/data/repositories/notification_repository.dart';
 import 'package:food_recipe_app/features/home/domain/repositories/notification_repository.dart';
-import 'package:food_recipe_app/shared/data/remote/network_service.dart';
+import 'package:food_recipe_app/core/infrastructure/remote/network_service.dart';
 import 'package:food_recipe_app/shared/domain/providers/dio_network_provider.dart';
 
 final notificationDatasourceProvider = Provider.family<NotificationDatasource, NetworkService>(

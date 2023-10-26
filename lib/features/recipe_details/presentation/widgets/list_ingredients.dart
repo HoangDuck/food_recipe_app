@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/recipe_details/presentation/widgets/item_ingredient.dart';
-import 'package:food_recipe_app/shared/domain/models/ingredients/ingredients.dart';
+import 'package:food_recipe_app/core/domain/models/ingredients/ingredients.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
 

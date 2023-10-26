@@ -4,7 +4,7 @@ import 'package:food_recipe_app/features/home/data/datasource/user/user_local_da
 import 'package:food_recipe_app/features/home/data/datasource/user/user_remote_datasource.dart';
 import 'package:food_recipe_app/features/home/data/repositories/user_repository.dart';
 import 'package:food_recipe_app/features/home/domain/repositories/user_repository.dart';
-import 'package:food_recipe_app/shared/data/remote/network_service.dart';
+import 'package:food_recipe_app/core/infrastructure/remote/network_service.dart';
 import 'package:food_recipe_app/shared/domain/providers/dio_network_provider.dart';
 
 final userDatasourceProvider = Provider.family<UserDatasource, NetworkService>(

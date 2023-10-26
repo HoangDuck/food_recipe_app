@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:food_recipe_app/features/recipe_details/domain/repositories/meal_repository.dart';
 import 'package:food_recipe_app/features/recipe_details/presentation/providers/recipe_detail_state/state/recipe_detail_state.dart';
-import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
+import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
 enum RecipeDetailConcreteState {

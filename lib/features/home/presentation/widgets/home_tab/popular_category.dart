@@ -5,10 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/category_state/category_state_provider.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/home_tab/item_category_popular.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/home_tab/item_meals_by_category.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/category_list/categories.dart';
+import 'package:food_recipe_app/core/domain/models/categories/category_list/categories.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
+import 'package:food_recipe_app/core/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PopularCategory extends HookConsumerWidget{
@@ -24,15 +24,14 @@ class PopularCategory extends HookConsumerWidget{
     var stateMealByCategory = ref.watch(categoryNotifierProvider(currentIndexCategory.value));
     List<meal_by_category.Meals> listMealByCategories = stateMealByCategory.listMealsByCategory;
     ScreenUtil.init(context, designSize: const Size(375,812));
-    // TODO: implement build
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 12.h, 0, 12.h),
+      padding: EdgeInsets.fromLTRB(0.w, 12.h, 0, 12.h),
       child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children:[
             Padding(
-              padding: EdgeInsets.fromLTRB(0.w,0.h,20.w,16.h),
+              padding: EdgeInsets.fromLTRB(20.w,0.h,20.w,16.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,6 +56,7 @@ class PopularCategory extends HookConsumerWidget{
                       height: 34.h,
                       child: ListView.builder(
                         itemCount: listCategories.length,
+                        padding: EdgeInsets.only(left: 20.w),
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
                           return ItemCategoryPopular(
@@ -77,6 +77,7 @@ class PopularCategory extends HookConsumerWidget{
                         height: 231.h,
                         child: ListView.builder(
                           itemCount: listMealByCategories.length,
+                          padding: EdgeInsets.only(left: 20.w),
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
                             return ItemMealByCategory(

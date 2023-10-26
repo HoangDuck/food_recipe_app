@@ -7,7 +7,7 @@ import 'package:food_recipe_app/routes/app_route.dart';
 import 'package:food_recipe_app/shared/theme/app_images.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
-import 'package:food_recipe_app/shared/widgets/app_button.dart';
+import 'package:food_recipe_app/core/presentation/app_button.dart';
 
 @RoutePage()
 class OnBoardingScreen extends ConsumerWidget {

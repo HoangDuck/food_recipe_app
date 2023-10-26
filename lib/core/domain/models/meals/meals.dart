@@ -1,4 +1,4 @@
-import 'package:food_recipe_app/shared/domain/models/ingredients/ingredients.dart';
+import 'package:food_recipe_app/core/domain/models/ingredients/ingredients.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 

@@ -4,11 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/user_state/user_state_provider.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/account_tab/item_video_recipe_profile.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/account_tab/my_profile.dart';
-import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
+import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
-import 'package:food_recipe_app/shared/widgets/app_button.dart';
-import 'package:food_recipe_app/shared/widgets/divider.dart';
+import 'package:food_recipe_app/core/presentation/app_button.dart';
+import 'package:food_recipe_app/core/presentation/divider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 enum TypeTabAccount {

@@ -1,9 +1,9 @@
 
 import 'package:dartz/dartz.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/category_list/categories.dart';
-import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
+import 'package:food_recipe_app/core/domain/models/categories/category_list/categories.dart';
+import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
+import 'package:food_recipe_app/core/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
 
 abstract interface class HomeRepository {
   Future<Either<AppException, List<Meals>>> fetchTrendingMeals();

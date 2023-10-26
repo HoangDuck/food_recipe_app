@@ -4,8 +4,8 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:food_recipe_app/shared/data/remote/remote.dart';
-import 'package:food_recipe_app/shared/domain/models/response.dart' as response;
+import 'package:food_recipe_app/core/infrastructure/remote/remote.dart';
+import 'package:food_recipe_app/core/domain/models/response.dart' as response;
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
 mixin ExceptionHandlerMixin on NetworkService {

@@ -1,6 +1,6 @@
 
 import 'package:dartz/dartz.dart';
-import 'package:food_recipe_app/shared/domain/models/response.dart';
+import 'package:food_recipe_app/core/domain/models/response.dart';
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
 

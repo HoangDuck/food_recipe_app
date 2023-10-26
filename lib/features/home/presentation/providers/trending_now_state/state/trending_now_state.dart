@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:food_recipe_app/features/home/presentation/providers/trending_now_state/state/trending_now_notifier.dart';
-import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
+import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'trending_now_state.freezed.dart';

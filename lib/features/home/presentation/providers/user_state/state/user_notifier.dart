@@ -3,8 +3,8 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:food_recipe_app/features/home/domain/repositories/user_repository.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/user_state/state/user_state.dart';
-import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
-import 'package:food_recipe_app/shared/domain/models/users/user.dart';
+import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
+import 'package:food_recipe_app/core/domain/models/users/user.dart';
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 
 enum UserConcreteState {

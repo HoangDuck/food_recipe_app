@@ -2,12 +2,11 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:food_recipe_app/configs/app_configs.dart';
-import 'package:food_recipe_app/shared/data/remote/network_service.dart';
-import 'package:food_recipe_app/shared/domain/models/response.dart' as response;
+import 'package:food_recipe_app/core/infrastructure/remote/network_service.dart';
+import 'package:food_recipe_app/core/domain/models/response.dart' as response;
 import 'package:food_recipe_app/shared/exceptions/http_exception.dart';
 import 'package:food_recipe_app/shared/globals.dart';
 import 'package:food_recipe_app/shared/mixins/exception_handler_mixin.dart';
-
 class DioNetworkService extends NetworkService with ExceptionHandlerMixin {
   final Dio dio;
   DioNetworkService(this.dio) {

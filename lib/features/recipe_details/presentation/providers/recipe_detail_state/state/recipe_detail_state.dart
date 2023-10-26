@@ -1,6 +1,6 @@
 
 import 'package:food_recipe_app/features/recipe_details/presentation/providers/recipe_detail_state/state/recipe_detail_notifier.dart';
-import 'package:food_recipe_app/shared/domain/models/meals/meals.dart';
+import 'package:food_recipe_app/core/domain/models/meals/meals.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'recipe_detail_state.freezed.dart';

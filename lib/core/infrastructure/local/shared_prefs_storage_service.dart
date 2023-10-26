@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:food_recipe_app/shared/data/local/storage_service.dart';
+import 'package:food_recipe_app/core/infrastructure/local/storage_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefsService implements StorageService {

@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/providers/notification_state/notification_state_provider.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/notification_tab/item_notification.dart';
-import 'package:food_recipe_app/shared/domain/models/notifications/notifications.dart';
+import 'package:food_recipe_app/core/domain/models/notifications/notifications.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/app_strings.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';

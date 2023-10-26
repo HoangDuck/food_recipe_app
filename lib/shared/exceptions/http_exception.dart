@@ -1,7 +1,7 @@
 
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:food_recipe_app/shared/domain/models/response.dart';
+import 'package:food_recipe_app/core/domain/models/response.dart';
 
 class AppException implements Exception {
   final String? message;

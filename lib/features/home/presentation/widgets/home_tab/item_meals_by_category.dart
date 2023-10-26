@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/features/home/presentation/widgets/icon_bookmark_food.dart';
 import 'package:food_recipe_app/shared/theme/app_colors.dart';
 import 'package:food_recipe_app/shared/theme/text_style.dart';
-import 'package:food_recipe_app/shared/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
+import 'package:food_recipe_app/core/domain/models/categories/meal_by_categories/meals.dart' as meal_by_category;
 
 class ItemMealByCategory extends StatelessWidget {
   final meal_by_category.Meals meals;
