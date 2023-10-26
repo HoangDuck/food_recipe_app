@@ -67,8 +67,9 @@ class OnBoardingScreen extends ConsumerWidget {
                     ],
                   ),
                 ),
+                const Spacer(),
                 Padding(
-                  padding: EdgeInsets.only(top: 377.h,bottom: 0.h),
+                  padding: EdgeInsets.only(top: 0.h,bottom: 0.h),
                   child: Text(
                     AppStrings.letsCooking,
                     textAlign: TextAlign.center,
@@ -85,7 +86,7 @@ class OnBoardingScreen extends ConsumerWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(84.w, 0.h, 84.w,0.w),
+                  padding: EdgeInsets.fromLTRB(84.w, 0.h, 84.w,82.w),
                   child: PrimaryIconLargeButton(
                     onTap: () {
                       context.pushRoute(

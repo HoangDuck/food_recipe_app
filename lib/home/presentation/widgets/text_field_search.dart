@@ -32,22 +32,21 @@ class TextFieldWidget extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    if(initialValue!='' && textEditController!=null){
-      textEditController!.text = initialValue;
-    }
     // TODO: implement build
     ScreenUtil.init(context, designSize: const Size(375,812));
     return SizedBox(
       height: size.height.sp,
-      width: size.width.sp,
+      // width: size.width.sp,
       child: TextFormField(
         controller: textEditController,
         style: style ?? AppTextStyles.poppinsLabelBoldV5,
+
         onChanged: (text){
           if(onChange!=null){
             onChange!(text);
           }
         },
+        initialValue: initialValue,
         textAlign: textAlign,
         decoration: InputDecoration(
           border: OutlineInputBorder(

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_recipe_app/core/presentation/theme/app_colors.dart';
 import 'package:food_recipe_app/recipe_details/shared/recipe_detail_state_provider.dart';
 import 'package:food_recipe_app/recipe_details/application/recipe_detail_notifier.dart';
 import 'package:food_recipe_app/recipe_details/presentation/widgets/list_ingredients.dart';
@@ -19,8 +20,13 @@ class RecipeDetailsScreen extends ConsumerWidget{
     ScreenUtil.init(context, designSize: const Size(375,812));
     final state = ref.watch(mealNotifierProvider(idMeal));
     if(state.state == RecipeDetailConcreteState.loading){
-      return const Center(child: CircularProgressIndicator());
-    } else{
+      return Scaffold(
+        body: const Center(
+          child: CircularProgressIndicator(),
+        ),
+        backgroundColor: AppColors.white,
+      );
+    } else {
       Meals meal = state.meal!;
       return Scaffold(
         body: SingleChildScrollView(
@@ -28,7 +34,7 @@ class RecipeDetailsScreen extends ConsumerWidget{
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              Padding(
                 padding: EdgeInsets.fromLTRB(20.w, 56.h, 20.w, 12.h),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,

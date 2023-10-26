@@ -15,11 +15,8 @@ class ItemFormIngredients extends HookConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
-    var textEditControllerTitle = useTextEditingController();
-    textEditControllerTitle.text = formIngredient.title;
-    var textEditControllerValue = useTextEditingController();
-    textEditControllerValue.text = formIngredient.value;
-    // final formIngredientList = ref.watch(formIngredientListProvider);
+    final textEditControllerTitle = useTextEditingController(text: formIngredient.title);
+    final textEditControllerValue = useTextEditingController(text: formIngredient.value);
     // TODO: implement build
     return Padding(
       padding: EdgeInsets.only(bottom: 16.sp),
@@ -27,33 +24,39 @@ class ItemFormIngredients extends HookConsumerWidget{
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Padding(
-            padding: EdgeInsets.only(right: 12.w),
-            child: TextFieldWidget(
-              size: Size(155.w, 44.h),
-              textEditController: textEditControllerTitle,
-              hintText: AppStrings.itemName,
-              onChange: (text){
-                ref.read(formIngredientListProvider.notifier).edit(
-                    id: formIngredient.id,
-                    title: text,
-                    value: formIngredient.value);
-              },
+          Expanded(
+            flex: 3,
+            child: Padding(
+              padding: EdgeInsets.only(right: 12.w),
+              child: TextFieldWidget(
+                size: Size(155.w, 44.h),
+                textEditController: textEditControllerTitle,
+                hintText: AppStrings.itemName,
+                onChange: (text){
+                  ref.read(formIngredientListProvider.notifier).edit(
+                      id: formIngredient.id,
+                      title: text,
+                      value: formIngredient.value);
+                },
+              ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(right: 12.w),
-            child: TextFieldWidget(
-              size: Size(110.w, 44.h),
-              textEditController: textEditControllerValue,
-              hintText: AppStrings.quantity,
-              textAlign: TextAlign.center,
-              onChange: (text){
-                ref.read(formIngredientListProvider.notifier).edit(
-                    id: formIngredient.id,
-                    title: formIngredient.title,
-                    value: text);
-              },
+          Expanded(
+            flex: 2,
+            child: Padding(
+              padding: EdgeInsets.only(right: 12.w),
+              child: TextFieldWidget(
+                size: Size(110.w, 44.h),
+                textEditController: textEditControllerValue,
+                hintText: AppStrings.quantity,
+                textAlign: TextAlign.center,
+                onChange: (text){
+                  ref.read(formIngredientListProvider.notifier).edit(
+                      id: formIngredient.id,
+                      title: formIngredient.title,
+                      value: text);
+                },
+              ),
             ),
           ),
           GestureDetector(
