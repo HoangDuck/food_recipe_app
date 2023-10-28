@@ -46,6 +46,19 @@ abstract class _$AppRoute extends RootStackRouter {
         ),
       );
     },
+    SearchRecipeRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<SearchRecipeRouteArgs>(
+          orElse: () =>
+              SearchRecipeRouteArgs(value: pathParams.getString('search')));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SearchRecipeScreen(
+          key: args.key,
+          value: args.value,
+        ),
+      );
+    },
   };
 }
 
@@ -127,5 +140,44 @@ class RecipeDetailsRouteArgs {
   @override
   String toString() {
     return 'RecipeDetailsRouteArgs{key: $key, idMeal: $idMeal}';
+  }
+}
+
+/// generated route for
+/// [SearchRecipeScreen]
+class SearchRecipeRoute extends PageRouteInfo<SearchRecipeRouteArgs> {
+  SearchRecipeRoute({
+    Key? key,
+    required String value,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SearchRecipeRoute.name,
+          args: SearchRecipeRouteArgs(
+            key: key,
+            value: value,
+          ),
+          rawPathParams: {'search': value},
+          initialChildren: children,
+        );
+
+  static const String name = 'SearchRecipeRoute';
+
+  static const PageInfo<SearchRecipeRouteArgs> page =
+      PageInfo<SearchRecipeRouteArgs>(name);
+}
+
+class SearchRecipeRouteArgs {
+  const SearchRecipeRouteArgs({
+    this.key,
+    required this.value,
+  });
+
+  final Key? key;
+
+  final String value;
+
+  @override
+  String toString() {
+    return 'SearchRecipeRouteArgs{key: $key, value: $value}';
   }
 }

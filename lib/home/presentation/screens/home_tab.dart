@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_recipe_app/home/presentation/widgets/home_tab/popular_category.dart';
@@ -9,17 +10,14 @@ import 'package:food_recipe_app/core/presentation/theme/app_colors.dart';
 import 'package:food_recipe_app/core/presentation/theme/app_images.dart';
 import 'package:food_recipe_app/core/presentation/theme/app_strings.dart';
 import 'package:food_recipe_app/core/presentation/theme/text_style.dart';
+import 'package:food_recipe_app/routes/app_route.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class HomeTab extends StatefulWidget {
+class HomeTab extends HookConsumerWidget {
   const HomeTab({super.key});
 
   @override
-  State<HomeTab> createState() => _HomeTabState();
-}
-
-class _HomeTabState extends State<HomeTab> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return SingleChildScrollView(
       child: Column(
@@ -49,6 +47,11 @@ class _HomeTabState extends State<HomeTab> {
                   alignment: Alignment.center,
                 ),
               ),
+              onSubmit: (value){
+                context.pushRoute(
+                  SearchRecipeRoute(value: value),
+                );
+              },
             ),
           ),
           const TrendingNowWidget(),
@@ -60,4 +63,5 @@ class _HomeTabState extends State<HomeTab> {
       ),
     );
   }
+
 }

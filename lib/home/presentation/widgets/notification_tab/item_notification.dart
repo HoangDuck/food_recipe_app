@@ -14,8 +14,6 @@ class ItemNotification extends StatelessWidget {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return Container(
       padding: EdgeInsets.symmetric(vertical: 12.h,horizontal: 16.w),
-      // height: 82.h,
-      // width: 335.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.sp),
         color: AppColors.cardFoodByCategory,
@@ -30,12 +28,12 @@ class ItemNotification extends StatelessWidget {
               color: AppColors.iconNotificationBackground,
               borderRadius: BorderRadius.circular(10.sp),
             ),
-            height: 28.h,
-            width: 28.w,
+            height: 28,
+            width: 28,
             child: Image.asset(
               AppImages.imgIconNotificationItem,
-              height: 16.h,
-              width: 16.w,
+              height: 16,
+              width: 16,
             ),
           ),
           Expanded(
@@ -65,8 +63,8 @@ class ItemNotification extends StatelessWidget {
           Visibility(
             visible: notification.isToday,
             child: Container(
-              height: 6.h,
-              width: 6.w,
+              height: 6,
+              width: 6,
               decoration: BoxDecoration(
                 color: AppColors.buttonPrimaryNoIconLargeColor,
                 borderRadius: BorderRadius.circular(48.sp)

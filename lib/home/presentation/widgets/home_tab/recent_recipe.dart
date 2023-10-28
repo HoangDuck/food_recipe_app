@@ -60,6 +60,7 @@ class RecentRecipe extends ConsumerWidget {
                 padding: EdgeInsets.only(left: 20.w),
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
+                prototypeItem: ItemRecentRecipe(meal: Meals(),),
                 itemBuilder: (context, index) {
                   return ItemRecentRecipe(meal: listRecentRecipe[index],);
                 },

@@ -33,9 +33,7 @@ class TrendingNowWidget extends HookConsumerWidget{
         scrollController.removeListener(listenerLoadMore);
       };
     }, [key]);
-
     ScreenUtil.init(context, designSize: const Size(375,812));
-
     return Padding(
       padding: EdgeInsets.fromLTRB(0.w, 12.h, 0, 12.h),
       child: Column(
@@ -55,37 +53,49 @@ class TrendingNowWidget extends HookConsumerWidget{
                     style: AppTextStyles.poppinsH5Bold,
                   )),
                   Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(AppStrings.seeAll,style: AppTextStyles.poppinsLabelBold,),
-                    const Icon(Icons.arrow_forward_rounded, color: AppColors.buttonPrimaryNoIconLargeColor,)
-                  ],
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(AppStrings.seeAll,style: AppTextStyles.poppinsLabelBold,),
+                      const Icon(Icons.arrow_forward_rounded, color: AppColors.buttonPrimaryNoIconLargeColor,)
+                    ],
                 ),
               ],
             ),
           ),
           SizedBox(
             height: 254.h,
-            child: ListView.custom(
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.only(left: 20.w),
-              childrenDelegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                  debugPrint("Meals: ${listFoodTrending[index].strMeal}");
+                padding: EdgeInsets.only(left: 20.w),
+                prototypeItem: GestureDetector(
+                  onTap: () {
+                    context.pushRoute(RecipeDetailsRoute(idMeal: ''));
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 16.w),
+                    child: ItemVideo(meal: Meals(),
+                      size: Size(280, 180),
+                    ),
+                  ),
+                ),
+                itemCount: listFoodTrending.length,
+                itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      context.pushRoute(RecipeDetailsRoute(idMeal: listFoodTrending[index].idMeal??''));
+                      context.pushRoute(RecipeDetailsRoute(
+                          idMeal: listFoodTrending[index].idMeal ?? ''));
                     },
                     child: Padding(
                       padding: EdgeInsets.only(right: 16.w),
-                      child: ItemVideo(meal: listFoodTrending[index]),
+                      child: ItemVideo(
+                        meal: listFoodTrending[index],
+                        size: Size(280, 180),
+                      ),
                     ),
                   );
                 },
-                childCount: listFoodTrending.length,
               ),
-            ),
           ),
         ]
       ),

@@ -18,26 +18,24 @@ class ItemVideo extends ConsumerWidget {
       {super.key,
       required this.meal,
       this.isMarked = false,
-      this.size = const Size(280, 220)});
+      this.size = const Size(335, 180)});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        SizedBox(
-          // height: size.height.h,
-          width: size.width.w,
-          child: Column(
+    return SizedBox(
+      width: size.width.w,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 180.h,
-                width: size.width.w,
+              AspectRatio(
+                aspectRatio: size.width/size.height,
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 6.h),
                   child: Stack(
@@ -98,12 +96,8 @@ class ItemVideo extends ConsumerWidget {
               )
             ],
           ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(top: 2.h),
-          child: SizedBox(
-            height: 32.h,
-            width: 145.w,
+          Padding(
+            padding: EdgeInsets.only(top: 2.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -129,8 +123,8 @@ class ItemVideo extends ConsumerWidget {
               ],
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -8,3 +8,8 @@ final trendingNowNotifierProvider = StateNotifierProvider<TrendingNowNotifier, T
   final repository = ref.watch(homeRepositoryProvider);
   return TrendingNowNotifier(repository)..fetchTrendingProducts();
 });
+
+final searchMealsNotifierProvider = StateNotifierProvider.autoDispose.family<TrendingNowNotifier, TrendingNowState, String>((ref,value) {
+  final repository = ref.watch(homeRepositoryProvider);
+  return TrendingNowNotifier(repository)..searchProducts(value);
+});

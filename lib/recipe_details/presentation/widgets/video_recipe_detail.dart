@@ -47,56 +47,53 @@ class VideoRecipeDetail extends ConsumerWidget{
               ],
             ),
           ),
-          SizedBox(
-            height: 43.h,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(48.sp),
-                  child: Image.network(AppConfig.randomImageUrl,width: 41.w,height: 41.h,),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 10.w),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        meal.strMeal??'',style: AppTextStyles.poppinsParagraphBoldV2,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            AppImages.imgIconLocation,
-                            height: 16.sp,
-                            width: 16.sp,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(48.sp),
+                child: Image.network(AppConfig.randomImageUrl,width: 41.w,height: 41.h,),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 10.w),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      meal.strMeal??'',style: AppTextStyles.poppinsParagraphBoldV2,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          AppImages.imgIconLocation,
+                          height: 16.sp,
+                          width: 16.sp,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 4.w),
+                          child: Text(
+                            meal.strArea ?? '',
+                            style: AppTextStyles.poppinsSmallRegularV3,
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 4.w),
-                            child: Text(
-                              meal.strArea ?? '',
-                              style: AppTextStyles.poppinsSmallRegularV3,
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
-                const Spacer(),
-                PrimaryNoIconLargeButton(
-                  title: AppStrings.follow,
-                  onTap: () {},
-                  padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 16.w),
-                  size: Size(77.w,36.h),
-                  textSize: 13.sp,
-                ),
-              ],
-            ),
+              ),
+              const Spacer(),
+              PrimaryNoIconLargeButton(
+                title: AppStrings.follow,
+                onTap: () {},
+                padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 16.w),
+                size: Size(77.w,36.h),
+                textSize: 13.sp,
+              ),
+            ],
           )
         ],
       ),

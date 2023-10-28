@@ -43,4 +43,5 @@ class AppStrings {
   static const String quantity = 'Quantity';
   static const String sixtyPlus = '60K+';
   static const String premiumRecipe = 'Premium recipes';
+  static const String searchResult = 'Search result';
 }

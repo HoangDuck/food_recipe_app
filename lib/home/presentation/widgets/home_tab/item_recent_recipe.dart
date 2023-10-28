@@ -12,22 +12,20 @@ class ItemRecentRecipe extends StatelessWidget {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return Padding(
       padding: EdgeInsets.only(right: 16.w),
-      child: SizedBox(
-        height: 191.h,
-        width: 124.w,
+      child: AspectRatio(
+        aspectRatio: 124.w/191.h,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(10.sp),
+              borderRadius: BorderRadius.circular(10.w),
               child: Image.network(
                 meal.strMealThumb ?? '',
                 errorBuilder: (context, error, stackTrace) {
                   return Container();
                 },
-                width: 124.w,
-                height: 124.h,
               ),
             ),
             Padding(

@@ -23,13 +23,9 @@ class ListIngredients extends ConsumerWidget{
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 28.h,
-                width: 164.w,
-                child: Text(
-                  AppStrings.ingredients,
-                  style: AppTextStyles.poppinsH5Bold,
-                ),
+              Text(
+                AppStrings.ingredients,
+                style: AppTextStyles.poppinsH5Bold,
               ),
               const Spacer(),
               Text(

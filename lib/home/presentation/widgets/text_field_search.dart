@@ -15,6 +15,7 @@ class TextFieldWidget extends HookConsumerWidget {
   final TextAlign textAlign;
   final Size size;
   final Function(String text)? onChange;
+  final Function(String text)? onSubmit;
   final TextEditingController? textEditController;
 
   const TextFieldWidget(
@@ -27,7 +28,9 @@ class TextFieldWidget extends HookConsumerWidget {
       this.initialValue = '',
       this.prefixIcon,
       this.textAlign = TextAlign.start,
-      this.size = const Size(335, 44),this.onChange});
+      this.size = const Size(335, 44),
+      this.onChange,
+      this.onSubmit});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -44,6 +47,11 @@ class TextFieldWidget extends HookConsumerWidget {
         onChanged: (text){
           if(onChange!=null){
             onChange!(text);
+          }
+        },
+        onFieldSubmitted: (text){
+          if(onSubmit!=null){
+            onSubmit!(text);
           }
         },
         textAlign: textAlign,

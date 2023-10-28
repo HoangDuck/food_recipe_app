@@ -26,36 +26,40 @@ class ItemFormIngredients extends HookConsumerWidget{
         children: [
           Expanded(
             flex: 3,
-            child: Padding(
-              padding: EdgeInsets.only(right: 12.w),
-              child: TextFieldWidget(
-                size: Size(155.w, 44.h),
-                textEditController: textEditControllerTitle,
-                hintText: AppStrings.itemName,
-                onChange: (text){
-                  ref.read(formIngredientListProvider.notifier).edit(
-                      id: formIngredient.id,
-                      title: text,
-                      value: formIngredient.value);
-                },
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.only(right: 12.w),
+                child: TextFieldWidget(
+                  size: Size(155.w, 44.h),
+                  textEditController: textEditControllerTitle,
+                  hintText: AppStrings.itemName,
+                  onChange: (text){
+                    ref.read(formIngredientListProvider.notifier).edit(
+                        id: formIngredient.id,
+                        title: text,
+                        value: formIngredient.value);
+                  },
+                ),
               ),
             ),
           ),
           Expanded(
             flex: 2,
-            child: Padding(
-              padding: EdgeInsets.only(right: 12.w),
-              child: TextFieldWidget(
-                size: Size(110.w, 44.h),
-                textEditController: textEditControllerValue,
-                hintText: AppStrings.quantity,
-                textAlign: TextAlign.center,
-                onChange: (text){
-                  ref.read(formIngredientListProvider.notifier).edit(
-                      id: formIngredient.id,
-                      title: formIngredient.title,
-                      value: text);
-                },
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.only(right: 12.w),
+                child: TextFieldWidget(
+                  size: Size(110.w, 44.h),
+                  textEditController: textEditControllerValue,
+                  hintText: AppStrings.quantity,
+                  textAlign: TextAlign.center,
+                  onChange: (text){
+                    ref.read(formIngredientListProvider.notifier).edit(
+                        id: formIngredient.id,
+                        title: formIngredient.title,
+                        value: text);
+                  },
+                ),
               ),
             ),
           ),

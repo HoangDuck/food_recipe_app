@@ -14,8 +14,6 @@ class ItemIngredient extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 12.w),
       child: Container(
-        width: 335.w,
-        height: 76.h,
         padding: EdgeInsets.symmetric(vertical: 12.h,horizontal: 16.w),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.sp),

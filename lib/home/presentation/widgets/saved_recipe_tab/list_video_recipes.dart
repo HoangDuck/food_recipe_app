@@ -18,10 +18,10 @@ class ListVideoRecipes extends ConsumerWidget{
       padding: EdgeInsets.zero,
       childrenDelegate: SliverChildBuilderDelegate((context, index) {
         return Padding(
-          padding: EdgeInsets.only(bottom: 16.h),
+          padding: EdgeInsets.only(bottom: 16),
           child: ItemVideo(
             meal: listFoodTrending[index],
-            size: Size(335.w, 209.h),
+            size: Size(335, 180),
             isMarked: true,
           ),
         );

@@ -7,18 +7,29 @@ import 'package:food_recipe_app/core/presentation/theme/app_images.dart';
 class IconBookmarkFood extends StatelessWidget {
   final Function() onTap;
   final bool isMarked;
-  const IconBookmarkFood({super.key,required this.onTap, this.isMarked = false});
+  final EdgeInsets padding;
+  final Size size;
+
+  const IconBookmarkFood(
+      {super.key,
+      required this.onTap,
+      this.isMarked = false,
+      this.padding = const EdgeInsets.all(6),
+      this.size = const Size(20, 20)});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       onTap: () {
         onTap();
       },
       child: Container(
-        height: 32.h,
-        width: 32.w,
+        padding: EdgeInsets.fromLTRB(
+          padding.left.w,
+          padding.top.w,
+          padding.right.w,
+          padding.bottom.w,
+        ),
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(100.sp),
@@ -27,8 +38,8 @@ class IconBookmarkFood extends StatelessWidget {
           isMarked
               ? AppImages.imgIconDiscoverPressed
               : AppImages.imgIconNotBookmark,
-          width: 21.33.sp,
-          height: 21.33.sp,
+          width: size.width.sp,
+          height: size.height.sp,
         ),
       ),
     );

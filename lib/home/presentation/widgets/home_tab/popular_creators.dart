@@ -16,7 +16,7 @@ class PopularCreators extends ConsumerWidget{
     return Padding(
       padding: EdgeInsets.fromLTRB(20.w, 12.h, 19.w, 12.h),
       child: SizedBox(
-        height: 187.h,
+        height: 250.h,
         child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,

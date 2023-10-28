@@ -17,3 +17,9 @@ iphone:
 	fvm flutter clean
 	fvm flutter pub get
 	cd ios && pod install
+
+route:
+	fvm flutter pub run build_runner watch --delete-conflicting-outputs
+
+freezed:
+	fvm dart run build_runner build

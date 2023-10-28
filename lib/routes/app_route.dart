@@ -5,6 +5,7 @@ import 'package:food_recipe_app/create_recipe/presentation/screens/create_recipe
 import 'package:food_recipe_app/home/presentation/screens/home.dart';
 import 'package:food_recipe_app/onboarding/presentation/screens/onboarding.dart';
 import 'package:food_recipe_app/recipe_details/presentation/screens/recipe_details.dart';
+import 'package:food_recipe_app/search_meals/presentation/screens/search_recipe.dart';
 
 part 'app_route.gr.dart';
 
@@ -19,6 +20,10 @@ class AppRoute extends _$AppRoute {
         AutoRoute(
           path: '/recipe_detail/:id',
           page: RecipeDetailsRoute.page,
+        ),
+        AutoRoute(
+          path: '/search_recipe/:search',
+          page: SearchRecipeRoute.page,
         ),
       ];
 }

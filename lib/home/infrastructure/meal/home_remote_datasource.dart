@@ -1,6 +1,5 @@
 
 import 'package:dartz/dartz.dart';
-import 'package:food_recipe_app/app_configs.dart';
 import 'package:food_recipe_app/core/infrastructure/remote/exceptions/http_exception.dart';
 import 'package:food_recipe_app/core/infrastructure/remote/network_service.dart';
 import 'package:food_recipe_app/core/domain/models/categories/category_list/categories.dart';
@@ -28,7 +27,6 @@ class HomeRemoteDatasource extends HomeDatasource {
     // TODO: implement searchMeals
     final response = await networkService.get(
       '/search.php?s=a',
-      header: AppConfig.baseHeader
     );
 
     return response.fold(
@@ -55,7 +53,6 @@ class HomeRemoteDatasource extends HomeDatasource {
     // TODO: implement searchMeals
     final response = await networkService.get(
       '/search.php?f=$query',
-        header: AppConfig.baseHeader
     );
 
     return response.fold(
@@ -71,7 +68,7 @@ class HomeRemoteDatasource extends HomeDatasource {
             ),
           );
         }
-        final resultSearchResponse = MealList.fromJson(jsonData['meals'] ?? []);
+        final resultSearchResponse = MealList.fromJson(jsonData ?? []);
         return Right(resultSearchResponse.meals);
       },
     );
@@ -82,7 +79,6 @@ class HomeRemoteDatasource extends HomeDatasource {
     // TODO: implement fetchAllCategories
     final response = await networkService.get(
       '/categories.php',
-        header: AppConfig.baseHeader
     );
 
     return response.fold(
@@ -109,7 +105,6 @@ class HomeRemoteDatasource extends HomeDatasource {
     // TODO: implement fetchMealByCategories
     final response = await networkService.get(
       '/filter.php?c=$category',
-        header: AppConfig.baseHeader
     );
 
     return response.fold(
@@ -136,7 +131,6 @@ class HomeRemoteDatasource extends HomeDatasource {
     // TODO: implement fetchMealsRecentRecipe
     final response = await networkService.get(
       '/search.php?f=a',
-        header: AppConfig.baseHeader
     );
 
     return response.fold(

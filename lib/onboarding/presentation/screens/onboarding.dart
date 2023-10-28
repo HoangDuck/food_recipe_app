@@ -21,7 +21,11 @@ class OnBoardingScreen extends ConsumerWidget {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          Image.asset(AppImages.imgBackgroundOnBoard),
+          Positioned.fill(
+            child: Center(
+              child: Image.asset(AppImages.imgBackgroundOnBoard,fit: BoxFit.cover,),
+            ),
+          ),
           Container(
             decoration: const BoxDecoration(
                 gradient: LinearGradient(

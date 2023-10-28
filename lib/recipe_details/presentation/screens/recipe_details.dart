@@ -22,7 +22,7 @@ class RecipeDetailsScreen extends ConsumerWidget{
     if(state.state == RecipeDetailConcreteState.loading){
       return Scaffold(
         body: const Center(
-          child: CircularProgressIndicator(),
+          child: CircularProgressIndicator(color: AppColors.black),
         ),
         backgroundColor: AppColors.white,
       );

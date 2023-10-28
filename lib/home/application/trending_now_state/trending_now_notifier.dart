@@ -65,7 +65,7 @@ class TrendingNowNotifier extends StateNotifier<TrendingNowState> {
     } else {
       state = state.copyWith(
         state: TrendingNowConcreteState.fetchedAllProducts,
-        message: 'No more products available',
+        message: 'No more meals available',
         isLoading: false,
       );
     }
@@ -89,7 +89,7 @@ class TrendingNowNotifier extends StateNotifier<TrendingNowState> {
             ? TrendingNowConcreteState.fetchedAllProducts
             : TrendingNowConcreteState.loaded,
         hasData: true,
-        message: totalProducts.isEmpty ? 'No products found' : '',
+        message: totalProducts.isEmpty ? 'No meals found' : '',
         isLoading: false,
       );
     });
@@ -104,10 +104,6 @@ class TrendingNowNotifier extends StateNotifier<TrendingNowState> {
             : TrendingNowConcreteState.loading,
         isLoading: true,
       );
-
-      // final response = await homeRepository.fetchAllCategories();
-
-      // updateStateFromResponse<Categories>(response);
     } else {
       state = state.copyWith(
         state: TrendingNowConcreteState.fetchedAllProducts,
