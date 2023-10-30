@@ -15,41 +15,38 @@ class PopularCreators extends ConsumerWidget{
 
     return Padding(
       padding: EdgeInsets.fromLTRB(20.w, 12.h, 19.w, 12.h),
-      child: SizedBox(
-        height: 250.h,
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children:[
-              Padding(
-                padding: EdgeInsets.fromLTRB(0.w,0.h,0.w,16.h),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(
-                        child: Text(
-                      AppStrings.popularCreator,
-                      style: AppTextStyles.poppinsH5Bold,
-                    )),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(AppStrings.seeAll,style: AppTextStyles.poppinsLabelBold,),
-                        const Icon(Icons.arrow_forward_rounded, color: AppColors.buttonPrimaryNoIconLargeColor,)
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:[
+            Padding(
+              padding: EdgeInsets.fromLTRB(0.w,0.h,0.w,16.h),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: List.generate(4, (index) => const ItemPopularCreator()),
+                children: [
+                  Expanded(
+                      child: Text(
+                    AppStrings.popularCreator,
+                    style: AppTextStyles.poppinsH5Bold,
+                  )),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(AppStrings.seeAll,style: AppTextStyles.poppinsLabelBold,),
+                      const Icon(Icons.arrow_forward_rounded, color: AppColors.buttonPrimaryNoIconLargeColor,)
+                    ],
+                  ),
+                ],
               ),
-            ]
-        ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: List.generate(4, (index) => const ItemPopularCreator()),
+            ),
+          ]
       ),
     );
   }

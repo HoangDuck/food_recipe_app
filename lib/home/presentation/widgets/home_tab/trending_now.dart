@@ -2,6 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_recipe_app/app_configs.dart';
+import 'package:food_recipe_app/core/presentation/widgets/prototype_wiget.dart';
 import 'package:food_recipe_app/home/shared/trending_now_state_provider.dart';
 import 'package:food_recipe_app/home/presentation/widgets/item_video_home.dart';
 import 'package:food_recipe_app/routes/app_route.dart';
@@ -63,40 +65,70 @@ class TrendingNowWidget extends HookConsumerWidget{
               ],
             ),
           ),
-          SizedBox(
-            height: 254.h,
-            child: ListView.builder(
+          PrototypeListViewHorizontal(
+            prototype: GestureDetector(
+              onTap: () {
+                context.pushRoute(RecipeDetailsRoute(idMeal: ''));
+              },
+              child: Padding(
+                padding: EdgeInsets.only(right: 16.w),
+                child: ItemVideo(meal: Meals(strMealThumb: AppConfig.randomImageUrl,strMeal: 'as',strArea: 'as'),
+                  size: Size(280, 180),
+                ),
+              ),
+            ),
+            listView: ListView.builder(
               scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.only(left: 20.w),
-                prototypeItem: GestureDetector(
+              itemCount: listFoodTrending.length,
+              padding: EdgeInsets.only(left: 20.w),
+              itemBuilder: (_, index) {
+                debugPrint(listFoodTrending[index].strMeal);
+                return GestureDetector(
                   onTap: () {
-                    context.pushRoute(RecipeDetailsRoute(idMeal: ''));
+                    context.pushRoute(RecipeDetailsRoute(
+                        idMeal: listFoodTrending[index].idMeal ?? ''));
                   },
                   child: Padding(
                     padding: EdgeInsets.only(right: 16.w),
-                    child: ItemVideo(meal: Meals(),
+                    child: ItemVideo(
+                      meal: listFoodTrending[index],
                       size: Size(280, 180),
                     ),
                   ),
-                ),
-                itemCount: listFoodTrending.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      context.pushRoute(RecipeDetailsRoute(
-                          idMeal: listFoodTrending[index].idMeal ?? ''));
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.only(right: 16.w),
-                      child: ItemVideo(
-                        meal: listFoodTrending[index],
-                        size: Size(280, 180),
-                      ),
-                    ),
-                  );
-                },
-              ),
+                );
+              },
+            ),
           ),
+          // CustomScrollView(
+          //     scrollDirection: Axis.horizontal,
+          //     slivers: [
+          //       SliverPrototypeExtentList.builder(
+          //         itemBuilder: (context, index) {
+          //           return GestureDetector(
+          //             onTap: () {
+          //               context.pushRoute(RecipeDetailsRoute(
+          //                   idMeal: listFoodTrending[index].idMeal ?? ''));
+          //             },
+          //             child: Padding(
+          //               padding: EdgeInsets.only(right: 16.w),
+          //               child: ItemVideo(
+          //                 meal: listFoodTrending[index],
+          //                 size: Size(280, 180),
+          //               ),
+          //             ),
+          //           );
+          //         },
+          //         prototypeItem: Padding(padding: EdgeInsets.only(right: 16.w),
+          //           child: ItemVideo(
+          //             meal: Meals(
+          //                 strMealThumb: AppConfig.randomImageUrl,
+          //                 strMeal: 'as',
+          //                 strArea: 'as'),
+          //           ),
+          //         ),
+          //       ),
+          //     ],
+          // ),
         ]
       ),
     );

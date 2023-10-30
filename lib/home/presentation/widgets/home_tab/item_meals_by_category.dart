@@ -14,93 +14,96 @@ class ItemMealByCategory extends StatelessWidget {
     ScreenUtil.init(context, designSize: const Size(375,812));
     return Padding(
       padding: EdgeInsets.only(right: 16.w),
-      child: AspectRatio(
-        aspectRatio: 150/231,
-        child: Stack(
-          children: [
-            Positioned(
-              bottom: 0.h,
-              right: 0.w,
-              left: 0.w,
-              top: 55.h,
-              child: AspectRatio(
-                aspectRatio: 150/176,
+      child: SizedBox(
+        width: 150,
+        child: AspectRatio(
+          aspectRatio: 150/231,
+          child: Stack(
+            children: [
+              Positioned(
+                bottom: 0.h,
+                right: 0.w,
+                left: 0.w,
+                top: 55.h,
+                child: AspectRatio(
+                  aspectRatio: 150/176,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.cardFoodByCategory,
+                      borderRadius: BorderRadius.circular(12.sp),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 0.h,
+                right: 20.w,
+                left: 20.w,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: AppColors.cardFoodByCategory,
-                    borderRadius: BorderRadius.circular(12.sp),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 0.h,
-              right: 20.w,
-              left: 20.w,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(110),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.shadowMealByCategory,
-                      offset: Offset(
-                        0.w,
-                        8.0.h,
+                    borderRadius: BorderRadius.circular(110),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.shadowMealByCategory,
+                        offset: Offset(
+                          0.w,
+                          8.0.h,
+                        ),
+                        blurRadius: 25.0,
+                        spreadRadius: 0.0,
                       ),
-                      blurRadius: 25.0,
-                      spreadRadius: 0.0,
+                    ],
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(100),
+                    child: Image.network(
+                      meals.strMealThumb ?? '',
                     ),
-                  ],
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(100),
-                  child: Image.network(
-                    meals.strMealThumb ?? '',
                   ),
                 ),
               ),
-            ),
-            Positioned(
-              // top: 121.h,
-              right: 8.w,
-              left: 8.w,
-              top: 121.h,
-              child: Text(
-                meals.strMeal??'',
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: AppTextStyles.poppinsLabelBoldV2,
+              Positioned(
+                // top: 121.h,
+                right: 8.w,
+                left: 8.w,
+                top: 121.h,
+                child: Text(
+                  meals.strMeal??'',
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTextStyles.poppinsLabelBoldV2,
+                ),
               ),
-            ),
-            Positioned(
-              bottom: 34.h,
-              left: 12.w,
-              child: Text(
-                'Time',
-                style: AppTextStyles.hintTextStyleSearchSmall,
+              Positioned(
+                bottom: 34.h,
+                left: 12.w,
+                child: Text(
+                  'Time',
+                  style: AppTextStyles.hintTextStyleSearchSmall,
+                ),
               ),
-            ),
-            Positioned(
-              bottom: 12.h,
-              left: 12.w,
-              child: Text(
-                '10 Mins',
-                style: AppTextStyles.poppinsLabelBoldV3,
+              Positioned(
+                bottom: 12.h,
+                left: 12.w,
+                child: Text(
+                  '10 Mins',
+                  style: AppTextStyles.poppinsLabelBoldV3,
+                ),
               ),
-            ),
-            Positioned(
-              bottom: 12.h,
-              right: 12.w,
-              child: IconBookmarkFood(
-                onTap: () {
+              Positioned(
+                bottom: 12.h,
+                right: 12.w,
+                child: IconBookmarkFood(
+                  onTap: () {
 
-                },
-                size: Size(16,16),
-                padding: EdgeInsets.all(4),
+                  },
+                  size: Size(16,16),
+                  padding: EdgeInsets.all(4),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

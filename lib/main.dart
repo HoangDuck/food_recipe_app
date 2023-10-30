@@ -15,13 +15,15 @@ Future<void> main() async {
     ),
   );
   final prefs = await SharedPreferences.getInstance();
-  runApp(ProviderScope(
-    overrides: [
-      sharedPreferencesProvider.overrideWithValue(prefs),
-    ],
-    observers: [
-      Observers(),
-    ],
-    child: MyApp(),
-  ));
+  runApp(
+    ProviderScope(
+      overrides: [
+        sharedPreferencesProvider.overrideWithValue(prefs),
+      ],
+      observers: [
+        Observers(),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
