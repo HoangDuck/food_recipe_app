@@ -18,8 +18,9 @@ class ListNotification extends HookConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ScreenUtil.init(context, designSize: const Size(375,812));
-    final state = ref.watch(notificationNotifierProvider);
-    List<Notifications> listFoodTrending = state.listNotifications;
+    final List<Notifications> listFoodTrending = ref.watch(notificationNotifierProvider.select((state){
+      return state.listNotifications;
+    }));
     final scrollController = useScrollController();
     useEffect(() {
       listenerLoadMore(){

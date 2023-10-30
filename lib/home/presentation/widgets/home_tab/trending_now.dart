@@ -18,8 +18,11 @@ class TrendingNowWidget extends HookConsumerWidget{
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(trendingNowNotifierProvider);
-    List<Meals> listFoodTrending = state.productList;
+    final List<Meals> listFoodTrending = ref.watch(
+      trendingNowNotifierProvider.select(
+        (state) => state.productList,
+      ),
+    );
     final scrollController = useScrollController();
     useEffect(() {
       listenerLoadMore(){
@@ -99,36 +102,6 @@ class TrendingNowWidget extends HookConsumerWidget{
               },
             ),
           ),
-          // CustomScrollView(
-          //     scrollDirection: Axis.horizontal,
-          //     slivers: [
-          //       SliverPrototypeExtentList.builder(
-          //         itemBuilder: (context, index) {
-          //           return GestureDetector(
-          //             onTap: () {
-          //               context.pushRoute(RecipeDetailsRoute(
-          //                   idMeal: listFoodTrending[index].idMeal ?? ''));
-          //             },
-          //             child: Padding(
-          //               padding: EdgeInsets.only(right: 16.w),
-          //               child: ItemVideo(
-          //                 meal: listFoodTrending[index],
-          //                 size: Size(280, 180),
-          //               ),
-          //             ),
-          //           );
-          //         },
-          //         prototypeItem: Padding(padding: EdgeInsets.only(right: 16.w),
-          //           child: ItemVideo(
-          //             meal: Meals(
-          //                 strMealThumb: AppConfig.randomImageUrl,
-          //                 strMeal: 'as',
-          //                 strArea: 'as'),
-          //           ),
-          //         ),
-          //       ),
-          //     ],
-          // ),
         ]
       ),
     );

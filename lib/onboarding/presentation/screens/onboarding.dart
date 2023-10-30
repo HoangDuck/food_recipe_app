@@ -93,7 +93,7 @@ class OnBoardingScreen extends ConsumerWidget {
                   padding: EdgeInsets.fromLTRB(84.w, 0.h, 84.w,82.w),
                   child: PrimaryIconLargeButton(
                     onTap: () {
-                      context.pushRoute(
+                      context.replaceRoute(
                         const HomeRoute(),
                       );
                     },

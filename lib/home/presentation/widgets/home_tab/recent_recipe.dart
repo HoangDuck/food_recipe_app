@@ -15,8 +15,9 @@ class RecentRecipe extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final stateRecentRecipe = ref.watch(recentRecipeProvider);
-    List<Meals> listRecentRecipe = stateRecentRecipe.listMealsByCategory;
+    final List<Meals> listRecentRecipe = ref.watch(recentRecipeProvider.select((state){
+      return state.listMealsByCategory;
+    }));
 
     ScreenUtil.init(context, designSize: const Size(375, 812));
 
@@ -60,7 +61,8 @@ class RecentRecipe extends ConsumerWidget {
                 meal: Meals(
                     strMealThumb: AppConfig.randomImageUrl,
                     strMeal: 'as',
-                    strArea: 'as'),
+                    strArea: 'as',
+                ),
               ),
               listView: ListView.builder(
                 itemCount: listRecentRecipe.length,

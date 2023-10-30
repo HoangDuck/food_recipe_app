@@ -10,8 +10,10 @@ class ListVideoRecipes extends ConsumerWidget{
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(trendingNowNotifierProvider);
-    List<Meals> listFoodTrending = state.productList;
+    final List<Meals> listFoodTrending =
+        ref.watch(trendingNowNotifierProvider.select((state) {
+      return state.productList;
+    }));
     ScreenUtil.init(context, designSize: const Size(375,812));
 
     return ListView.custom(

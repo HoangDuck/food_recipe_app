@@ -18,13 +18,16 @@ class PopularCategory extends HookConsumerWidget{
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final stateCategory = ref.watch(categoryPopularNotifierProvider);
-    List<Categories> listCategories = stateCategory.listMealsByCategory;
+    final List<Categories> listCategories = ref.watch(categoryPopularNotifierProvider.select(
+          (state) => state.listMealsByCategory,
+    ));
     var currentIndexCategory = useValueNotifier<String>(listCategories.isEmpty
         ? 'Beef'
         : (listCategories.first.strCategory ?? 'Beef'));
-    var stateMealByCategory = ref.watch(categoryNotifierProvider(currentIndexCategory.value));
-    List<meal_by_category.Meals> listMealByCategories = stateMealByCategory.listMealsByCategory;
+    final List<meal_by_category.Meals> listMealByCategories =
+        ref.watch(categoryNotifierProvider(currentIndexCategory.value).select(
+      (state) => state.listMealsByCategory,
+    ));
     ScreenUtil.init(context, designSize: const Size(375,812));
     return Padding(
       padding: EdgeInsets.fromLTRB(0.w, 12.h, 0, 12.h),

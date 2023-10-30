@@ -22,8 +22,9 @@ class AccountTab extends HookConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     var currentPage = useValueNotifier<TypeTabAccount>(TypeTabAccount.video);
-    final state = ref.watch(userNotifierProvider);
-    List<Meals> listMealsProfile = state.listMeals;
+    final List<Meals> listMealsProfile = ref.watch(userNotifierProvider.select((state){
+      return state.listMeals;
+    }));
     ScreenUtil.init(context, designSize: const Size(375,812));
 
     return CustomScrollView(
