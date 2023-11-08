@@ -5,7 +5,6 @@ import 'package:food_recipe_app/home/application/user_state/user_notifier.dart';
 import 'package:food_recipe_app/home/shared/user_state_provider.dart';
 // import 'package:mocktail/mocktail.dart';
 
-
 /// A testing utility which creates a [ProviderContainer] and automatically
 /// disposes it at the end of the test.
 ProviderContainer createContainer({
@@ -26,9 +25,7 @@ ProviderContainer createContainer({
   return container;
 }
 
-
 void main() {
-
   test('Test loading state user notifier', () async {
     // Create a ProviderContainer for this test.
     // DO NOT share ProviderContainers between tests.
@@ -36,7 +33,7 @@ void main() {
     UserState valueTest = container.read(userNotifierProvider.notifier).state;
     expect(
       valueTest.state,
-    equals(UserConcreteState.loading),
+      equals(UserConcreteState.loading),
     );
   });
 
@@ -69,14 +66,13 @@ void main() {
     await container.read(userNotifierProvider.notifier).fetchUserData();
     container.listen<UserState>(
       userNotifierProvider,
-          (previous, next) {
-            expect(
-              next.user!=null,
-              equals(false),
-            );
+      (previous, next) {
+        expect(
+          next.user != null,
+          equals(false),
+        );
       },
     );
-
   });
 }
 // class UserNotifierMock extends StateNotifier<UserState> with Mock implements UserNotifier {}
